@@ -4,7 +4,7 @@ listView("DEMO-CI-Team-Gate") {
     filterBuildQueue()
     filterExecutors()
     jobs {
-        regex(/DEMO-CI-400-Team-Gate-.+/)
+        regex(/DEMO-CI-4..-Team-Gate-.+/)
     }
     columns {
         status()
