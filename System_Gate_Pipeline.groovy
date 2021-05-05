@@ -16,7 +16,6 @@ pipeline {
 		stage('Build-4') { steps { build 'DEMO-CI-524-System-Gate-Build-4' } }
 		stage('Build-5') { steps { build 'DEMO-CI-525-System-Gate-Build-5' } }
 		}}
-
 		stage ('Deploy') { parallel {
 		stage('Deploy-1') { steps { build 'DEMO-CI-531-System-Gate-Deploy-1' } }
 		stage('Deploy-2') { steps { build 'DEMO-CI-532-System-Gate-Deploy-2' } }
@@ -24,7 +23,6 @@ pipeline {
 		stage('Deploy-4') { steps { build 'DEMO-CI-534-System-Gate-Deploy-4' } }
 		stage('Deploy-5') { steps { build 'DEMO-CI-535-System-Gate-Deploy-5' } }
 		}}
-
 		stage ('Test') { parallel {
 		stage('Test-1') { steps { build 'DEMO-CI-541-System-Gate-Test-1' } }
 		stage('Test-2') { steps { build 'DEMO-CI-542-System-Gate-Test-2' } }

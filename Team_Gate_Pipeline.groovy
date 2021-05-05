@@ -17,7 +17,6 @@ pipeline {
 		stage('Build-4') { steps { build 'DEMO-CI-424-Team-Gate-MARS-Build-4' } }
 		stage('Build-5') { steps { build 'DEMO-CI-425-Team-Gate-MARS-Build-5' } }
 		}}
-
 		stage ('Deploy') { parallel {
 		stage('Deploy-1') { steps { build 'DEMO-CI-431-Team-Gate-MARS-Deploy-1' } }
 		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-MARS-Deploy-2' } }
@@ -25,7 +24,6 @@ pipeline {
 		stage('Deploy-4') { steps { build 'DEMO-CI-434-Team-Gate-MARS-Deploy-4' } }
 		stage('Deploy-5') { steps { build 'DEMO-CI-435-Team-Gate-MARS-Deploy-5' } }
 		}}
-
 		stage ('Test') { parallel {
 		stage('Test-1') { steps { build 'DEMO-CI-441-Team-Gate-MARS-Test-1' } }
 		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-MARS-Test-2' } }
@@ -33,7 +31,7 @@ pipeline {
 		stage('Test-4') { steps { build 'DEMO-CI-444-Team-Gate-MARS-Test-4' } }
 		stage('Test-5') { steps { build 'DEMO-CI-445-Team-Gate-MARS-Test-5' } }
 		}}
-		}
+		}}
 
 
 
@@ -45,7 +43,6 @@ pipeline {
 		stage('Build-4') { steps { build 'DEMO-CI-424-Team-Gate-VENUS-Build-4' } }
 		stage('Build-5') { steps { build 'DEMO-CI-425-Team-Gate-VENUS-Build-5' } }
 		}}
-
 		stage ('Deploy') { parallel {
 		stage('Deploy-1') { steps { build 'DEMO-CI-431-Team-Gate-VENUS-Deploy-1' } }
 		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-VENUS-Deploy-2' } }
@@ -53,7 +50,6 @@ pipeline {
 		stage('Deploy-4') { steps { build 'DEMO-CI-434-Team-Gate-VENUS-Deploy-4' } }
 		stage('Deploy-5') { steps { build 'DEMO-CI-435-Team-Gate-VENUS-Deploy-5' } }
 		}}
-
 		stage ('Test') { parallel {
 		stage('Test-1') { steps { build 'DEMO-CI-441-Team-Gate-VENUS-Test-1' } }
 		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-VENUS-Test-2' } }
@@ -61,7 +57,7 @@ pipeline {
 		stage('Test-4') { steps { build 'DEMO-CI-444-Team-Gate-VENUS-Test-4' } }
 		stage('Test-5') { steps { build 'DEMO-CI-445-Team-Gate-VENUS-Test-5' } }
 		}}
-		}
+		}}
 
 
 
@@ -73,7 +69,6 @@ pipeline {
 		stage('Build-4') { steps { build 'DEMO-CI-424-Team-Gate-PLUTO-Build-4' } }
 		stage('Build-5') { steps { build 'DEMO-CI-425-Team-Gate-PLUTO-Build-5' } }
 		}}
-
 		stage ('Deploy') { parallel {
 		stage('Deploy-1') { steps { build 'DEMO-CI-431-Team-Gate-PLUTO-Deploy-1' } }
 		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-PLUTO-Deploy-2' } }
@@ -81,7 +76,6 @@ pipeline {
 		stage('Deploy-4') { steps { build 'DEMO-CI-434-Team-Gate-PLUTO-Deploy-4' } }
 		stage('Deploy-5') { steps { build 'DEMO-CI-435-Team-Gate-PLUTO-Deploy-5' } }
 		}}
-
 		stage ('Test') { parallel {
 		stage('Test-1') { steps { build 'DEMO-CI-441-Team-Gate-PLUTO-Test-1' } }
 		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-PLUTO-Test-2' } }
@@ -89,7 +83,7 @@ pipeline {
 		stage('Test-4') { steps { build 'DEMO-CI-444-Team-Gate-PLUTO-Test-4' } }
 		stage('Test-5') { steps { build 'DEMO-CI-445-Team-Gate-PLUTO-Test-5' } }
 		}}
-		}
+		}}
 
 
 		stage('Exit') { steps { build 'DEMO-CI-410-Team-Gate-Exit' } }
