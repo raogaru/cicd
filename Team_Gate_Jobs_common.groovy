@@ -11,6 +11,7 @@ job('DEMO-CI-410-Team-Gate-Entry') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Entry.sh')
         }
@@ -29,6 +30,7 @@ job('DEMO-CI-490-Team-Gate-Exit') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Build.sh 1')
         }

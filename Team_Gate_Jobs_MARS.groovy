@@ -12,6 +12,7 @@ job('DEMO-CI-421-Team-Gate-MARS-Build-1') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Build.sh MARS 1')
         }
@@ -30,6 +31,7 @@ job('DEMO-CI-422-Team-Gate-MARS-Build-2') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Build.sh MARS 2')
         }
@@ -48,6 +50,7 @@ job('DEMO-CI-423-Team-Gate-MARS-Build-3') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Build.sh MARS 3')
         }
@@ -66,6 +69,7 @@ job('DEMO-CI-424-Team-Gate-MARS-Build-4') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Build.sh MARS 4')
         }
@@ -84,6 +88,7 @@ job('DEMO-CI-425-Team-Gate-MARS-Build-5') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Build.sh MARS 5')
         }
@@ -102,6 +107,7 @@ job('DEMO-CI-431-Team-Gate-MARS-Deploy-1') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Deploy.sh MARS 1')
         }
@@ -120,6 +126,7 @@ job('DEMO-CI-432-Team-Gate-MARS-Deploy-2') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Deploy.sh MARS 2')
         }
@@ -138,6 +145,7 @@ job('DEMO-CI-433-Team-Gate-MARS-Deploy-3') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Deploy.sh MARS 3')
         }
@@ -156,6 +164,7 @@ job('DEMO-CI-434-Team-Gate-MARS-Deploy-4') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Deploy.sh MARS 4')
         }
@@ -174,6 +183,7 @@ job('DEMO-CI-435-Team-Gate-MARS-Deploy-5') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Deploy.sh MARS 5')
         }
@@ -192,6 +202,7 @@ job('DEMO-CI-441-Team-Gate-MARS-Test-1') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Test.sh MARS 1')
         }
@@ -210,6 +221,7 @@ job('DEMO-CI-442-Team-Gate-MARS-Test-2') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Test.sh MARS 2')
         }
@@ -228,6 +240,7 @@ job('DEMO-CI-443-Team-Gate-MARS-Test-3') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Test.sh MARS 3')
         }
@@ -246,6 +259,7 @@ job('DEMO-CI-444-Team-Gate-MARS-Test-4') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Test.sh MARS 4')
         }
@@ -264,6 +278,7 @@ job('DEMO-CI-445-Team-Gate-MARS-Test-5') {
                 daysToKeep(1)
                 numToKeep(24)
         }
+	scm {github('raogaru/cicd')}
         steps {
         shell('./Team-Gate-Test.sh MARS 5')
         }
