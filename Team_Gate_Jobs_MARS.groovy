@@ -6,7 +6,7 @@ job('DEMO-CI-421-Team-Gate-MARS-Build-1') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -25,7 +25,7 @@ job('DEMO-CI-422-Team-Gate-MARS-Build-2') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -44,7 +44,7 @@ job('DEMO-CI-423-Team-Gate-MARS-Build-3') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -63,7 +63,7 @@ job('DEMO-CI-424-Team-Gate-MARS-Build-4') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -82,7 +82,7 @@ job('DEMO-CI-425-Team-Gate-MARS-Build-5') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -101,7 +101,7 @@ job('DEMO-CI-431-Team-Gate-MARS-Deploy-1') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -120,7 +120,7 @@ job('DEMO-CI-432-Team-Gate-MARS-Deploy-2') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -139,7 +139,7 @@ job('DEMO-CI-433-Team-Gate-MARS-Deploy-3') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -158,7 +158,7 @@ job('DEMO-CI-434-Team-Gate-MARS-Deploy-4') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -177,7 +177,7 @@ job('DEMO-CI-435-Team-Gate-MARS-Deploy-5') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -196,7 +196,7 @@ job('DEMO-CI-441-Team-Gate-MARS-Test-1') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -215,7 +215,7 @@ job('DEMO-CI-442-Team-Gate-MARS-Test-2') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -234,7 +234,7 @@ job('DEMO-CI-443-Team-Gate-MARS-Test-3') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -253,7 +253,7 @@ job('DEMO-CI-444-Team-Gate-MARS-Test-4') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -272,7 +272,7 @@ job('DEMO-CI-445-Team-Gate-MARS-Test-5') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)

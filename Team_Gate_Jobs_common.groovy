@@ -5,7 +5,7 @@ job('DEMO-CI-410-Team-Gate-Entry') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
@@ -24,7 +24,7 @@ job('DEMO-CI-490-Team-Gate-Exit') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)

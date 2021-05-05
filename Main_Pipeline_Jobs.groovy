@@ -5,7 +5,7 @@ job('DEMO-CI-010-Main-Pipeline-Entry') {
                 colorizeOutput()
                 timestamps()
                 preBuildCleanup()
-                buildName('#-')
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
         }
         logRotator {
                 daysToKeep(1)
