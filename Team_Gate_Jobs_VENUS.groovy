@@ -14,7 +14,7 @@ job('DEMO-CI-421-Team-Gate-VENUS-Build-1') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Build.sh VENUS 1')
+        shell('./demo.sh TEAM_BUILD VENUS 1')
         }
 }
 // ----------------------------------------------------------------------
@@ -33,7 +33,7 @@ job('DEMO-CI-422-Team-Gate-VENUS-Build-2') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Build.sh VENUS 2')
+        shell('./demo.sh TEAM_BUILD VENUS 2')
         }
 }
 // ----------------------------------------------------------------------
@@ -52,7 +52,7 @@ job('DEMO-CI-423-Team-Gate-VENUS-Build-3') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Build.sh VENUS 3')
+        shell('./demo.sh TEAM_BUILD VENUS 3')
         }
 }
 // ----------------------------------------------------------------------
@@ -71,7 +71,7 @@ job('DEMO-CI-424-Team-Gate-VENUS-Build-4') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Build.sh VENUS 4')
+        shell('./demo.sh TEAM_BUILD VENUS 4')
         }
 }
 // ----------------------------------------------------------------------
@@ -90,7 +90,7 @@ job('DEMO-CI-425-Team-Gate-VENUS-Build-5') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Build.sh VENUS 5')
+        shell('./demo.sh TEAM_BUILD VENUS 5')
         }
 }
 // ----------------------------------------------------------------------
@@ -109,7 +109,7 @@ job('DEMO-CI-431-Team-Gate-VENUS-Deploy-1') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Deploy.sh VENUS 1')
+        shell('./demo.sh TEAM_DEPLOY VENUS 1')
         }
 }
 // ----------------------------------------------------------------------
@@ -128,7 +128,7 @@ job('DEMO-CI-432-Team-Gate-VENUS-Deploy-2') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Deploy.sh VENUS 2')
+        shell('./demo.sh TEAM_DEPLOY VENUS 2')
         }
 }
 // ----------------------------------------------------------------------
@@ -147,7 +147,7 @@ job('DEMO-CI-433-Team-Gate-VENUS-Deploy-3') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Deploy.sh VENUS 3')
+        shell('./demo.sh TEAM_DEPLOY VENUS 3')
         }
 }
 // ----------------------------------------------------------------------
@@ -166,7 +166,7 @@ job('DEMO-CI-434-Team-Gate-VENUS-Deploy-4') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Deploy.sh VENUS 4')
+        shell('./demo.sh TEAM_DEPLOY VENUS 4')
         }
 }
 // ----------------------------------------------------------------------
@@ -185,7 +185,7 @@ job('DEMO-CI-435-Team-Gate-VENUS-Deploy-5') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Deploy.sh VENUS 5')
+        shell('./demo.sh TEAM_DEPLOY VENUS 5')
         }
 }
 // ----------------------------------------------------------------------
@@ -204,7 +204,7 @@ job('DEMO-CI-441-Team-Gate-VENUS-Test-1') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Test.sh VENUS 1')
+        shell('./demo.sh TEAM_TEST VENUS 1')
         }
 }
 // ----------------------------------------------------------------------
@@ -223,7 +223,7 @@ job('DEMO-CI-442-Team-Gate-VENUS-Test-2') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Test.sh VENUS 2')
+        shell('./demo.sh TEAM_TEST VENUS 2')
         }
 }
 // ----------------------------------------------------------------------
@@ -242,7 +242,7 @@ job('DEMO-CI-443-Team-Gate-VENUS-Test-3') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Test.sh VENUS 3')
+        shell('./demo.sh TEAM_TEST VENUS 3')
         }
 }
 // ----------------------------------------------------------------------
@@ -261,7 +261,7 @@ job('DEMO-CI-444-Team-Gate-VENUS-Test-4') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Test.sh VENUS 4')
+        shell('./demo.sh TEAM_TEST VENUS 4')
         }
 }
 // ----------------------------------------------------------------------
@@ -280,7 +280,7 @@ job('DEMO-CI-445-Team-Gate-VENUS-Test-5') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./Team-Gate-Test.sh VENUS 5')
+        shell('./demo.sh TEAM_TEST VENUS 5')
         }
 }
 // ----------------------------------------------------------------------

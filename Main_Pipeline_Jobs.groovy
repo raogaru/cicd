@@ -13,7 +13,7 @@ job('DEMO-CI-010-Main-Pipeline-Entry') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh')
+        shell('./demo.sh MAIN ENTRY')
         }
 }
 // ----------------------------------------------------------------------
