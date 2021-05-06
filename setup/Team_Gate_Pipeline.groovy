@@ -10,21 +10,21 @@ pipeline {
 		stage('Enter') { steps { build 'DEMO-CI-410-Team-Gate-Entry' } }
 
 		stage('TeamGate-MARS') { parallel {
-		stage ('Build') {
+		stage ('TeamGate-MARS-Build') {
 		stage('Build-1') { steps { build 'DEMO-CI-421-Team-Gate-MARS-Build-1' } }
 		stage('Build-2') { steps { build 'DEMO-CI-422-Team-Gate-MARS-Build-2' } }
 		stage('Build-3') { steps { build 'DEMO-CI-423-Team-Gate-MARS-Build-3' } }
 		stage('Build-4') { steps { build 'DEMO-CI-424-Team-Gate-MARS-Build-4' } }
 		stage('Build-5') { steps { build 'DEMO-CI-425-Team-Gate-MARS-Build-5' } }
 		}
-		stage ('Deploy') {
+		stage ('TeamGate-MARS-Deploy') {
 		stage('Deploy-1') { steps { build 'DEMO-CI-431-Team-Gate-MARS-Deploy-1' } }
 		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-MARS-Deploy-2' } }
 		stage('Deploy-3') { steps { build 'DEMO-CI-433-Team-Gate-MARS-Deploy-3' } }
 		stage('Deploy-4') { steps { build 'DEMO-CI-434-Team-Gate-MARS-Deploy-4' } }
 		stage('Deploy-5') { steps { build 'DEMO-CI-435-Team-Gate-MARS-Deploy-5' } }
 		}
-		stage ('Test') {
+		stage ('TeamGate-MARS-Test') {
 		stage('Test-1') { steps { build 'DEMO-CI-441-Team-Gate-MARS-Test-1' } }
 		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-MARS-Test-2' } }
 		stage('Test-3') { steps { build 'DEMO-CI-443-Team-Gate-MARS-Test-3' } }
