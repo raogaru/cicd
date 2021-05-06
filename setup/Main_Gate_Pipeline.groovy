@@ -1,5 +1,5 @@
 // ######################################################################
-pipelineJob('DEMO-CI-000-Pipeline') {
+pipelineJob('DEMO-CI-000-Pipeline-Calling-Jobs') {
   definition {
     cps {
       script('''
@@ -93,7 +93,6 @@ pipeline {
 
 		stage('Team-Gate-Exit') { steps { build 'DEMO-CI-490-Team-Gate-Exit' } }
 
-
                 stage('System-Gate-Entry') { steps { build 'DEMO-CI-510-System-Gate-Entry' } }
 
                 stage('System-Build-1') { steps { build 'DEMO-CI-521-System-Gate-Build-1' } }
@@ -121,11 +120,10 @@ pipeline {
 		stage('Relesae-Gate-Build') { steps { build 'DEMO-CI-620-Relesae-Gate-Build' } }
 		stage('Relesae-Gate-Verfiy') { steps { build 'DEMO-CI-630-Relesae-Gate-Verfiy' } }
 		stage('Relesae-Gate-Publish') { steps { build 'DEMO-CI-640-Relesae-Gate-Publish' } }
-		stage('Relesae-Gate-Notofy') { steps { build 'DEMO-CI-650-Relesae-Gate-Notofy' } }
-		stage('Relesae-Gate-Prepare') { steps { build 'DEMO-CI-660-Relesae-Gate-Prepare' } }
+		stage('Relesae-Gate-Notify') { steps { build 'DEMO-CI-650-Relesae-Gate-Notify' } }
 		stage('Relesae-Gate-Exit') { steps { build 'DEMO-CI-690-Relesae-Gate-Exit' } }
 
-		stage('Enter') { steps { build 'DEMO-CI-900-Main-Exit' } }
+		stage('Enter') { steps { build 'DEMO-CI-990-Main-Exit' } }
 	}
 }
       '''.stripIndent())
