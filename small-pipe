@@ -1,0 +1,28 @@
+// ######################################################################
+pipelineJob('small-pipe') {
+  definition {
+    cps {
+      script('''
+pipeline {
+	agent any
+	options { timestamps() }
+	stages {
+		stage('Enter') { steps { sh 'echo Enter' } }
+
+		stage('Git') { steps { sh 'echo Git' } }
+
+		stage('Team-Build-1') { parallel {
+		stage('Team-Build-MARS-1') { steps { sh 'echo Team-Build-MARS-1' } }
+		stage('Team-Build-VENUS-1') { steps { sh 'echo Team-Build-VENUS-1' } }
+		stage('Team-Build-PLUTO-1') { steps { sh 'echo Team-Build-PLUTO-1' } }
+		}}
+
+		stage('Exit') { steps { sh 'echo Exit' } }
+	}
+}
+      '''.stripIndent())
+      sandbox()
+    }
+  }
+}
+// ######################################################################
