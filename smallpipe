@@ -11,7 +11,7 @@ pipeline {
 
 		stage('Git') { steps { sh 'echo Git' } }
 
-		stage('Team-Gate-Entry') { steps { sh 'echo Team-Gate-Entry' } 
+		stage('Team-Gate-Entry') { steps { sh 'echo Team-Gate-Entry' } }
 
 		stage('Team-Build-1') { parallel {
 		stage('Team-Build-MARS-1') { steps { sh 'echo Team-Build-MARS-1' } }
