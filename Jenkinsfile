@@ -75,7 +75,8 @@ pipeline {
         sh './demo.sh RELEASE BUILD'
         sh './demo.sh RELEASE VERIFY'
         sh './demo.sh RELEASE PUBLISH'
-        sh 'NOTIFY'
+        sh './demo.sh RELEASE PUBLISH'
+        build(wait: true, job: 'job1')
       }
     }
 
