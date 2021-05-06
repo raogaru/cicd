@@ -17,6 +17,18 @@ pipeline {
 		stage('Team-Build-PLUTO-1') { steps { sh 'echo Team-Build-PLUTO-1' } }
 		}}
 
+		stage('Team-Build-2') { parallel {
+		stage('Team-Build-MARS-2') { steps { sh 'echo Team-Build-MARS-2' } }
+		stage('Team-Build-VENUS-2') { steps { sh 'echo Team-Build-VENUS-2' } }
+		stage('Team-Build-PLUTO-2') { steps { sh 'echo Team-Build-PLUTO-2' } }
+		}}
+
+		stage('Team-Build-3') { parallel {
+		stage('Team-Build-MARS-3') { steps { sh 'echo Team-Build-MARS-3' } }
+		stage('Team-Build-VENUS-3') { steps { sh 'echo Team-Build-VENUS-3' } }
+		stage('Team-Build-PLUTO-3') { steps { sh 'echo Team-Build-PLUTO-3' } }
+		}}
+
 		stage('Exit') { steps { sh 'echo Exit' } }
 	}
 }
