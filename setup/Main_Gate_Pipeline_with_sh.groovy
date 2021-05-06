@@ -6,22 +6,15 @@ pipelineJob('DEMO-CI-000-Pipeline-Calling-Shell') {
 pipeline {
 	agent any
 	options { timestamps() }
-        wrappers {
-                colorizeOutput()
-                timestamps()
-                preBuildCleanup()
-                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
-        }
         logRotator {
                 daysToKeep(1)
                 numToKeep(24)
         }
-        scm {github('raogaru/cicd')}
 
 	stages {
 		stage('Enter') { steps { sh './demo.sh Enter' } }
 
-		stage('Git') { steps { sh './demo.sh Git' } }
+		stage('Git') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru') } }
 
 		stage('Team-Gate-Entry') { steps { sh './demo.sh Team-Gate-Entry' } }
 
