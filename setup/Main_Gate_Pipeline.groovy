@@ -14,81 +14,81 @@ pipeline {
 		stage('Team-Gate-Entry') { steps { build 'DEMO-CI-410-Team-Gate-Entry' } }
 
 		stage('Team-Build-1') { parallel {
-		stage('Build-1') { steps { build 'DEMO-CI-421-Team-Gate-MARS-Build-1' } }
-		stage('Build-1') { steps { build 'DEMO-CI-421-Team-Gate-VENUS-Build-1' } }
-		stage('Build-1') { steps { build 'DEMO-CI-421-Team-Gate-PLUTO-Build-1' } }
+		stage('Build-MARS-1') { steps { build 'DEMO-CI-421-Team-Gate-MARS-Build-1' } }
+		stage('Build-VENUS-1') { steps { build 'DEMO-CI-421-Team-Gate-VENUS-Build-1' } }
+		stage('Build-PLUTO-1') { steps { build 'DEMO-CI-421-Team-Gate-PLUTO-Build-1' } }
 		}}
 		stage('Team-Build-2') { parallel {
-		stage('Build-2') { steps { build 'DEMO-CI-422-Team-Gate-MARS-Build-2' } }
-		stage('Build-2') { steps { build 'DEMO-CI-422-Team-Gate-VENUS-Build-2' } }
-		stage('Build-2') { steps { build 'DEMO-CI-422-Team-Gate-PLUTO-Build-2' } }
+		stage('Build-MARS-2') { steps { build 'DEMO-CI-422-Team-Gate-MARS-Build-2' } }
+		stage('Build-VENUS-2') { steps { build 'DEMO-CI-422-Team-Gate-VENUS-Build-2' } }
+		stage('Build-PLUTO-2') { steps { build 'DEMO-CI-422-Team-Gate-PLUTO-Build-2' } }
 		}}
 		stage('Team-Build-3') { parallel {
-		stage('Build-3') { steps { build 'DEMO-CI-423-Team-Gate-MARS-Build-3' } }
-		stage('Build-3') { steps { build 'DEMO-CI-423-Team-Gate-VENUS-Build-3' } }
-		stage('Build-3') { steps { build 'DEMO-CI-423-Team-Gate-PLUTO-Build-3' } }
+		stage('Build-MARS-3') { steps { build 'DEMO-CI-423-Team-Gate-MARS-Build-3' } }
+		stage('Build-VENUS-3') { steps { build 'DEMO-CI-423-Team-Gate-VENUS-Build-3' } }
+		stage('Build-PLUTO-3') { steps { build 'DEMO-CI-423-Team-Gate-PLUTO-Build-3' } }
 		}}
 		stage('Team-Build-4') { parallel {
-		stage('Build-4') { steps { build 'DEMO-CI-424-Team-Gate-MARS-Build-4' } }
-		stage('Build-4') { steps { build 'DEMO-CI-424-Team-Gate-VENUS-Build-4' } }
-		stage('Build-4') { steps { build 'DEMO-CI-424-Team-Gate-PLUTO-Build-4' } }
+		stage('Build-MARS-4') { steps { build 'DEMO-CI-424-Team-Gate-MARS-Build-4' } }
+		stage('Build-VENUS-4') { steps { build 'DEMO-CI-424-Team-Gate-VENUS-Build-4' } }
+		stage('Build-PLUTO-4') { steps { build 'DEMO-CI-424-Team-Gate-PLUTO-Build-4' } }
 		}}
 		stage('Team-Build-5') { parallel {
-		stage('Build-5') { steps { build 'DEMO-CI-425-Team-Gate-MARS-Build-5' } }
-		stage('Build-5') { steps { build 'DEMO-CI-425-Team-Gate-VENUS-Build-5' } }
-		stage('Build-5') { steps { build 'DEMO-CI-425-Team-Gate-PLUTO-Build-5' } }
+		stage('Build-MARS-5') { steps { build 'DEMO-CI-425-Team-Gate-MARS-Build-5' } }
+		stage('Build-VENUS-5') { steps { build 'DEMO-CI-425-Team-Gate-VENUS-Build-5' } }
+		stage('Build-PLUTO-5') { steps { build 'DEMO-CI-425-Team-Gate-PLUTO-Build-5' } }
 		}}
 
 		stage('Team-Deploy-1') { parallel {
-		stage('Deploy-1') { steps { build 'DEMO-CI-431-Team-Gate-MARS-Deploy-1' } }
-		stage('Deploy-1') { steps { build 'DEMO-CI-431-Team-Gate-VENUS-Deploy-1' } }
-		stage('Deploy-1') { steps { build 'DEMO-CI-431-Team-Gate-PLUTO-Deploy-1' } }
+		stage('Deploy-MARS-1') { steps { build 'DEMO-CI-431-Team-Gate-MARS-Deploy-1' } }
+		stage('Deploy-VENUS-1') { steps { build 'DEMO-CI-431-Team-Gate-VENUS-Deploy-1' } }
+		stage('Deploy-PLUTO-1') { steps { build 'DEMO-CI-431-Team-Gate-PLUTO-Deploy-1' } }
 		}}
 		stage('Team-Deploy-2') { parallel {
-		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-MARS-Deploy-2' } }
-		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-VENUS-Deploy-2' } }
-		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-PLUTO-Deploy-2' } }
+		stage('Deploy-MARS-2') { steps { build 'DEMO-CI-432-Team-Gate-MARS-Deploy-2' } }
+		stage('Deploy-VENUS-2') { steps { build 'DEMO-CI-432-Team-Gate-VENUS-Deploy-2' } }
+		stage('Deploy-PLUTO-2') { steps { build 'DEMO-CI-432-Team-Gate-PLUTO-Deploy-2' } }
 		}}
 		stage('Team-Deploy-3') { parallel {
-		stage('Deploy-3') { steps { build 'DEMO-CI-433-Team-Gate-MARS-Deploy-3' } }
-		stage('Deploy-3') { steps { build 'DEMO-CI-433-Team-Gate-VENUS-Deploy-3' } }
-		stage('Deploy-3') { steps { build 'DEMO-CI-433-Team-Gate-PLUTO-Deploy-3' } }
+		stage('Deploy-MARS-3') { steps { build 'DEMO-CI-433-Team-Gate-MARS-Deploy-3' } }
+		stage('Deploy-VENUS-3') { steps { build 'DEMO-CI-433-Team-Gate-VENUS-Deploy-3' } }
+		stage('Deploy-PLUTO-3') { steps { build 'DEMO-CI-433-Team-Gate-PLUTO-Deploy-3' } }
 		}}
 		stage('Team-Deploy-4') { parallel {
-		stage('Deploy-4') { steps { build 'DEMO-CI-434-Team-Gate-MARS-Deploy-4' } }
-		stage('Deploy-4') { steps { build 'DEMO-CI-434-Team-Gate-VENUS-Deploy-4' } }
-		stage('Deploy-4') { steps { build 'DEMO-CI-434-Team-Gate-PLUTO-Deploy-4' } }
+		stage('Deploy-MARS-4') { steps { build 'DEMO-CI-434-Team-Gate-MARS-Deploy-4' } }
+		stage('Deploy-VENUS-4') { steps { build 'DEMO-CI-434-Team-Gate-VENUS-Deploy-4' } }
+		stage('Deploy-PLUTO-4') { steps { build 'DEMO-CI-434-Team-Gate-PLUTO-Deploy-4' } }
 		}}
 		stage('Team-Deploy-5') { parallel {
-		stage('Deploy-5') { steps { build 'DEMO-CI-435-Team-Gate-MARS-Deploy-5' } }
-		stage('Deploy-5') { steps { build 'DEMO-CI-435-Team-Gate-VENUS-Deploy-5' } }
-		stage('Deploy-5') { steps { build 'DEMO-CI-435-Team-Gate-PLUTO-Deploy-5' } }
+		stage('Deploy-MARS-5') { steps { build 'DEMO-CI-435-Team-Gate-MARS-Deploy-5' } }
+		stage('Deploy-VENUS-5') { steps { build 'DEMO-CI-435-Team-Gate-VENUS-Deploy-5' } }
+		stage('Deploy-PLUTO5') { steps { build 'DEMO-CI-435-Team-Gate-PLUTO-Deploy-5' } }
 		}}
 
 		stage('Team-Test-1') { parallel {
-		stage('Test-1') { steps { build 'DEMO-CI-441-Team-Gate-MARS-Test-1' } }
-		stage('Test-1') { steps { build 'DEMO-CI-441-Team-Gate-VENUS-Test-1' } }
-		stage('Test-1') { steps { build 'DEMO-CI-441-Team-Gate-PLUTO-Test-1' } }
+		stage('Test-MARS-1') { steps { build 'DEMO-CI-441-Team-Gate-MARS-Test-1' } }
+		stage('Test-VENUS-1') { steps { build 'DEMO-CI-441-Team-Gate-VENUS-Test-1' } }
+		stage('Test-PLUTO-1') { steps { build 'DEMO-CI-441-Team-Gate-PLUTO-Test-1' } }
 		}}
 		stage('Team-Test-2') { parallel {
-		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-MARS-Test-2' } }
-		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-VENUS-Test-2' } }
-		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-PLUTO-Test-2' } }
+		stage('Test-MARS-2') { steps { build 'DEMO-CI-442-Team-Gate-MARS-Test-2' } }
+		stage('Test-VENUS-2') { steps { build 'DEMO-CI-442-Team-Gate-VENUS-Test-2' } }
+		stage('Test-PLUTO-2') { steps { build 'DEMO-CI-442-Team-Gate-PLUTO-Test-2' } }
 		}}
 		stage('Team-Test-3') { parallel {
-		stage('Test-3') { steps { build 'DEMO-CI-443-Team-Gate-MARS-Test-3' } }
-		stage('Test-3') { steps { build 'DEMO-CI-443-Team-Gate-VENUS-Test-3' } }
-		stage('Test-3') { steps { build 'DEMO-CI-443-Team-Gate-PLUTO-Test-3' } }
+		stage('Test-MARS-3') { steps { build 'DEMO-CI-443-Team-Gate-MARS-Test-3' } }
+		stage('Test-VENUS-3') { steps { build 'DEMO-CI-443-Team-Gate-VENUS-Test-3' } }
+		stage('Test-PLUTO-3') { steps { build 'DEMO-CI-443-Team-Gate-PLUTO-Test-3' } }
 		}}
 		stage('Team-Test-4') { parallel {
-		stage('Test-4') { steps { build 'DEMO-CI-444-Team-Gate-MARS-Test-4' } }
-		stage('Test-4') { steps { build 'DEMO-CI-444-Team-Gate-VENUS-Test-4' } }
-		stage('Test-4') { steps { build 'DEMO-CI-444-Team-Gate-PLUTO-Test-4' } }
+		stage('Test-MARS-4') { steps { build 'DEMO-CI-444-Team-Gate-MARS-Test-4' } }
+		stage('Test-VENUS-4') { steps { build 'DEMO-CI-444-Team-Gate-VENUS-Test-4' } }
+		stage('Test-PLUTO-4') { steps { build 'DEMO-CI-444-Team-Gate-PLUTO-Test-4' } }
 		}}
 		stage('Team-Test-5') { parallel {
-		stage('Test-5') { steps { build 'DEMO-CI-445-Team-Gate-MARS-Test-5' } }
-		stage('Test-5') { steps { build 'DEMO-CI-445-Team-Gate-VENUS-Test-5' } }
-		stage('Test-5') { steps { build 'DEMO-CI-445-Team-Gate-PLUTO-Test-5' } }
+		stage('Test-MARS-5') { steps { build 'DEMO-CI-445-Team-Gate-MARS-Test-5' } }
+		stage('Test-VENUS-5') { steps { build 'DEMO-CI-445-Team-Gate-VENUS-Test-5' } }
+		stage('Test-PLUTO-5') { steps { build 'DEMO-CI-445-Team-Gate-PLUTO-Test-5' } }
 		}}
 
 		stage('Team-Gate-Exit') { steps { build 'DEMO-CI-490-Team-Gate-Exit' } }
