@@ -16,17 +16,48 @@ pipeline {
 		stage('Team-Build-VENUS-1') { steps { sh 'echo Team-Build-VENUS-1' } }
 		stage('Team-Build-PLUTO-1') { steps { sh 'echo Team-Build-PLUTO-1' } }
 		}}
-
 		stage('Team-Build-2') { parallel {
 		stage('Team-Build-MARS-2') { steps { sh 'echo Team-Build-MARS-2' } }
 		stage('Team-Build-VENUS-2') { steps { sh 'echo Team-Build-VENUS-2' } }
 		stage('Team-Build-PLUTO-2') { steps { sh 'echo Team-Build-PLUTO-2' } }
 		}}
-
 		stage('Team-Build-3') { parallel {
 		stage('Team-Build-MARS-3') { steps { sh 'echo Team-Build-MARS-3' } }
 		stage('Team-Build-VENUS-3') { steps { sh 'echo Team-Build-VENUS-3' } }
 		stage('Team-Build-PLUTO-3') { steps { sh 'echo Team-Build-PLUTO-3' } }
+		}}
+
+
+		stage('Team-Deploy-1') { parallel {
+		stage('Team-Deploy-MARS-1') { steps { sh 'echo Team-Deploy-MARS-1' } }
+		stage('Team-Deploy-VENUS-1') { steps { sh 'echo Team-Deploy-VENUS-1' } }
+		stage('Team-Deploy-PLUTO-1') { steps { sh 'echo Team-Deploy-PLUTO-1' } }
+		}}
+		stage('Team-Deploy-2') { parallel {
+		stage('Team-Deploy-MARS-2') { steps { sh 'echo Team-Deploy-MARS-2' } }
+		stage('Team-Deploy-VENUS-2') { steps { sh 'echo Team-Deploy-VENUS-2' } }
+		stage('Team-Deploy-PLUTO-2') { steps { sh 'echo Team-Deploy-PLUTO-2' } }
+		}}
+		stage('Team-Deploy-3') { parallel {
+		stage('Team-Deploy-MARS-3') { steps { sh 'echo Team-Deploy-MARS-3' } }
+		stage('Team-Deploy-VENUS-3') { steps { sh 'echo Team-Deploy-VENUS-3' } }
+		stage('Team-Deploy-PLUTO-3') { steps { sh 'echo Team-Deploy-PLUTO-3' } }
+		}}
+
+		stage('Team-Test-1') { parallel {
+		stage('Team-Test-MARS-1') { steps { sh 'echo Team-Deploy-MARS-1' } }
+		stage('Team-Test-VENUS-1') { steps { sh 'echo Team-Deploy-VENUS-1' } }
+		stage('Team-Test-PLUTO-1') { steps { sh 'echo Team-Deploy-PLUTO-1' } }
+		}}
+		stage('Team-Test-2') { parallel {
+		stage('Team-Test-MARS-2') { steps { sh 'echo Team-Deploy-MARS-2' } }
+		stage('Team-Test-VENUS-2') { steps { sh 'echo Team-Deploy-VENUS-2' } }
+		stage('Team-Test-PLUTO-2') { steps { sh 'echo Team-Deploy-PLUTO-2' } }
+		}}
+		stage('Team-Test-3') { parallel {
+		stage('Team-Test-MARS-3') { steps { sh 'echo Team-Deploy-MARS-3' } }
+		stage('Team-Test-VENUS-3') { steps { sh 'echo Team-Deploy-VENUS-3' } }
+		stage('Team-Test-PLUTO-3') { steps { sh 'echo Team-Deploy-PLUTO-3' } }
 		}}
 
 		stage('Exit') { steps { sh 'echo Exit' } }
