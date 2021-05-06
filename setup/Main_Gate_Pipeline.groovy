@@ -118,7 +118,7 @@ pipeline {
 		stage('Release-Gate-Entry') { steps { build 'DEMO-CI-600-Release-Gate-Entry' } }
 		stage('Release-Gate-Prepare') { steps { build 'DEMO-CI-610-Release-Gate-Prepare' } }
 		stage('Release-Gate-Build') { steps { build 'DEMO-CI-620-Release-Gate-Build' } }
-		stage('Release-Gate-Verfiy') { steps { build 'DEMO-CI-630-Release-Gate-Verfiy' } }
+		stage('Release-Gate-Verify') { steps { build 'DEMO-CI-630-Release-Gate-Verify' } }
 		stage('Release-Gate-Publish') { steps { build 'DEMO-CI-640-Release-Gate-Publish' } }
 		stage('Release-Gate-Notify') { steps { build 'DEMO-CI-650-Release-Gate-Notify' } }
 		stage('Release-Gate-Exit') { steps { build 'DEMO-CI-690-Release-Gate-Exit' } }
