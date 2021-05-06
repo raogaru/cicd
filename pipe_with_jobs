@@ -1,5 +1,5 @@
 // ######################################################################
-pipelineJob('DEMO-CI-400-Team-Gate-Pipeline') {
+pipelineJob('DEMO-CI-000-Pipeline') {
   definition {
     cps {
       script('''
@@ -48,7 +48,7 @@ pipeline {
 		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-MARS-Deploy-2' } }
 		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-VENUS-Deploy-2' } }
 		stage('Deploy-2') { steps { build 'DEMO-CI-432-Team-Gate-PLUTO-Deploy-2' } }
-		}j
+		}}
 		stage('Team-Deploy-3') { parallel {
 		stage('Deploy-3') { steps { build 'DEMO-CI-433-Team-Gate-MARS-Deploy-3' } }
 		stage('Deploy-3') { steps { build 'DEMO-CI-433-Team-Gate-VENUS-Deploy-3' } }
@@ -74,7 +74,7 @@ pipeline {
 		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-MARS-Test-2' } }
 		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-VENUS-Test-2' } }
 		stage('Test-2') { steps { build 'DEMO-CI-442-Team-Gate-PLUTO-Test-2' } }
-		}j
+		}}
 		stage('Team-Test-3') { parallel {
 		stage('Test-3') { steps { build 'DEMO-CI-443-Team-Gate-MARS-Test-3' } }
 		stage('Test-3') { steps { build 'DEMO-CI-443-Team-Gate-VENUS-Test-3' } }
