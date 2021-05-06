@@ -113,8 +113,8 @@ job('DEMO-CI-650-Release-Gate-Notify') {
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-660-Release-Gate-Exit') {
-        description('DEMO-CI-660-Release-Gate-Exit')
+job('DEMO-CI-690-Release-Gate-Exit') {
+        description('DEMO-CI-690-Release-Gate-Exit')
         wrappers {
                 colorizeOutput()
                 timestamps()
