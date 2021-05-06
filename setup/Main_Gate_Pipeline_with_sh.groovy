@@ -6,7 +6,18 @@ pipelineJob('DEMO-CI-000-Pipeline-Calling-Shell') {
 pipeline {
 	agent any
 	options { timestamps() }
-	scm {github('raogaru/cicd')}
+        wrappers {
+                colorizeOutput()
+                timestamps()
+                preBuildCleanup()
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
+        }
+        logRotator {
+                daysToKeep(1)
+                numToKeep(24)
+        }
+        scm {github('raogaru/cicd')}
+
 	stages {
 		stage('Enter') { steps { sh './demo.sh Enter' } }
 
