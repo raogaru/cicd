@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------
-job('DEMO-CI-010-Main-Pipeline-Entry') {
-        description('DEMO-CI-010-Main-Pipeline-Entry')
+job('DEMO-CI-010-Main-Gate-Entry') {
+        description('DEMO-CI-010-Main-Gate-Entry')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -18,8 +18,8 @@ job('DEMO-CI-010-Main-Pipeline-Entry') {
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-990-Main-Pipeline-Exit') {
-        description('DEMO-CI-990-Main-Pipeline-Exit')
+job('DEMO-CI-990-Main-Gate-Exit') {
+        description('DEMO-CI-990-Main-Gate-Exit')
         wrappers {
                 colorizeOutput()
                 timestamps()

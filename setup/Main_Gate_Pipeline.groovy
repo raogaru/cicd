@@ -7,7 +7,7 @@ pipeline {
 	agent any
 	options { timestamps() }
 	stages {
-		stage('Enter') { steps { build 'DEMO-CI-010-Main-Entry' } }
+		stage('Enter') { steps { build 'DEMO-CI-010-Main-Gate-Entry' } }
 
 		stage('Git') { steps { sh 'echo Git' } }
 
@@ -123,7 +123,7 @@ pipeline {
 		stage('Relesae-Gate-Notify') { steps { build 'DEMO-CI-650-Relesae-Gate-Notify' } }
 		stage('Relesae-Gate-Exit') { steps { build 'DEMO-CI-690-Relesae-Gate-Exit' } }
 
-		stage('Exit') { steps { build 'DEMO-CI-990-Main-Exit' } }
+		stage('Exit') { steps { build 'DEMO-CI-990-Main-Gate-Exit' } }
 	}
 }
       '''.stripIndent())
