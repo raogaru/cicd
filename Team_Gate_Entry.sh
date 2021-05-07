@@ -47,7 +47,7 @@ fi
 }
 # ----------------------------------------------------------------------
 f_teamgate_list_commits_by_each_team () {
-HEADER1 "Compare team branch \"team-${TEAM}\" with build branch \"build-${TEAM}\""
+HEADER2 "Compare team branch \"team-${TEAM}\" with build branch \"build-${TEAM}\""
 for TEAM in ${AGILE_TEAMS}
 do
         echo ''
