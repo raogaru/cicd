@@ -4,14 +4,14 @@
 ARG1=$1
 source demo.env
 set +x
-HEADER1 "BEGIN $ARG1"
-ECHOred "Application Name is \"${MYAPP_NAME}\""
-ECHOred "Pipe Environment file is \"${PIPE_ENV}\""
+ECHO "BEGIN $ARG1"
+ECHO "Application Name is \"${MYAPP_NAME}\""
+ECHO "Pipe Environment file is \"${PIPE_ENV}\""
 
 case "${ARG1}" in
 "Main-Gate-Entry") 
-	ECHOpurple "${ARG1}"
-	sh/Main_Gate_Entry.sh
+	ECHO "${ARG1}"
+	. sh/Main_Gate_Entry.sh
 	;;
 "Team-Gate-Entry") 
 	WARN "${ARG1}"
@@ -159,5 +159,5 @@ case "${ARG1}" in
 	;;
 esac
 echo "Hello World"
-FOOTER1 "END $ARG1"
+ECHO "END $ARG1"
 # ######################################################################
