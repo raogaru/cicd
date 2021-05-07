@@ -7,13 +7,13 @@ set +x
 HEADER1 "BEGIN $ARG1"
 
 case "${ARG1}" in
-"Team-Gate-Entry") 
-	ECHOred "${ARG1}"
-	. ./Team_Gate_Entry.sh
-	;;
 "Main-Gate-Entry") 
 	ECHOpurple "${ARG1}"
 	. ./Main_Gate_Entry.sh
+	;;
+"Team-Gate-Entry") 
+	ECHOred "${ARG1}"
+	. ./Team_Gate_Entry.sh
 	;;
 "Team-Build-MARS-1") 
 	ECHOpurple "${ARG1}"
