@@ -11,7 +11,7 @@ case "${ARG1}" in
 	INFO "${ARG1}"
 	;;
 "Team-Gate-Entry") 
-	INFO "${ARG1}"
+	WARN "${ARG1}"
 	;;
 "Team-Build-MARS-1") 
 	INFO "${ARG1}"
@@ -140,7 +140,7 @@ case "${ARG1}" in
 	INFO "${ARG1}"
 	;;
 "Release-Verify") 
-	INFO "${ARG1}"
+	ERROR "${ARG1}"
 	;;
 "Release-Publish") 
 	INFO "${ARG1}"
