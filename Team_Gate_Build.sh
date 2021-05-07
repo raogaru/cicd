@@ -42,18 +42,20 @@ case "${v_type}" in
 "jar") 
 	HEADER2 "Building jar using maven" 
 	DUMMY_ACTION
+ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "docker") 
 	HEADER2 "Building docker using kubectl" 
 	DUMMY_ACTION
+ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "ec2") 
 	HEADER2 "Building ec2 using awscli" 
 	DUMMY_ACTION
+ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 esac
 
-ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 
 # ######################################################################
 echo Team_Gate_Build.sh END
