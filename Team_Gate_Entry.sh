@@ -8,7 +8,7 @@ HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	GIT_MASTER_BRANCH_DIR=${PIPE_DIR}/git/master
 	mkdir -p ${GIT_MASTER_BRANCH_DIR}
 	cd ${GIT_MASTER_BRANCH_DIR}
-	git clone ${MYAPP_GIT} 
+	git clone ${MYAPP_GIT} ${GIT_MASTER_BRANCH_DIR}
 	[[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo"
 	[[ ! -d ${GIT_MASTER_BRANCH_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_MASTER_BRANCH_DIR} directory"
 	ADDENV "GIT_MASTER_BRANCH_LOCATION=${GIT_MASTER_BRANCH_DIR}"
