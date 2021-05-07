@@ -9,6 +9,7 @@ echo "Hello World"
 case "${ARG1}" in
 "Enter") 
 	INFO "${ARG1}"
+	sh/Main_Gate_Entry.sh
 	;;
 "Team-Gate-Entry") 
 	WARN "${ARG1}"
