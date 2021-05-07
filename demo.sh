@@ -5,10 +5,12 @@ ARG1=$1
 source demo.env
 set +x
 HEADER1 "BEGIN $ARG1"
-echo "Hello World"
+ECHOred "Application Name is \"${MYAPP_NAME}\""
+ECHOred "Pipe Environment file is \"${PIPE_ENV}\""
+
 case "${ARG1}" in
 "Main-Gate-Entry") 
-	#INFO "${ARG1}"
+	ECHOpurple "${ARG1}"
 	sh/Main_Gate_Entry.sh
 	;;
 "Team-Gate-Entry") 
