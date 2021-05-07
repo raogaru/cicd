@@ -36,6 +36,10 @@ HEADER2 "Make sure working on team-${v_team} branch"
         [[ "${x1}" != "team-${v_team}" ]] && ERROR "Current branch is not \"team-${v_team}\"."
         ECHO Current branch is "${x1}"
 }
+# ######################################################################
+# START HERE 
+# ######################################################################
+f_teamgate_checkout_team_branch
 
 case "${v_type}" in
 "jar") HEADER2 "Building jar using maven" ;;
