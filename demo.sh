@@ -6,6 +6,8 @@ source demo.env
 set +x
 HEADER1 "BEGIN $ARG1"
 
+[[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
+
 case "${ARG1}" in
 "Main-Gate-Entry") 
 	ECHOpurple "${ARG1}"

@@ -7,12 +7,13 @@ f_teamgate_checkout_master () {
 HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	git checkout master
 
-HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
+HEADER2 "List all branches"
 	git branch -a
 
-HEADER2 "Current branch"
+HEADER2 "Make sure working on master branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
         [[ "${x1}" != "master" ]] && ERROR "Current branch is not \"master\"."
+	ECHO Current branch is "master"
 }
 
 # ----------------------------------------------------------------------
