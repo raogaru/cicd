@@ -23,9 +23,11 @@ case "${ARG1}" in
 	;;
 "Team-Build-VENUS-1") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Build.sh venus jar
 	;;
 "Team-Build-PLUTO-1") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Build.sh pluto jar
 	;;
 "Team-Build-MARS-2") 
 	ECHOpurple "Option:${ARG1}"
@@ -33,9 +35,11 @@ case "${ARG1}" in
 	;;
 "Team-Build-VENUS-2") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Build.sh venus docker
 	;;
 "Team-Build-PLUTO-2") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Build.sh pluto docker
 	;;
 "Team-Build-MARS-3") 
 	ECHOpurple "Option:${ARG1}"
@@ -43,9 +47,11 @@ case "${ARG1}" in
 	;;
 "Team-Build-VENUS-3") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Build.sh venus ec2
 	;;
 "Team-Build-PLUTO-3") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Build.sh pluto ec2
 	;;
 "Team-Deploy-MARS-1") 
 	ECHOpurple "Option:${ARG1}"
