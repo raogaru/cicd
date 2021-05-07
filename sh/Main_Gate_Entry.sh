@@ -20,7 +20,7 @@ mkdir -p ${PIPE_DIR}
 
 ADDENV "AGILE_TEAMS=\"${AGILE_TEAMS}\""
 
-INFO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
+ECHOpurple "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
 echo "Script $0 END"
 # ######################################################################

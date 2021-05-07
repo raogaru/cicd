@@ -8,7 +8,7 @@ HEADER1 "BEGIN $ARG1"
 echo "Hello World"
 case "${ARG1}" in
 "Main-Gate-Entry") 
-	INFO "${ARG1}"
+	#INFO "${ARG1}"
 	sh/Main_Gate_Entry.sh
 	;;
 "Team-Gate-Entry") 
