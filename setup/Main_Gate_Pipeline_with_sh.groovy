@@ -14,7 +14,7 @@ pipeline {
 	}
 
 	stages {
-		stage('Banner') { steps { echo '\033[1m\033[4m\033[7m\033[34mCI-PIPELINE-START\033[0m' } }
+		stage('Banner') { steps { echo 'CI-PIPELINE-START' } }
 
 		stage('Git') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru') } }
 
