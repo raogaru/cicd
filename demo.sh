@@ -6,7 +6,7 @@ source demo.env
 set +x
 HEADER1 "BEGIN $ARG1"
 echo "Hello World"
-case "${ARG1}"
+case "${ARG1}" in
 "Enter") 
 	INFO "${ARG1}"
 	;;
