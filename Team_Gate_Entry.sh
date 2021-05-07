@@ -1,7 +1,6 @@
 # ######################################################################
-# Team-Gate-Entry.sh 
+echo Team-Gate-Entry.sh START
 # ######################################################################
-echo "Script $0 START"
 # ----------------------------------------------------------------------
 f_teamgate_checkout_master () {
 HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
@@ -71,7 +70,6 @@ f_teamgate_checkout_master
 f_teamgate_validate_team_branches
 f_teamgate_list_commits_by_each_team
 
-echo "Script $0 END"
 # ######################################################################
-# EOF
+echo Team-Gate-Entry.sh END
 # ######################################################################
