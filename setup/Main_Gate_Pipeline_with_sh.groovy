@@ -79,6 +79,7 @@ pipeline {
 
 		stage('Team-Gate-Exit') { steps { sh './demo.sh Team-Gate-Exit' } }
 
+/*
 		stage('System-Gate-Entry') { steps { sh './demo.sh System-Gate-Entry' } }
 		stage('System-Build-1') { steps { sh './demo.sh System-Build-1' } }
 		stage('System-Build-2') { steps { sh './demo.sh System-Build-2' } }
@@ -91,7 +92,6 @@ pipeline {
 		stage('System-Test-3') { steps { sh './demo.sh System-Test-3' } }
 		stage('System-Gate-Exit') { steps { sh './demo.sh System-Gate-Exit' } }
 
-
 		stage('Release-Gate-Entry') { steps { sh './demo.sh Release-Gate-Entry' } }
 		stage('Release-Prepare') { steps { sh './demo.sh Release-Prepare' } }
 		stage('Release-Build') { steps { sh './demo.sh Release-Build' } }
@@ -99,6 +99,7 @@ pipeline {
 		stage('Release-Publish') { steps { sh './demo.sh Release-Publish' }} 
 		stage('Release-Notify') { steps { sh './demo.sh Release-Notify' } }
 		stage('Release-Gate-Exit') { steps { sh './demo.sh Release-Gate-Exit' } }
+*/
 
 
 		stage('Exit') { steps { sh './demo.sh Exit' } }
