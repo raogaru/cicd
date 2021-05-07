@@ -7,7 +7,7 @@ set +x
 HEADER1 "BEGIN $ARG1"
 echo "Hello World"
 case "${ARG1}" in
-"Enter") 
+"Main-Gate-Entry") 
 	INFO "${ARG1}"
 	sh/Main_Gate_Entry.sh
 	;;
@@ -152,7 +152,7 @@ case "${ARG1}" in
 "Release-Gate-Exit") 
 	INFO "${ARG1}"
 	;;
-"Exit") 
+"Main-Gate-Exit") 
 	INFO "${ARG1}"
 	;;
 esac
