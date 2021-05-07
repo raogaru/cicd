@@ -5,8 +5,6 @@ ARG1=$1
 source demo.env
 set +x
 HEADER1 "BEGIN $ARG1"
-ECHO "Application Name is \"${MYAPP_NAME}\""
-ECHO "Pipe Environment file is \"${PIPE_ENV}\""
 
 case "${ARG1}" in
 "Main-Gate-Entry") 
@@ -143,7 +141,7 @@ case "${ARG1}" in
 	ECHOpurple "${ARG1}"
 	;;
 "Release-Verify") 
-	ERROR "${ARG1}"
+	ECHOpurple "${ARG1}"
 	;;
 "Release-Publish") 
 	ECHOpurple "${ARG1}"

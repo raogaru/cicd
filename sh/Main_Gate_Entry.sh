@@ -2,6 +2,10 @@
 # Main-Gate-Entry.sh 
 # ######################################################################
 ECHO "Script $0 START"
+
+ECHO "Application Name is \"${MYAPP_NAME}\""
+ECHO "Pipe Environment file is \"${PIPE_ENV}\""
+
 rm -f ${PIPE_ENV}
 [[ -f ${PIPE_ENV} ]] && ERROR "Failed to delete ${PIPE_ENV} file"
 
