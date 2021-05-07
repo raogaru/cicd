@@ -22,6 +22,10 @@ ADDENV "PIPE_NUM=${PIPE_NUM}"
 PIPE_DIR=${MYAPP_TMP}/build${MYAPP_NAME}/${PIPE_NUM}
 ADDENV "PIPE_DIR=${PIPE_DIR}"
 
+ECHO "Cleaning up 7 days old build stash on host "
+rm -rf ${MYAPP_TMP}/build${MYAPP_NAME}/$(TZ=GMT+168 date +%Y%m%d)????
+[[ $? -ne 0 ]] && WARN "Failed to cleaning 7 days old 
+
 mkdir -p ${PIPE_DIR}
 [[ ! -d ${PIPE_DIR} ]] && ERROR "Failed to create ${PIPE_DIR} directory"
 
