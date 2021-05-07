@@ -7,12 +7,13 @@ HEADER2 "Build \"${v_type}\" in team-${v_team} branch requested"
 
 HEADER2 "Check if commits in team-${v_team} branch"
 
-cat ${PIPE_ENV}
 
 v_commits=$(READENV TEAM_COMMITS_${v_team})
 
 if [ "${v_commits}" != "YES" ]; then
-	ECHO "No commits. Nothing to do"
+	ECHO "No commits. Nothing to do."
+else
+	ECHO "Proceed with \"${v_type}\" build ..."
 fi
 
 case "${v_type}" in
