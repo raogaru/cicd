@@ -53,7 +53,7 @@ case "${v_type}" in
 	;;
 esac
 
-ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
+ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 exit 0
 # ######################################################################
 echo Team_Gate_Build.sh END
