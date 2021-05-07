@@ -4,7 +4,7 @@
 ARG1=$1
 source demo.env
 set +x
-ECHO "BEGIN $ARG1"
+HEADER1 "BEGIN $ARG1"
 ECHO "Application Name is \"${MYAPP_NAME}\""
 ECHO "Pipe Environment file is \"${PIPE_ENV}\""
 
@@ -158,6 +158,6 @@ case "${ARG1}" in
 	ECHOpurple "${ARG1}"
 	;;
 esac
-echo "Hello World"
-ECHO "END $ARG1"
+
+FOOTER1 "END $ARG1"
 # ######################################################################

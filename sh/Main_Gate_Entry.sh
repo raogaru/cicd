@@ -9,6 +9,9 @@ touch ${PIPE_ENV}
 chmod 755 ${PIPE_ENV}
 [[ ! -f ${PIPE_ENV} ]] && ERROR "Failed to create ${PIPE_ENV} file"
 
+ADDENV "MYAPP_NAME=${MYAPP_NAME}"
+ADDENV "AGILE_TEAMS=\"${AGILE_TEAMS}\""
+
 export PIPE_NUM=$(date '+%Y%m%d%H%M')
 ADDENV "PIPE_NUM=${PIPE_NUM}"
 
@@ -17,8 +20,6 @@ ADDENV "PIPE_DIR=${PIPE_DIR}"
 
 mkdir -p ${PIPE_DIR}
 [[ ! -d ${PIPE_DIR} ]] && ERROR "Failed to create ${PIPE_DIR} directory"
-
-ADDENV "AGILE_TEAMS=\"${AGILE_TEAMS}\""
 
 ECHO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
