@@ -9,10 +9,11 @@ HEADER1 "BEGIN $ARG1"
 case "${ARG1}" in
 "Main-Gate-Entry") 
 	ECHOpurple "${ARG1}"
-	. sh/Main_Gate_Entry.sh
+	. ./Main_Gate_Entry.sh
 	;;
 "Team-Gate-Entry") 
 	ECHOpurple "${ARG1}"
+	. ./Team_Gate_Entry.sh
 	;;
 "Team-Build-MARS-1") 
 	ECHOpurple "${ARG1}"
