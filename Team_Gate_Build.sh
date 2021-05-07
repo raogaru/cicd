@@ -3,6 +3,7 @@ echo Team-Gate-Build.sh START
 # ######################################################################
 v_team=${1}	# team name
 v_type=${2}	# build type
+
 HEADER2 "Build \"${v_type}\" in team-${v_team} branch requested"
 
 HEADER2 "Check if commits in team-${v_team} branch"
@@ -12,20 +13,10 @@ v_commits=$(READENV TEAM_COMMITS_${v_team})
 if [ "${v_commits}" != "YES" ]; then
 	ECHO "No commits. Nothing to do."
 else
-	ECHO "Proceed with \"${v_type}\" build ..."
+	ECHO "Proceed with \"${v_type}\" build for team ${v_team} ..."
 fi
 
-
-# ----------------------------------------------------------------------
-f_teamgate_checkout_team_branch () {
-HEADER2 "Checkout team branch team-${v_team} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
-        GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
-	ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
-        mkdir -p ${GIT_TEAM_DIR}
-        git clone -b team-${v_team} ${MYAPP_GIT} ${GIT_TEAM_DIR}
-        [[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo team-${v_team} branch"
-        [[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
-        ADDENV "GIT_TEAM_DIR_${v_team}=${GIT_TEAM_DIR}"
+GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
 
 HEADER2 "List my branch"
 	cd ${GIT_TEAM_DIR}
@@ -35,18 +26,21 @@ HEADER2 "Make sure working on team-${v_team} branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
         [[ "${x1}" != "team-${v_team}" ]] && ERROR "Current branch is not \"team-${v_team}\"."
         ECHO Current branch is "${x1}"
-}
-# ######################################################################
-# START HERE 
-# ######################################################################
-f_teamgate_checkout_team_branch
+
 
 case "${v_type}" in
-"jar") HEADER2 "Building jar using maven" ;;
-"docker") HEADER2 "Building docker using kubectl" ;;
-"ec2") HEADER2 "Building ec2 using awscli" ;;
+"liquibase")
+	HEADER2 "Deploying to DB using liquibase" 
+	;;
+"kubernetes")
+	HEADER2 "Deploying docker using kubectl" 
+	;;
+"tomcat")
+	HEADER2 "Deploying jar to tomcat"
+	;;
 esac
 
+ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
 exit 0
 # ######################################################################
 echo Team-Gate-Build.sh END

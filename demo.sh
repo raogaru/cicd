@@ -55,31 +55,39 @@ case "${ARG1}" in
 	;;
 "Team-Deploy-MARS-1") 
 	ECHOpurple "Option:${ARG1}"
-	ERROR "for no reason"
+	. ./Team_Gate_Deploy.sh mars liquibase
 	;;
 "Team-Deploy-VENUS-1") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh venus liquibase
 	;;
 "Team-Deploy-PLUTO-1") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh pluto liquibase
 	;;
 "Team-Deploy-MARS-2") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh mars kubernetes
 	;;
 "Team-Deploy-VENUS-2") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh venus kubernetes
 	;;
 "Team-Deploy-PLUTO-2") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh pluto kubernetes
 	;;
 "Team-Deploy-MARS-3") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh mars tomcat
 	;;
 "Team-Deploy-VENUS-3") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh venus tomcat
 	;;
 "Team-Deploy-PLUTO-3") 
 	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Deploy.sh pluto tomcat
 	;;
 "Team-Test-MARS-1") 
 	ECHOpurple "Option:${ARG1}"
@@ -110,6 +118,7 @@ case "${ARG1}" in
 	;;
 "Team-Gate-Exit") 
 	ECHOpurple "Option:${ARG1}"
+	ERROR "for no reason"
 	;;
 "System-Gate-Entry") 
 	ECHOpurple "Option:${ARG1}"
