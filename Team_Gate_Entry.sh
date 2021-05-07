@@ -57,7 +57,12 @@ do
         [[ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]] && ADDENV "TEAM_COMMITS_${TEAM}=YES"
 done
 }
-# ----------------------------------------------------------------------
+# ######################################################################
+# START HERE
+# ######################################################################
+f_teamgate_checkout_master
+f_teamgate_validate_team_branches
+f_teamgate_list_commits_by_each_team
 
 echo "Script $0 END"
 # ######################################################################
