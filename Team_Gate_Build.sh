@@ -9,8 +9,19 @@ HEADER2 "Check if commits in team-${v_team} branch"
 
 cat ${PIPE_ENV}
 
-ERROR "for no reason"
+v_commits=$(READENV TEAM_COMMITS_${v_team})
 
+if [ "${v_commits}" != "YES" ]; then
+	ECHO "No commits. Nothing to do"
+fi
+
+case "${v_type}" in
+"jar") HEADER2 "Building jar using maven" ;;
+"docker") HEADER2 "Building docker using kubectl" ;;
+"ec2") HEADER2 "Building ec2 using awscli" ;;
+esac
+
+exit 0
 # ######################################################################
 echo Team-Gate-Build.sh END
 # ######################################################################

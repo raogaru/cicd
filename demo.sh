@@ -55,6 +55,7 @@ case "${ARG1}" in
 	;;
 "Team-Deploy-MARS-1") 
 	ECHOpurple "Option:${ARG1}"
+	ERROR "for no reason"
 	;;
 "Team-Deploy-VENUS-1") 
 	ECHOpurple "Option:${ARG1}"
