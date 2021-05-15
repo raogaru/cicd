@@ -10,13 +10,14 @@ liquibase \
   --classpath=../../war/WEB-INF/lib/postgresql-42.2.20.jar \
   --url="jdbc:postgresql://localhost:5432/${V_DB}" \
   --changeLogFile=src/db/liquibase.xml \
-  --liquibaseSchemaName=demo \
-  --databaseChangeLogTableName=db_chg_log \
-  --databaseChangeLogLockTableName=db_chg_lock \
   --username=rao \
   --password=rao \
   --logLevel info \
 update
+
+#  --liquibaseSchemaName=${MYAPP_NAME} \
+#  --databaseChangeLogTableName=db_chg_log \
+#  --databaseChangeLogLockTableName=db_chg_lock \
 
 #  --defaultsFile src/db/liquibase.properties \
 
