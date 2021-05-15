@@ -13,7 +13,7 @@ f_teamgate_checkout_status_check () {
 v_commits=$(READENV TEAM_COMMITS_${v_team})
 v_checkout=$(READENV TEAM_CHECKOUT_${v_team})
 
-if [ "${v_commits}" != "YES" || "${v_checkout}" != "SUCCESS" ]; then
+if [ "${v_commits}" != "YES" ] || [ "${v_checkout}" != "SUCCESS" ]; then
 	WARN "Commit status for team-${v_team}=${v_commits}."
 	WARN "Checkout status for team-${v_team}=${v_checkout}."
 	WARN "Not doing build for team-${v_team}"
