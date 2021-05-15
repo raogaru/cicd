@@ -5,7 +5,7 @@ BUILD_DB_SQL=${PIPE_DIR}/build_db_${v_team}.sql
 #ADDENV "BUILD_DB_SQL_${v_team}=${BUILD_DB_SQL}"
 
 ECHO "Prepare ${BUILD_DB_SQL}" 
-echo -E "
+/bin/echo -E "
 \l+ ${v_team}
 drop database if exists ${v_team};
 \l+ ${v_team}
