@@ -35,36 +35,41 @@ return 0
 # ----------------------------------------------------------------------
 f_teamgate_deploy () {
 case "${v_type}" in
-"liquibase")
+"db")
 	HEADER2 "Deploying to DB using liquibase" 
 	DUMMY_ACTION
+	. ${WORKSPACE}/deploy_${v_type}.sh ${v_team}
 	;;
 "kubernetes")
 	HEADER2 "Deploying docker using kubectl" 
 	DUMMY_ACTION
+	. ${WORKSPACE}/deploy_${v_type}.sh
 	;;
 "tomcat")
 	HEADER2 "Deploying jar to tomcat"
 	DUMMY_ACTION
+	. ${WORKSPACE}/deploy_${v_type}.sh
 	;;
 "dep1")
 	HEADER2 "Deploying dep1"
 	DUMMY_ACTION
+	. ${WORKSPACE}/deploy_${v_type}.sh
 	;;
 "dep2")
 	HEADER2 "Deploying dep2"
 	DUMMY_ACTION
+	. ${WORKSPACE}/deploy_${v_type}.sh
 	;;
 "dep3")
 	HEADER2 "Deploying dep3"
 	DUMMY_ACTION
+	. ${WORKSPACE}/deploy_${v_type}.sh
 	;;
 esac
 
-. ${WORKSPACE}/deploy_${v_type}.sh
 r=$?
 
-if [ $? -eq 0 ]; then
+if [ $r -eq 0 ]; then
 	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=SUCCESS"
 	return 0
 else
