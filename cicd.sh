@@ -72,31 +72,31 @@ case "${ARG1}" in
 	. ./Team_Gate_Deploy.sh pluto tomcat
 	;;
 "Team-Test-MARS-1") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh mars phase1
 	;;
 "Team-Test-VENUS-1") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh venus phase1
 	;;
 "Team-Test-PLUTO-1") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh pluto phase1
 	;;
 "Team-Test-MARS-2") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh mars phase2
 	;;
 "Team-Test-VENUS-2") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh venus phase2
 	;;
 "Team-Test-PLUTO-2") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh pluto phase2
 	;;
 "Team-Test-MARS-3") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh mars phase3
 	;;
 "Team-Test-VENUS-3") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh venus phase3
 	;;
 "Team-Test-PLUTO-3") 
-	ECHOpurple "Option:${ARG1}"
+	. ./Team_Gate_Test.sh pluto phase3
 	;;
 "Team-Gate-Exit") 
 	ECHOpurple "Option:${ARG1}"
