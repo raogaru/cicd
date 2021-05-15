@@ -7,7 +7,8 @@ HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	GIT_MASTER_DIR=${PIPE_DIR}/git/master
 	mkdir -p ${GIT_MASTER_DIR}
 	cd ${GIT_MASTER_DIR}
-	git clone ${MYAPP_GIT} ${GIT_MASTER_DIR}
+	ECHO "GIT_MASTER_DIR is ${GIT_MASTER_DIR}"
+	git clone -b master ${MYAPP_GIT} ${GIT_MASTER_DIR}
 	[[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo"
 	[[ ! -d ${GIT_MASTER_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_MASTER_DIR} directory"
 	ADDENV "GIT_MASTER_DIR=${GIT_MASTER_DIR}"
@@ -66,14 +67,19 @@ done
 # ----------------------------------------------------------------------
 f_teamgate_checkout_team_branch () {
 ECHOpurple "function:f_teamgate_checkout_team_branch"
-HEADER2 "Checkout team branch team-${v_team} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
-        GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
-        ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
+for TEAM in ${AGILE_TEAMS}
+do
+	HEADER2 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
+        GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
         mkdir -p ${GIT_TEAM_DIR}
-        git clone -b team-${v_team} ${MYAPP_GIT} ${GIT_TEAM_DIR}
-        [[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo team-${v_team} branch"
+	cd ${GIT_TEAM_DIR}
+        ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
+        git clone -b team-${TEAM} ${MYAPP_GIT} ${GIT_TEAM_DIR}
+        [[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo team-${TEAM} branch"
         [[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
-        ADDENV "GIT_TEAM_DIR_${v_team}=${GIT_TEAM_DIR}"
+        ADDENV "GIT_TEAM_DIR_${TEAM}=${GIT_TEAM_DIR}"
+        ADDENV "TEAM_CHECKOUT_${TEAM}=SUCCESS"
+done
 
 return 0
 }
