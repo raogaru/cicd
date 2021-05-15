@@ -1,0 +1,11 @@
+\l+ V_TEAM
+drop database if exists V_TEAM;
+\l+ V_TEAM
+create database V_TEAM;
+\l+ V_TEAM
+\connect V_TEAM;
+\dn
+create schema V_APPNAME;
+\dn
+select schema_name from information_schema.schemata;
+set search_path to V_APPNAME;

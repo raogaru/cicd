@@ -1,29 +1,10 @@
 ECHOpurple "script:build_db.sh START"
-ECHO "Drop and recreate database for team ${v_team}"
-
 BUILD_DB_SQL=${PIPE_DIR}/build_db_${v_team}.sql
-#ADDENV "BUILD_DB_SQL_${v_team}=${BUILD_DB_SQL}"
-
-ECHO "Prepare ${BUILD_DB_SQL}" 
-echo -n "
-\l+ ${v_team}
-drop database if exists ${v_team};
-\l+ ${v_team}
-create database ${v_team};
-\l+ ${v_team}
-\" > ${BUILD_DB_SQL}
-
-echo -n "connect ${v_team};
-select schema_name from information_schema.schemata;
-create schema ${MYAPP_NAME};
-select schema_name from information_schema.schemata;
-set search_path to ${MYAPP_NAME};
-" >> ${BUILD_DB_SQL}
-
-HEADER2 "File: ${BUILD_DB_SQL}"
+ECHO "Drop and recreate database for team ${v_team} using  ${BUILD_DB_SQL}"
+cat ${WORKSPACE}/build_db.template |sed -e "s/V_TEAM/${v_team}/g" -e "s/V_APPNAME/${MYAPP_NAME}/g" > ${BUILD_DB_SQL}
 cat ${BUILD_DB_SQL}
 
-HEADER2 "Execute ${PIPE_DIR}/build_db.sql"
+HEADER2 "Execute ${BUILD_DB_SQL}"
 export PGPASSWORD=rao
 psql -h localhost -p 5432 -d rao -U rao -f ${BUILD_DB_SQL}
 
