@@ -37,10 +37,12 @@ case "${v_type}" in
 "jar") 
 	HEADER2 "Building jar using maven" 
 	DUMMY_ACTION
+	build_jar.sh
 	;;
 "docker") 
 	HEADER2 "Building docker using kubectl" 
 	DUMMY_ACTION
+	build_docker.sh
 	;;
 "ec2") 
 	HEADER2 "Building ec2 using awscli" 
