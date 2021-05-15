@@ -10,12 +10,20 @@ HEADER2 "Check if commits in team-${v_team} branch"
 
 # ----------------------------------------------------------------------
 f_teamgate_checkout_status_check () {
+v_commits=$(READENV TEAM_COMMITS_${v_team})
 v_checkout=$(READENV TEAM_CHECKOUT_${v_team})
+
+if [ "${v_commits}" != "YES" ] ; then
+	ECHO "No commits for team ${v_team}. No need to checkout team-${v_team} branch"
+	return -1
+fi
 
 if [ "${v_checkout}" != "SUCCESS" ]; then
 	ECHO "Checkout not success. Noting to do"
+	return -1
 else
 	ECHO "Proceed with \"${v_type}\" build for team ${v_team} ..."
+	return 0
 fi
 }
 # ----------------------------------------------------------------------
