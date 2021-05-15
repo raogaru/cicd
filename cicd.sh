@@ -1,8 +1,8 @@
 # ######################################################################
-# demo.sh - Main program to be called by Jenkins jobs
+# cicd.sh - Main program to be called by Jenkins jobs
 # ######################################################################
 ARG1=$1
-source demo.env
+source cicd.env
 set +x
 HEADER1 "BEGIN $ARG1"
 

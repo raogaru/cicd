@@ -13,7 +13,7 @@ job('DEMO-CI-600-Release-Gate-Entry') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh RELEASE ENTRY')
+        shell('./cicd.sh RELEASE ENTRY')
         }
 }
 // ----------------------------------------------------------------------
@@ -32,7 +32,7 @@ job('DEMO-CI-610-Release-Gate-Prepare') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh RELEASE PREPARE')
+        shell('./cicd.sh RELEASE PREPARE')
         }
 }
 // ----------------------------------------------------------------------
@@ -51,7 +51,7 @@ job('DEMO-CI-620-Release-Gate-Build') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh RELEASE BUILD')
+        shell('./cicd.sh RELEASE BUILD')
         }
 }
 // ----------------------------------------------------------------------
@@ -70,7 +70,7 @@ job('DEMO-CI-630-Release-Gate-Verify') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh RELEASE VERIFY')
+        shell('./cicd.sh RELEASE VERIFY')
         }
 }
 // ----------------------------------------------------------------------
@@ -89,7 +89,7 @@ job('DEMO-CI-640-Release-Gate-Publish') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh RELEASE PUBLISH')
+        shell('./cicd.sh RELEASE PUBLISH')
         }
 }
 // ----------------------------------------------------------------------
@@ -108,7 +108,7 @@ job('DEMO-CI-650-Release-Gate-Notify') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh RELEASE NOTIFY')
+        shell('./cicd.sh RELEASE NOTIFY')
         }
 }
 // ----------------------------------------------------------------------
@@ -127,7 +127,7 @@ job('DEMO-CI-690-Release-Gate-Exit') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh RELEASE EXIT')
+        shell('./cicd.sh RELEASE EXIT')
         }
 }
 // ----------------------------------------------------------------------

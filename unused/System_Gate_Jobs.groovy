@@ -1,7 +1,6 @@
 // ----------------------------------------------------------------------
-// ----------------------------------------------------------------------
-job('DEMO-CI-421-Team-Gate-VENUS-Build-1') {
-        description('DEMO-CI-421-Team-Gate-VENUS-Build-1')
+job('DEMO-CI-510-System-Gate-Entry') {
+        description('DEMO-CI-510-System-Gate-Entry')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -14,13 +13,13 @@ job('DEMO-CI-421-Team-Gate-VENUS-Build-1') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_BUILD VENUS 1')
+        shell('./cicd.sh SYSTEM ENTRY')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-422-Team-Gate-VENUS-Build-2') {
-        description('DEMO-CI-422-Team-Gate-VENUS-Build-2')
+job('DEMO-CI-521-System-Gate-Build-1') {
+        description('DEMO-CI-521-System-Gate-Build-1')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -33,13 +32,13 @@ job('DEMO-CI-422-Team-Gate-VENUS-Build-2') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_BUILD VENUS 2')
+        shell('./cicd.sh SYSTEM BUILD 1')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-423-Team-Gate-VENUS-Build-3') {
-        description('DEMO-CI-423-Team-Gate-VENUS-Build-3')
+job('DEMO-CI-522-System-Gate-Build-2') {
+        description('DEMO-CI-522-System-Gate-Build-2')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -52,13 +51,13 @@ job('DEMO-CI-423-Team-Gate-VENUS-Build-3') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_BUILD VENUS 3')
+        shell('./cicd.sh SYSTEM BUILD 2')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-424-Team-Gate-VENUS-Build-4') {
-        description('DEMO-CI-424-Team-Gate-VENUS-Build-4')
+job('DEMO-CI-523-System-Gate-Build-3') {
+        description('DEMO-CI-523-System-Gate-Build-3')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -71,13 +70,13 @@ job('DEMO-CI-424-Team-Gate-VENUS-Build-4') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_BUILD VENUS 4')
+        shell('./cicd.sh SYSTEM BUILD 3')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-425-Team-Gate-VENUS-Build-5') {
-        description('DEMO-CI-425-Team-Gate-VENUS-Build-5')
+job('DEMO-CI-524-System-Gate-Build-4') {
+        description('DEMO-CI-524-System-Gate-Build-4')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -90,13 +89,13 @@ job('DEMO-CI-425-Team-Gate-VENUS-Build-5') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_BUILD VENUS 5')
+        shell('./cicd.sh SYSTEM BUILD 4')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-431-Team-Gate-VENUS-Deploy-1') {
-        description('DEMO-CI-431-Team-Gate-VENUS-Deploy-1')
+job('DEMO-CI-525-System-Gate-Build-5') {
+        description('DEMO-CI-525-System-Gate-Build-5')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -109,13 +108,13 @@ job('DEMO-CI-431-Team-Gate-VENUS-Deploy-1') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_DEPLOY VENUS 1')
+        shell('./cicd.sh SYSTEM BUILD 5')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-432-Team-Gate-VENUS-Deploy-2') {
-        description('DEMO-CI-432-Team-Gate-VENUS-Deploy-2')
+job('DEMO-CI-531-System-Gate-Deploy-1') {
+        description('DEMO-CI-531-System-Gate-Deploy-1')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -128,13 +127,13 @@ job('DEMO-CI-432-Team-Gate-VENUS-Deploy-2') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_DEPLOY VENUS 2')
+        shell('./cicd.sh SYSTEM DEPLOY 1')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-433-Team-Gate-VENUS-Deploy-3') {
-        description('DEMO-CI-433-Team-Gate-VENUS-Deploy-3')
+job('DEMO-CI-532-System-Gate-Deploy-2') {
+        description('DEMO-CI-532-System-Gate-Deploy-2')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -147,13 +146,13 @@ job('DEMO-CI-433-Team-Gate-VENUS-Deploy-3') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_DEPLOY VENUS 3')
+        shell('./cicd.sh SYSTEM DEPLOY 2')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-434-Team-Gate-VENUS-Deploy-4') {
-        description('DEMO-CI-434-Team-Gate-VENUS-Deploy-4')
+job('DEMO-CI-533-System-Gate-Deploy-3') {
+        description('DEMO-CI-533-System-Gate-Deploy-3')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -166,13 +165,13 @@ job('DEMO-CI-434-Team-Gate-VENUS-Deploy-4') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_DEPLOY VENUS 4')
+        shell('./cicd.sh SYSTEM DEPLOY 3')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-435-Team-Gate-VENUS-Deploy-5') {
-        description('DEMO-CI-435-Team-Gate-VENUS-Deploy-5')
+job('DEMO-CI-534-System-Gate-Deploy-4') {
+        description('DEMO-CI-534-System-Gate-Deploy-4')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -185,13 +184,13 @@ job('DEMO-CI-435-Team-Gate-VENUS-Deploy-5') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_DEPLOY VENUS 5')
+        shell('./cicd.sh SYSTEM DEPLOY 4')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-441-Team-Gate-VENUS-Test-1') {
-        description('DEMO-CI-441-Team-Gate-VENUS-Test-1')
+job('DEMO-CI-535-System-Gate-Deploy-5') {
+        description('DEMO-CI-535-System-Gate-Deploy-5')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -204,13 +203,13 @@ job('DEMO-CI-441-Team-Gate-VENUS-Test-1') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_TEST VENUS 1')
+        shell('./cicd.sh SYSTEM DEPLOY 5')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-442-Team-Gate-VENUS-Test-2') {
-        description('DEMO-CI-442-Team-Gate-VENUS-Test-2')
+job('DEMO-CI-541-System-Gate-Test-1') {
+        description('DEMO-CI-541-System-Gate-Test-1')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -223,13 +222,13 @@ job('DEMO-CI-442-Team-Gate-VENUS-Test-2') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_TEST VENUS 2')
+        shell('./cicd.sh SYSTEM TEST 1')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-443-Team-Gate-VENUS-Test-3') {
-        description('DEMO-CI-443-Team-Gate-VENUS-Test-3')
+job('DEMO-CI-542-System-Gate-Test-2') {
+        description('DEMO-CI-542-System-Gate-Test-2')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -242,13 +241,13 @@ job('DEMO-CI-443-Team-Gate-VENUS-Test-3') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_TEST VENUS 3')
+        shell('./cicd.sh SYSTEM TEST 2')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-444-Team-Gate-VENUS-Test-4') {
-        description('DEMO-CI-444-Team-Gate-VENUS-Test-4')
+job('DEMO-CI-543-System-Gate-Test-3') {
+        description('DEMO-CI-543-System-Gate-Test-3')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -261,13 +260,13 @@ job('DEMO-CI-444-Team-Gate-VENUS-Test-4') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_TEST VENUS 4')
+        shell('./cicd.sh SYSTEM TEST 3')
         }
 }
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
-job('DEMO-CI-445-Team-Gate-VENUS-Test-5') {
-        description('DEMO-CI-445-Team-Gate-VENUS-Test-5')
+job('DEMO-CI-544-System-Gate-Test-4') {
+        description('DEMO-CI-544-System-Gate-Test-4')
         wrappers {
                 colorizeOutput()
                 timestamps()
@@ -280,8 +279,45 @@ job('DEMO-CI-445-Team-Gate-VENUS-Test-5') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_TEST VENUS 5')
+        shell('./cicd.sh SYSTEM TEST 4')
         }
 }
 // ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+job('DEMO-CI-545-System-Gate-Test-5') {
+        description('DEMO-CI-545-System-Gate-Test-5')
+        wrappers {
+                colorizeOutput()
+                timestamps()
+                preBuildCleanup()
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
+        }
+        logRotator {
+                daysToKeep(1)
+                numToKeep(24)
+        }
+	scm {github('raogaru/cicd')}
+        steps {
+        shell('./cicd.sh SYSTEM TEST 5')
+        }
+}
+// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+job('DEMO-CI-590-System-Gate-Exit') {
+        description('DEMO-CI-590-System-Gate-Exit')
+        wrappers {
+                colorizeOutput()
+                timestamps()
+                preBuildCleanup()
+                buildName('#${BUILD_NUMBER}-${PIPE_NUMBER}')
+        }
+        logRotator {
+                daysToKeep(1)
+                numToKeep(24)
+        }
+	scm {github('raogaru/cicd')}
+        steps {
+        shell('./cicd.sh SYSTEM EXIT 1')
+        }
+}
 // ----------------------------------------------------------------------

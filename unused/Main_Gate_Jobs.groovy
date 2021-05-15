@@ -13,7 +13,7 @@ job('DEMO-CI-010-Main-Gate-Entry') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh MAIN ENTRY')
+        shell('./cicd.sh MAIN ENTRY')
         }
 }
 // ----------------------------------------------------------------------
@@ -32,7 +32,7 @@ job('DEMO-CI-990-Main-Gate-Exit') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh MAIN EXIT')
+        shell('./cicd.sh MAIN EXIT')
         }
 }
 // ----------------------------------------------------------------------

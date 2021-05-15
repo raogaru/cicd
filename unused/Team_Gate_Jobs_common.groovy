@@ -13,7 +13,7 @@ job('DEMO-CI-410-Team-Gate-Entry') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_GATE ENTRY')
+        shell('./cicd.sh TEAM_GATE ENTRY')
         }
 }
 // ----------------------------------------------------------------------
@@ -32,7 +32,7 @@ job('DEMO-CI-490-Team-Gate-Exit') {
         }
 	scm {github('raogaru/cicd')}
         steps {
-        shell('./demo.sh TEAM_GATE EXIT')
+        shell('./cicd.sh TEAM_GATE EXIT')
         }
 }
 // ----------------------------------------------------------------------
