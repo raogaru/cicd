@@ -1,3 +1,3 @@
-ECHOyellow "script:build_jar.sh START"
+ECHOpurple "script:build_jar.sh START"
 ECHO "building jar file"
-ECHOyellow "script:build_jar.sh END"
+ECHOpurple "script:build_jar.sh END"

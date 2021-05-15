@@ -1,3 +1,3 @@
-ECHOyellow "script:build_docker.sh START"
+ECHOpurple "script:build_docker.sh START"
 ECHO "building docker image"
-ECHOyellow "script:build_docker.sh END"
+ECHOpurple "script:build_docker.sh END"

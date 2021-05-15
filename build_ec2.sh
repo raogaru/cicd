@@ -1,3 +1,3 @@
-ECHOyellow "script:build_ec2.sh START"
+ECHOpurple "script:build_ec2.sh START"
 ECHO "building ec2 instance"
-ECHOyellow "script:build_ec2.sh END"
+ECHOpurple "script:build_ec2.sh END"
