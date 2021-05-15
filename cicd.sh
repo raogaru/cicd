@@ -163,5 +163,6 @@ case "${ARG1}" in
 	;;
 esac
 
+ECHOpurple "script:cicd.sh END"
 FOOTER1 "END $ARG1"
 # ######################################################################
