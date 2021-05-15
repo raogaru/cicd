@@ -163,6 +163,12 @@ case "${ARG1}" in
 	;;
 esac
 
-ECHOpurple "script:cicd.sh END"
+r=$?
+if [ $r -eq 0 ]; then
+	ECHOpurple "script:cicd.sh END"
+else
+	ECHOred "script:cicd.sh END FAILED"
+fi
+# ######################################################################
 FOOTER1 "END $ARG1"
 # ######################################################################
