@@ -1,3 +1,3 @@
-ECHOyello "script:build_docker.sh START"
+ECHOyellow "script:build_docker.sh START"
 ECHO "building docker image"
-ECHOyello "script:build_docker.sh END"
+ECHOyellow "script:build_docker.sh END"
