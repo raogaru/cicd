@@ -33,8 +33,8 @@ HEADER2 "Make sure working on team-${v_team} branch"
         [[ "${x1}" != "team-${v_team}" ]] && ECHOred "Current branch is not \"team-${v_team}\"." && return 1
         ECHO Current branch is "${x1}"
 
-HEADER2 "List files"
-	find . -path ./.git -prune -o -print
+#HEADER2 "List files"
+#	find . -path ./.git -prune -o -print
 
 case "${v_type}" in
 "jar") 
