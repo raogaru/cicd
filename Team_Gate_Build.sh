@@ -60,7 +60,7 @@ case "${v_type}" in
 	;;
 esac
 
-${WORKSPACE}/build_${v_type}.sh
+. ${WORKSPACE}/build_${v_type}.sh
 r=$?
 if [ $? -eq 0 ]; then
 	ADDENV "TEAM_BUILD_${v_team}_${v_type}=SUCCESS"
