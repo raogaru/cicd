@@ -31,6 +31,8 @@ mkdir -p ${PIPE_DIR}
 
 ECHO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
+ECHO "Workspace directory is ${WORKSPACE}"
+
 echo "script:Main_Gate_Entry.sh END"
 # ######################################################################
 # EOF
