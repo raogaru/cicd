@@ -18,13 +18,13 @@ case "${ARG1}" in
 	. ${WORKSPACE}/Team_Gate_Entry.sh
 	;;
 "Team-Build-MARS-1") 
-	. ${WORKSPACE}/Team_Gate_Build.sh mars jar
+	. ${WORKSPACE}/Team_Gate_Build.sh mars db
 	;;
 "Team-Build-VENUS-1") 
-	. ${WORKSPACE}/Team_Gate_Build.sh venus jar
+	. ${WORKSPACE}/Team_Gate_Build.sh venus db
 	;;
 "Team-Build-PLUTO-1") 
-	. ${WORKSPACE}/Team_Gate_Build.sh pluto jar
+	. ${WORKSPACE}/Team_Gate_Build.sh pluto db
 	;;
 "Team-Build-MARS-2") 
 	. ${WORKSPACE}/Team_Gate_Build.sh mars docker

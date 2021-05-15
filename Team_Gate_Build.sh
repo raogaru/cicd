@@ -49,8 +49,8 @@ case "${v_type}" in
 	HEADER2 "Building ec2 using awscli" 
 	DUMMY_ACTION
 	;;
-"abc") 
-	HEADER2 "Building abc " 
+"db") 
+	HEADER2 "Building database" 
 	DUMMY_ACTION
 	;;
 "pqr") 
