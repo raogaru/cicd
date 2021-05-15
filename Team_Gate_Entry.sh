@@ -75,9 +75,9 @@ f_teamgate_checkout_team_branch () {
 ECHOpurple "function:f_teamgate_checkout_team_branch"
 for TEAM in ${AGILE_TEAMS}
 do
-	v_commits=$(READENV TEAM_COMMITS_${v_team})
+	v_commits=$(READENV TEAM_COMMITS_${TEAM})
 	if [ "${v_commits}" != "YES" ] ; then
-		ECHO "No commits for team ${v_team}. No need to checkout team-${v_team} branch"
+		ECHO "No commits for team ${TEAM}. No need to checkout team-${TEAM} branch"
 	else
 	HEADER2 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
         GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
