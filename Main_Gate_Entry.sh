@@ -1,7 +1,7 @@
 # ######################################################################
-# Main-Gate-Entry.sh 
+# Main_Gate_Entry.sh 
 # ######################################################################
-ECHO "Script $0 START"
+ECHO "script:Main_Gate_Entry.sh START"
 
 ECHO "Application Name is \"${MYAPP_NAME}\""
 ECHO "Pipe Environment file is \"${PIPE_ENV}\""
@@ -31,7 +31,7 @@ mkdir -p ${PIPE_DIR}
 
 ECHO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
-echo "Script $0 END"
+echo "script:Main_Gate_Entry.sh END"
 # ######################################################################
 # EOF
 # ######################################################################

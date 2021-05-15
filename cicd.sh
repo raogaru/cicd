@@ -8,7 +8,7 @@ HEADER1 "BEGIN $ARG1"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
-ECHOpurple "cicd.sh argument:${ARG1}"
+ECHOpurple "script:cicd.sh argument:${ARG1}"
 
 case "${ARG1}" in
 "Main-Gate-Entry") 
