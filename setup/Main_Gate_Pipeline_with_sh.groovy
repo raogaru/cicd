@@ -22,13 +22,11 @@ pipeline {
 
 		stage('Team-Gate-Entry') { steps { sh './demo.sh Team-Gate-Entry' } }
 
-		stage('Team-Build-1') { 
-		//parallel {
+		//stage('Team-Build-1') { parallel {
 		stage('Team-Build-MARS-1') { steps { sh './demo.sh Team-Build-MARS-1' } }
 		stage('Team-Build-VENUS-1') { steps { sh './demo.sh Team-Build-VENUS-1' } }
 		stage('Team-Build-PLUTO-1') { steps { sh './demo.sh Team-Build-PLUTO-1' } }
-		//}
-		}
+		//}}
 /*		
 		stage('Team-Build-2') { parallel {
 		stage('Team-Build-MARS-2') { steps { sh './demo.sh Team-Build-MARS-2' } }
@@ -43,13 +41,11 @@ pipeline {
 */
 
 
-		stage('Team-Deploy-1') { 
-		//parallel {
+		//stage('Team-Deploy-1') { parallel {
 		stage('Team-Deploy-MARS-1') { steps { sh './demo.sh Team-Deploy-MARS-1' } }
 		stage('Team-Deploy-VENUS-1') { steps { sh './demo.sh Team-Deploy-VENUS-1' } }
 		stage('Team-Deploy-PLUTO-1') { steps { sh './demo.sh Team-Deploy-PLUTO-1' } }
-		//}
-		}
+		//}}
 /*
 		stage('Team-Deploy-2') { parallel {
 		stage('Team-Deploy-MARS-2') { steps { sh './demo.sh Team-Deploy-MARS-2' } }
@@ -63,13 +59,11 @@ pipeline {
 		}}
 */
 
-		stage('Team-Test-1') { 
-		//parallel {
+		//stage('Team-Test-1') { parallel {
 		stage('Team-Test-MARS-1') { steps { sh './demo.sh Team-Test-MARS-1' } }
 		stage('Team-Test-VENUS-1') { steps { sh './demo.sh Team-Test-VENUS-1' } }
 		stage('Team-Test-PLUTO-1') { steps { sh './demo.sh Team-Test-PLUTO-1' } }
-		//}
-		}
+		//}}
 /*
 		stage('Team-Test-2') { parallel {
 		stage('Team-Test-MARS-2') { steps { sh './demo.sh Team-Test-MARS-2' } }
