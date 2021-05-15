@@ -8,85 +8,67 @@ HEADER1 "BEGIN $ARG1"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
+ECHOpurple "cicd.sh argument:${ARG1}"
+
 case "${ARG1}" in
 "Main-Gate-Entry") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Main_Gate_Entry.sh
 	;;
 "Team-Gate-Entry") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Entry.sh
 	;;
 "Team-Build-MARS-1") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh mars jar
 	;;
 "Team-Build-VENUS-1") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh venus jar
 	;;
 "Team-Build-PLUTO-1") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh pluto jar
 	;;
 "Team-Build-MARS-2") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh mars docker
 	;;
 "Team-Build-VENUS-2") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh venus docker
 	;;
 "Team-Build-PLUTO-2") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh pluto docker
 	;;
 "Team-Build-MARS-3") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh mars ec2
 	;;
 "Team-Build-VENUS-3") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh venus ec2
 	;;
 "Team-Build-PLUTO-3") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Build.sh pluto ec2
 	;;
 "Team-Deploy-MARS-1") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh mars liquibase
 	;;
 "Team-Deploy-VENUS-1") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh venus liquibase
 	;;
 "Team-Deploy-PLUTO-1") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh pluto liquibase
 	;;
 "Team-Deploy-MARS-2") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh mars kubernetes
 	;;
 "Team-Deploy-VENUS-2") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh venus kubernetes
 	;;
 "Team-Deploy-PLUTO-2") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh pluto kubernetes
 	;;
 "Team-Deploy-MARS-3") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh mars tomcat
 	;;
 "Team-Deploy-VENUS-3") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh venus tomcat
 	;;
 "Team-Deploy-PLUTO-3") 
-	ECHOpurple "Option:${ARG1}"
 	. ./Team_Gate_Deploy.sh pluto tomcat
 	;;
 "Team-Test-MARS-1") 
@@ -176,6 +158,9 @@ case "${ARG1}" in
 	;;
 "Main-Gate-Exit") 
 	ECHOpurple "Option:${ARG1}"
+	;;
+"*")
+	ERROR "Invalid argument to cicd.sh"
 	;;
 esac
 
