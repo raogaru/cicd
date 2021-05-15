@@ -46,13 +46,13 @@ case "${ARG1}" in
 	. ${WORKSPACE}/Team_Gate_Build.sh pluto ec2
 	;;
 "Team-Deploy-MARS-1") 
-	. ${WORKSPACE}/Team_Gate_Deploy.sh mars liquibase
+	. ${WORKSPACE}/Team_Gate_Deploy.sh mars db
 	;;
 "Team-Deploy-VENUS-1") 
-	. ${WORKSPACE}/Team_Gate_Deploy.sh venus liquibase
+	. ${WORKSPACE}/Team_Gate_Deploy.sh venus db
 	;;
 "Team-Deploy-PLUTO-1") 
-	. ${WORKSPACE}/Team_Gate_Deploy.sh pluto liquibase
+	. ${WORKSPACE}/Team_Gate_Deploy.sh pluto db
 	;;
 "Team-Deploy-MARS-2") 
 	. ${WORKSPACE}/Team_Gate_Deploy.sh mars kubernetes

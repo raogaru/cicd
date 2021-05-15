@@ -60,7 +60,10 @@ case "${v_type}" in
 	DUMMY_ACTION
 	;;
 esac
+
+. ${WORKSPACE}/deploy_${v_type}.sh
 r=$?
+
 if [ $? -eq 0 ]; then
 	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=SUCCESS"
 	return 0
