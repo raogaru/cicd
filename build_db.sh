@@ -5,13 +5,13 @@ BUILD_DB_SQL=${PIPE_DIR}/build_db_${v_team}.sql
 #ADDENV "BUILD_DB_SQL_${v_team}=${BUILD_DB_SQL}"
 
 ECHO "Prepare ${BUILD_DB_SQL}" 
-echo "
-\list
+echo -E "
+\l+ ${v_team}
 drop database if exists ${v_team};
-\list
+\l+ ${v_team}
 create database ${v_team};
-\list
-\\connect ${v_team};
+\l+ ${v_team}
+\connect ${v_team};
 \dn
 create schema ${MYAPP_NAME};
 \dn
