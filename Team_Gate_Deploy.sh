@@ -11,12 +11,16 @@ f_teamgate_deploy_check_build_status () {
 
 HEADER2 "Check if build in team-${v_team} branch"
 
-v_build_status=$(READENV TEAM_BUILD_${v_team})
+v_commits=$(READENV TEAM_COMMITS_${v_team})
+v_checkout=$(READENV TEAM_CHECKOUT_${v_team})
+v_build=$(READENV TEAM_BUILD_${v_team})
 
-if [ "${v_build_status}" != "SUCCESS" ]; then
-	ECHO "Team Build for \"${v_team}\" not SUCCESS. Nothing to deploy."
+if [ "${v_commits}" != "YES" ] || [ "${v_checkout}" != "SUCCESS" ] || [ "${v_build}" != "SUCCESS" ]; then
+	WARN "COMMITS=${v_commits}. CHECKOUT=${v_checkout}. BUILD=${v_build}. Hence, NOT doing deploy for team-${v_team}"
+	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=N/A"
+	return -1
 else
-	ECHO "Proceed with \"${v_type}\" build for team ${v_team} ..."
+	ECHO "Proceed with \"${v_type}\" deploy for team ${v_team} ..."
 fi
 
 GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
