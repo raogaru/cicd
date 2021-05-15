@@ -27,12 +27,13 @@ pipeline {
 		stage('Team-Build-VENUS-1') { steps { sh './cicd.sh Team-Build-VENUS-1' } }
 		stage('Team-Build-PLUTO-1') { steps { sh './cicd.sh Team-Build-PLUTO-1' } }
 		//}}
-/*		
-		stage('Team-Build-2') { parallel {
+		
+		//stage('Team-Build-2') { parallel {
 		stage('Team-Build-MARS-2') { steps { sh './cicd.sh Team-Build-MARS-2' } }
 		stage('Team-Build-VENUS-2') { steps { sh './cicd.sh Team-Build-VENUS-2' } }
 		stage('Team-Build-PLUTO-2') { steps { sh './cicd.sh Team-Build-PLUTO-2' } }
-		}}
+		//}}
+/*
 		stage('Team-Build-3') { parallel {
 		stage('Team-Build-MARS-3') { steps { sh './cicd.sh Team-Build-MARS-3' } }
 		stage('Team-Build-VENUS-3') { steps { sh './cicd.sh Team-Build-VENUS-3' } }
@@ -46,12 +47,12 @@ pipeline {
 		stage('Team-Deploy-VENUS-1') { steps { sh './cicd.sh Team-Deploy-VENUS-1' } }
 		stage('Team-Deploy-PLUTO-1') { steps { sh './cicd.sh Team-Deploy-PLUTO-1' } }
 		//}}
-/*
-		stage('Team-Deploy-2') { parallel {
+		//stage('Team-Deploy-2') { parallel {
 		stage('Team-Deploy-MARS-2') { steps { sh './cicd.sh Team-Deploy-MARS-2' } }
 		stage('Team-Deploy-VENUS-2') { steps { sh './cicd.sh Team-Deploy-VENUS-2' } }
 		stage('Team-Deploy-PLUTO-2') { steps { sh './cicd.sh Team-Deploy-PLUTO-2' } }
-		}}
+		//}}
+/*
 		stage('Team-Deploy-3') { parallel {
 		stage('Team-Deploy-MARS-3') { steps { sh './cicd.sh Team-Deploy-MARS-3' } }
 		stage('Team-Deploy-VENUS-3') { steps { sh './cicd.sh Team-Deploy-VENUS-3' } }
@@ -64,12 +65,12 @@ pipeline {
 		stage('Team-Test-VENUS-1') { steps { sh './cicd.sh Team-Test-VENUS-1' } }
 		stage('Team-Test-PLUTO-1') { steps { sh './cicd.sh Team-Test-PLUTO-1' } }
 		//}}
-/*
-		stage('Team-Test-2') { parallel {
+		//stage('Team-Test-2') { parallel {
 		stage('Team-Test-MARS-2') { steps { sh './cicd.sh Team-Test-MARS-2' } }
 		stage('Team-Test-VENUS-2') { steps { sh './cicd.sh Team-Test-VENUS-2' } }
 		stage('Team-Test-PLUTO-2') { steps { sh './cicd.sh Team-Test-PLUTO-2' } }
-		}}
+		//}}
+/*
 		stage('Team-Test-3') { parallel {
 		stage('Team-Test-MARS-3') { steps { sh './cicd.sh Team-Test-MARS-3' } }
 		stage('Team-Test-VENUS-3') { steps { sh './cicd.sh Team-Test-VENUS-3' } }
