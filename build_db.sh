@@ -13,10 +13,10 @@ create database ${v_team};
 \l+ ${v_team}
 \" > ${BUILD_DB_SQL}
 
-echo "connect ${v_team};
-\dn
+echo -n "connect ${v_team};
+select schema_name from information_schema.schemata;
 create schema ${MYAPP_NAME};
-\dn
+select schema_name from information_schema.schemata;
 set search_path to ${MYAPP_NAME};
 " >> ${BUILD_DB_SQL}
 
