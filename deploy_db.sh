@@ -7,7 +7,7 @@ ECHO "current directory is $PWD"
 
 liquibase \
   --driver=org.postgresql.Driver \
-  --classpath=../../war/WEB-INF/lib/postgresql-42.2.20.jar \
+  --classpath=/Users/rao/.jenkins/war/WEB-INF/lib/postgresql-42.2.20.jar \
   --url="jdbc:postgresql://localhost:5432/${V_DB}" \
   --changeLogFile=src/db/liquibase.xml \
   --username=rao \
@@ -15,6 +15,7 @@ liquibase \
   --logLevel info \
 update
 
+#  --classpath=../../war/WEB-INF/lib/postgresql-42.2.20.jar \
 #  --liquibaseSchemaName=${MYAPP_NAME} \
 #  --databaseChangeLogTableName=db_chg_log \
 #  --databaseChangeLogLockTableName=db_chg_lock \
