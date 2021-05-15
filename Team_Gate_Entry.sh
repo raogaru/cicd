@@ -3,6 +3,7 @@ ECHOpurple "script:Team_Gate_Entry.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
 f_teamgate_checkout_master () {
+ECHOpurple "function:f_teamgate_checkout_master"
 HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	GIT_MASTER_DIR=${PIPE_DIR}/git/master
 	mkdir -p ${GIT_MASTER_DIR}
@@ -24,6 +25,7 @@ HEADER2 "Make sure working on master branch"
 
 # ----------------------------------------------------------------------
 f_teamgate_validate_team_branches () {
+ECHOpurple "function:f_teamgate_validate_team_branches"
 HEADER2 "List development teams"
         rm -f ${PIPE_DIR}/teams.tmp
         for TEAM in ${AGILE_TEAMS}; do echo "${TEAM}" >> ${PIPE_DIR}/teams.tmp; done
@@ -53,7 +55,7 @@ fi
 }
 # ----------------------------------------------------------------------
 f_teamgate_list_commits_by_each_team () {
-HEADER2 "Compare team branch \"team-${TEAM}\" with build branch \"build-${TEAM}\""
+ECHOpurple "function:f_teamgate_list_commits_by_each_team"
 for TEAM in ${AGILE_TEAMS}
 do
         echo ''
