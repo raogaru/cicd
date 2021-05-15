@@ -63,7 +63,11 @@ do
         ECHO "git log origin/master..build-${TEAM}"
         git log origin/master..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'
         git log origin/master..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'  > ${PIPE_DIR}/git_commits_by_${TEAM}.lst
-        [[ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]] && ADDENV "TEAM_COMMITS_${TEAM}=YES"
+        if [ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]; then
+		ADDENV "TEAM_COMMITS_${TEAM}=YES"
+	else
+		ADDENV "TEAM_COMMITS_${TEAM}=NO"
+	fi
 done
 }
 # ----------------------------------------------------------------------
