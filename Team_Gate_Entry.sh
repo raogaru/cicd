@@ -1,5 +1,5 @@
 # ######################################################################
-echo Team-Gate-Entry.sh START
+ECHOpurple "script:Team_Gate_Entry.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
 f_teamgate_checkout_master () {
@@ -71,5 +71,5 @@ f_teamgate_validate_team_branches
 f_teamgate_list_commits_by_each_team
 
 # ######################################################################
-echo Team-Gate-Entry.sh END
+ECHOpurple "script:Team_Gate_Entry.sh END"
 # ######################################################################
