@@ -12,7 +12,7 @@ ECHOpurple "script:cicd.sh argument:${ARG1} START"
 
 case "${ARG1}" in
 "Main-Gate-Entry") 
-	. ./Main_Gate_Entry.sh
+	. ${WORKSPACE}/Main_Gate_Entry.sh
 	;;
 "Team-Gate-Entry") 
 	. ./Team_Gate_Entry.sh
