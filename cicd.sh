@@ -100,7 +100,6 @@ case "${ARG1}" in
 	;;
 "Team-Gate-Exit") 
 	ECHOpurple "Option:${ARG1}"
-	ERROR "for no reason"
 	;;
 "System-Gate-Entry") 
 	ECHOpurple "Option:${ARG1}"

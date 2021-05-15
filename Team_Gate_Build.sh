@@ -1,5 +1,5 @@
 # ######################################################################
-echo Team_Gate_Build.sh START
+ECHOpurple "script:Team_Gate_Build.sh START"
 # ######################################################################
 v_team=${1}	# team name
 v_type=${2}	# build type
@@ -42,21 +42,36 @@ case "${v_type}" in
 "jar") 
 	HEADER2 "Building jar using maven" 
 	DUMMY_ACTION
-ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
+	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "docker") 
 	HEADER2 "Building docker using kubectl" 
 	DUMMY_ACTION
-ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
+	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "ec2") 
 	HEADER2 "Building ec2 using awscli" 
 	DUMMY_ACTION
-ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
+	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
+	;;
+"abc") 
+	HEADER2 "Building abc " 
+	DUMMY_ACTION
+	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
+	;;
+"pqr") 
+	HEADER2 "Building pqr " 
+	DUMMY_ACTION
+	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
+	;;
+"xyz") 
+	HEADER2 "Building xyz " 
+	DUMMY_ACTION
+	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 esac
 
 
 # ######################################################################
-echo Team_Gate_Build.sh END
+ECHOpurple "script:Team_Gate_Build.sh END"
 # ######################################################################
