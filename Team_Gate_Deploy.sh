@@ -6,6 +6,9 @@ v_type=${2}	# deploy type
 
 HEADER2 "Deploy \"${v_type}\" in team-${v_team} branch requested"
 
+# ----------------------------------------------------------------------
+f_teamgate_deploy_check_build_status () {
+
 HEADER2 "Check if build in team-${v_team} branch"
 
 v_build_status=$(READENV TEAM_BUILD_${v_team})
@@ -24,45 +27,55 @@ HEADER2 "List my branch"
 
 HEADER2 "Make sure working on team-${v_team} branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
-        [[ "${x1}" != "team-${v_team}" ]] && ERROR "Current branch is not \"team-${v_team}\"."
+        [[ "${x1}" != "team-${v_team}" ]] && ECHOred "Current branch is not \"team-${v_team}\"." && return 1
         ECHO Current branch is "${x1}"
 
-# ######################################################################
-# START HERE 
-# ######################################################################
-
+return 0
+}
+# ----------------------------------------------------------------------
+f_teamgate_deploy () {
 case "${v_type}" in
 "liquibase")
 	HEADER2 "Deploying to DB using liquibase" 
 	DUMMY_ACTION
-	ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
 	;;
 "kubernetes")
 	HEADER2 "Deploying docker using kubectl" 
 	DUMMY_ACTION
-	ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
 	;;
 "tomcat")
 	HEADER2 "Deploying jar to tomcat"
 	DUMMY_ACTION
-	ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
 	;;
 "dep1")
 	HEADER2 "Deploying dep1"
 	DUMMY_ACTION
-	ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
 	;;
 "dep2")
 	HEADER2 "Deploying dep2"
 	DUMMY_ACTION
-	ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
 	;;
 "dep3")
 	HEADER2 "Deploying dep3"
 	DUMMY_ACTION
-	ADDENV "TEAM_DEPLOY_${v_team}=SUCCESS"
 	;;
 esac
+r=$?
+if [ $? -eq 0 ]; then
+	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=SUCCESS"
+	return 0
+else
+	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=FAILED"
+	return 1
+fi
+}
+# ######################################################################
+# START HERE
+# ######################################################################
+f_teamgate_deploy_check_build_status
+if [ $? -eq 0 ]; then
+	f_teamgate_deploy
+fi
 
 # ######################################################################
 ECHOpurple "script:Team_Gate_Deploy.sh END"

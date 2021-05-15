@@ -17,6 +17,7 @@ else
 fi
 # ----------------------------------------------------------------------
 f_teamgate_checkout_team_branch () {
+ECHOpurple "function:f_teamgate_checkout_team_branch"
 HEADER2 "Checkout team branch team-${v_team} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
         GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
         ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
@@ -32,46 +33,55 @@ HEADER2 "List my branch"
 
 HEADER2 "Make sure working on team-${v_team} branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
-        [[ "${x1}" != "team-${v_team}" ]] && ERROR "Current branch is not \"team-${v_team}\"."
+        [[ "${x1}" != "team-${v_team}" ]] && ECHOred "Current branch is not \"team-${v_team}\"." && return 1
         ECHO Current branch is "${x1}"
+
+return 0
 }
 # ----------------------------------------------------------------------
-f_teamgate_checkout_team_branch
+f_teamgate_build () {
+ECHOpurple "function:f_teamgate_build"
 
 case "${v_type}" in
 "jar") 
 	HEADER2 "Building jar using maven" 
 	DUMMY_ACTION
-	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "docker") 
 	HEADER2 "Building docker using kubectl" 
 	DUMMY_ACTION
-	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "ec2") 
 	HEADER2 "Building ec2 using awscli" 
 	DUMMY_ACTION
-	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "abc") 
 	HEADER2 "Building abc " 
 	DUMMY_ACTION
-	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "pqr") 
 	HEADER2 "Building pqr " 
 	DUMMY_ACTION
-	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 "xyz") 
 	HEADER2 "Building xyz " 
 	DUMMY_ACTION
-	ADDENV "TEAM_BUILD_${v_team}=SUCCESS"
 	;;
 esac
-
-
+r=$?
+if [ $? -eq 0 ]; then
+	ADDENV "TEAM_BUILD_${v_team}_${v_type}=SUCCESS"
+else
+	ADDENV "TEAM_BUILD_${v_team}_${v_type}=FAILED"
+fi
+}
+# ######################################################################
+# START HERE
+# ######################################################################
+f_teamgate_checkout_team_branch
+if [ $? -eq 0 ]; then 
+	f_teamgate_build
+fi
 # ######################################################################
 ECHOpurple "script:Team_Gate_Build.sh END"
 # ######################################################################

@@ -18,6 +18,7 @@ if [ "${v_deployed}" != "SUCCESS" ]; then
 else
 	ECHO "Proceed with \"${v_type}\" test for team ${v_team} ..."
 fi
+return 0
 }
 # ----------------------------------------------------------------------
 f_teamgate_test () {
@@ -26,33 +27,22 @@ case "${v_type}" in
 "phase1") 
 	HEADER2 "test phase1" 
 	DUMMY_ACTION
-	if [ $? -eq 0 ]; then
-		ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
-	else
-		ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
-	fi
 	;;
 "phase2") 
 	HEADER2 "test phase2" 
 	DUMMY_ACTION
-	if [ $? -eq 0 ]; then
-		ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
-	else
-		ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
-	fi
-	ADDENV "TEAM_TEST_${v_team}=SUCCESS"
 	;;
 "phase3") 
 	HEADER2 "test phase3" 
 	DUMMY_ACTION
-	if [ $? -eq 0 ]; then
-		ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
-	else
-		ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
-	fi
-	ADDENV "TEAM_TEST_${v_team}=SUCCESS"
 	;;
 esac
+r=$?
+if [ $? -eq 0 ]; then
+	ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
+else
+	ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
+fi
 }
 # ----------------------------------------------------------------------
 f_teamgate_test_val_build
