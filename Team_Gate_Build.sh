@@ -37,12 +37,10 @@ case "${v_type}" in
 "jar") 
 	HEADER2 "Building jar using maven" 
 	DUMMY_ACTION
-	build_jar.sh
 	;;
 "docker") 
 	HEADER2 "Building docker using kubectl" 
 	DUMMY_ACTION
-	build_docker.sh
 	;;
 "ec2") 
 	HEADER2 "Building ec2 using awscli" 
@@ -61,6 +59,8 @@ case "${v_type}" in
 	DUMMY_ACTION
 	;;
 esac
+
+./build_${v_type}.sh
 r=$?
 if [ $? -eq 0 ]; then
 	ADDENV "TEAM_BUILD_${v_team}_${v_type}=SUCCESS"
