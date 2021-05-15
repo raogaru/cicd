@@ -22,6 +22,8 @@ fi
 f_teamgate_build () {
 ECHOpurple "function:f_teamgate_build"
 
+GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
+
 HEADER2 "List my branch"
         cd ${GIT_TEAM_DIR}
         git branch
