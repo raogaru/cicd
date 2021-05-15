@@ -26,16 +26,30 @@ case "${v_type}" in
 "phase1") 
 	HEADER2 "test phase1" 
 	DUMMY_ACTION
-	ADDENV "TEAM_TEST_${v_team}=SUCCESS"
+	if [ $? -eq 0 ]; then
+		ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
+	else
+		ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
+	fi
 	;;
 "phase2") 
 	HEADER2 "test phase2" 
 	DUMMY_ACTION
+	if [ $? -eq 0 ]; then
+		ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
+	else
+		ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
+	fi
 	ADDENV "TEAM_TEST_${v_team}=SUCCESS"
 	;;
 "phase3") 
 	HEADER2 "test phase3" 
 	DUMMY_ACTION
+	if [ $? -eq 0 ]; then
+		ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
+	else
+		ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
+	fi
 	ADDENV "TEAM_TEST_${v_team}=SUCCESS"
 	;;
 esac
