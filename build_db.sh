@@ -7,11 +7,11 @@ BUILD_DB_SQL=${PIPE_DIR}/build_db_${v_team}.sql
 ECHO "Prepare ${BUILD_DB_SQL}" 
 echo "
 \list
-drop database if exists ${v_team} with force;
+drop database if exists ${v_team};
 \list
 create database ${v_team};
 \list
-\connect ${v_team};
+\\connect ${v_team};
 \dn
 create schema ${MYAPP_NAME};
 \dn
