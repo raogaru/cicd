@@ -63,12 +63,28 @@ do
         [[ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]] && ADDENV "TEAM_COMMITS_${TEAM}=YES"
 done
 }
+# ----------------------------------------------------------------------
+f_teamgate_checkout_team_branch () {
+ECHOpurple "function:f_teamgate_checkout_team_branch"
+HEADER2 "Checkout team branch team-${v_team} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
+        GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
+        ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
+        mkdir -p ${GIT_TEAM_DIR}
+        git clone -b team-${v_team} ${MYAPP_GIT} ${GIT_TEAM_DIR}
+        [[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo team-${v_team} branch"
+        [[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
+        ADDENV "GIT_TEAM_DIR_${v_team}=${GIT_TEAM_DIR}"
+
+return 0
+}
+# ----------------------------------------------------------------------
 # ######################################################################
 # START HERE
 # ######################################################################
 f_teamgate_checkout_master
 f_teamgate_validate_team_branches
 f_teamgate_list_commits_by_each_team
+f_teamgate_checkout_team_branch
 
 # ######################################################################
 ECHOpurple "script:Team_Gate_Entry.sh END"
