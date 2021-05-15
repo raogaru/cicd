@@ -7,4 +7,3 @@ create database V_TEAM;
 \dn V_APPNAME
 create schema V_APPNAME;
 \dn V_APPNAME
-set search_path to V_APPNAME;
