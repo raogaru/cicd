@@ -75,6 +75,9 @@ case "${ARG1}" in
 "Team-Deploy-PLUTO-3") 
 	. ${WORKSPACE}/Team_Gate_Deploy.sh pluto tomcat
 	;;
+"Team-Deploy-Exit") 
+	. ${WORKSPACE}/Team_Deploy_Exit.sh
+	;;
 "Team-Test-MARS-1") 
 	. ${WORKSPACE}/Team_Gate_Test.sh mars phase1
 	;;
