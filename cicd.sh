@@ -115,25 +115,28 @@ case "${ARG1}" in
 	. ${WORKSPACE}/System_Gate_Entry.sh
 	;;
 "System-Build-1") 
-	ECHOpurple "Option:${ARG1}"
+	. ${WORKSPACE}/System_Gate_Build.sh db 
 	;;
 "System-Build-2") 
-	ECHOpurple "Option:${ARG1}"
+	. ${WORKSPACE}/System_Gate_Build.sh docker 
 	;;
 "System-Build-3") 
-	ECHOpurple "Option:${ARG1}"
+	. ${WORKSPACE}/System_Gate_Build.sh ec2 
 	;;
 "System-Build-Exit") 
 	. ${WORKSPACE}/System_Build_Exit.sh
 	;;
 "System-Deploy-1") 
 	ECHOpurple "Option:${ARG1}"
+	DUMMY_ACTION
 	;;
 "System-Deploy-2") 
 	ECHOpurple "Option:${ARG1}"
+	DUMMY_ACTION
 	;;
 "System-Deploy-3") 
 	ECHOpurple "Option:${ARG1}"
+	DUMMY_ACTION
 	;;
 "System-Deploy-Exit") 
 	. ${WORKSPACE}/System_Deploy_Exit.sh

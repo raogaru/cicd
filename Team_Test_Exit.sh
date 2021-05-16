@@ -1,18 +1,18 @@
 # ######################################################################
 ECHOpurple "script:Team_Test_Exit.sh START"
 # ######################################################################
-for TEAM in ${AGILE_TEAMS}
+for v_team in ${AGILE_TEAMS}
 do
-	HEADER2 "Evaluate team test status for ${TEAM}"
+	HEADER2 "Evaluate team test status for ${v_team}"
 	v_test_final="SUCCESS"
-	for PHASE in ${TEAM_TEST_PHASES}
+	for v_type in ${TEST_TYPES}
 	do
-		v_test=$(READENV TEAM_TEST_${TEAM}_${PHASE})
-		ECHO "TEAM_TEST_${TEAM}_${PHASE}=${v_test}"
+		v_test=$(READENV TEAM_TEST_${v_team}_${v_type})
+		ECHO "TEAM_TEST_${v_team}_${v_type}=${v_test}"
 		[[ "${v_test}" == "FAILED" ]] && v_test_final="FAILED"
 		[[ "${v_test}" == "N/A" ]] && v_test_final="N/A"
 	done
-	ADDENV "TEAM_TEST_${TEAM}=${v_test_final}"
+	ADDENV "TEAM_TEST_${v_team}=${v_test_final}"
 done
 # ######################################################################
 ECHOpurple "script:Team_Test_Exit.sh END"

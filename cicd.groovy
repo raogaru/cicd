@@ -86,15 +86,22 @@ pipeline {
 		stage('Team-Gate-Exit') { steps { sh './cicd.sh Team-Gate-Exit' } }
 
 		stage('System-Gate-Entry') { steps { sh './cicd.sh System-Gate-Entry' } }
+
 		stage('System-Build-1') { steps { sh './cicd.sh System-Build-1' } }
 		stage('System-Build-2') { steps { sh './cicd.sh System-Build-2' } }
 		stage('System-Build-3') { steps { sh './cicd.sh System-Build-3' } }
+		stage('System-Build-Exit') { steps { sh './cicd.sh System-Build-Exit' } }
+
 		stage('System-Deploy-1') { steps { sh './cicd.sh System-Deploy-1' }} 
 		stage('System-Deploy-2') { steps { sh './cicd.sh System-Deploy-2' } }
 		stage('System-Deploy-3') { steps { sh './cicd.sh System-Deploy-3' } }
+		stage('System-Deploy-Exit') { steps { sh './cicd.sh System-Deploy-Exit' } }
+
 		stage('System-Test-1') { steps { sh './cicd.sh System-Test-1' } }
 		stage('System-Test-2') { steps { sh './cicd.sh System-Test-2' } }
 		stage('System-Test-3') { steps { sh './cicd.sh System-Test-3' } }
+		stage('System-Test-Exit') { steps { sh './cicd.sh System-Test-Exit' } }
+
 		stage('System-Gate-Exit') { steps { sh './cicd.sh System-Gate-Exit' } }
 
 /*
