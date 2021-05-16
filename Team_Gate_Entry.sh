@@ -9,7 +9,8 @@ HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	mkdir -p ${GIT_MASTER_DIR}
 	cd ${GIT_MASTER_DIR}
 	ECHO "GIT_MASTER_DIR is ${GIT_MASTER_DIR}"
-	git clone -b master ${MYAPP_GIT} ${GIT_MASTER_DIR}
+	git clone ${MYAPP_GIT} ${GIT_MASTER_DIR}
+	git checkout master
 	[[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo"
 	[[ ! -d ${GIT_MASTER_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_MASTER_DIR} directory"
 	ADDENV "GIT_MASTER_DIR=${GIT_MASTER_DIR}"
