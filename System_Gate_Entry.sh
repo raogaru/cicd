@@ -14,9 +14,16 @@ HEADER2 "Create directory for sysgate"
 HEADER2 "Clone master branch"
         git clone ${MYAPP_GIT} ${GIT_SYSGATE_DIR}
 	git checkout master
-        [[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo"
+        [[ $? -ne 0 ]] && ERROR "Failed to checkout ${MYAPP_GIT} git repo master branch"
         [[ ! -d ${GIT_SYSGATE_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_SYSGATE_DIR} directory"
         ADDENV "GIT_SYSGATE_DIR=${GIT_SYSGATE_DIR}"
+
+HEADER2 "Checkout team branches"
+	for TEAM in ${AGILE_TEAMS}
+	do
+		git checkout team-${TEAM}
+        	[[ $? -ne 0 ]] && ERROR "Failed to checkout ${MYAPP_GIT} git repo team-${TEAM} branch"
+	done
 
 HEADER2 "Delete sysgate branch"
 	git branch -D sysgate
@@ -43,7 +50,7 @@ do
 	#ECHO "TEAM_TEST_${TEAM}=${v_test}"
 	if [ "${v_test}" == "SUCCESS" ] ;  then
 		HEADER2 "Merge team-${TEAM} branch into sysgate branch"
-		git merge team-${TEAM}
+		git merge team-${TEAM} -m "Merge branch team-${TEAM} pipe# ${PIPE_NUM}"
         	if [ $? -ne 0 ]; then
 			WARN "Failed to merge team-${TEAM} branch of ${MYAPP_GIT} repo to sysgate branch"
 			ADDENV "SYSGATE_MERGE_${TEAM}=FAILED"
