@@ -18,23 +18,6 @@ pipeline {
 
 		stage('Git') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru') } }
 
-		stage('Hello-1') { 
-			steps { 
-				sh 'echo hell-1a'
-				sh 'echo hell-1b'
-				sh 'echo hell-1c'
-			} 
-		}
-
-		stage('Hello-2') { 
-			steps { 
-				shell( 'echo hell-2a')
-				shell( 'echo hell-2b')
-				shell( 'echo hell-2c')
-			} 
-		}
-
-/*
 		stage('Main-Gate-Entry') { steps { sh './cicd.sh Main-Gate-Entry' } }
 
 		stage('Team-Gate-Entry') { steps { sh './cicd.sh Team-Gate-Entry' } }
@@ -129,7 +112,7 @@ pipeline {
 		stage('Release-Gate-Exit') { steps { sh './cicd.sh Release-Gate-Exit' } }
 
 		stage('Exit') { steps { sh './cicd.sh Exit' } }
-*/
+
 	}
 }
       '''.stripIndent())
