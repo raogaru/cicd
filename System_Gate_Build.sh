@@ -1,7 +1,8 @@
 # ######################################################################
 ECHOpurple "script:System_Gate_Build.sh argument:$1 $2 START"
 # ######################################################################
-v_type=${1}	# build type
+v_team=${1}	# team name
+v_type=${2}	# deploy type
 
 HEADER2 "Build \"${v_type}\" in sysgate branch requested"
 
