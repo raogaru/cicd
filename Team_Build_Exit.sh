@@ -9,6 +9,7 @@ do
 	do
 		v_build=$(READENV TEAM_BUILD_${TEAM}_${PHASE})
 		[[ "${v_build}" == "FAILED" ]] && v_build_final="FAILED"
+		[[ "${v_build}" == "N/A" ]] && v_build_final="N/A"
 		ECHO "TEAM_BUILD_${TEAM}_${PHASE}=${v_build}"
 	done
 	ADDENV "TEAM_BUILD_${TEAM}=${v_build_final}"
