@@ -21,8 +21,15 @@ HEADER2 "Clone master branch"
 HEADER2 "Checkout team branches"
 	for TEAM in ${AGILE_TEAMS}
 	do
+		ECHO "git checkout team-${TEAM}"
 		git checkout team-${TEAM}
-        	[[ $? -ne 0 ]] && ERROR "Failed to checkout ${MYAPP_GIT} git repo team-${TEAM} branch"
+        	if [ $? -ne 0 ]; then
+			WARN "Failed to checkout ${MYAPP_GIT} git repo team-${TEAM} branch"
+			return 1
+		else
+			ECHO "git checkout team-${TEAM} successful"
+		fi
+		PrintLine2
 	done
 
 HEADER2 "Delete sysgate branch"
@@ -31,6 +38,12 @@ HEADER2 "Delete sysgate branch"
 HEADER2 "Create sysgate branch"
 	git branch sysgate
 	git checkout sysgate
+       	if [ $? -ne 0 ]; then
+		WARN "Failed to checkout ${MYAPP_GIT} git repo sysgate branch"
+		return 1
+	else
+		ECHO "git checkout sysgate successful"
+	fi
 
 HEADER2 "List all branches"
         git branch -a
@@ -69,6 +82,7 @@ done
 f_sysgate_git_merge_status () {
 ECHOpurple "function:f_sysgate_git_merge_status"
 
+HEADER2 "Check merge status for each team"
 v_merge_final="SUCCESS"
 for TEAM in ${AGILE_TEAMS}
 do
