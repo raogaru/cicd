@@ -1,7 +1,7 @@
 # ######################################################################
 ECHOpurple "script:System_Build_Exit.sh START"
 # ######################################################################
-HEADER2 "Evaluate build status for all build types ${BUILD_"
+HEADER2 "Evaluate build status for all build types ${BUILD_TYPES}"
 v_build_final="SUCCESS"
 for v_type in ${BUILD_TYPES}
 do

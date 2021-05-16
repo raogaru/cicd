@@ -1,7 +1,7 @@
 # ######################################################################
 ECHOpurple "script:System_Deploy_Exit.sh START"
 # ######################################################################
-HEADER2 "Evaluate team deploy status for ${v_team}"
+HEADER2 "Evaluate deploy status for all deploy types ${DEPLOY_TYPES}"
 v_deploy_final="SUCCESS"
 for v_type in ${DEPLOY_TYPES}
 do

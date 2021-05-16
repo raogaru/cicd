@@ -1,7 +1,7 @@
 # ######################################################################
 ECHOpurple "script:System_Test_Exit.sh START"
 # ######################################################################
-HEADER2 "Evaluate team test status for ${TEAM}"
+HEADER2 "Evaluate test status for all test types ${TEST_TYPES}"
 v_test_final="SUCCESS"
 for v_type in ${TEST_TYPES}
 do
