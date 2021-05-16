@@ -21,7 +21,7 @@ HEADER2 "Clone master branch"
 HEADER2 "Checkout team branches"
 	for TEAM in ${AGILE_TEAMS}
 	do
-		ECHO "git checkout team-${TEAM}"
+		ECHO "git checkout team-${TEAM} started"
 		git checkout team-${TEAM}
         	if [ $? -ne 0 ]; then
 			WARN "Failed to checkout ${MYAPP_GIT} git repo team-${TEAM} branch"

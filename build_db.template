@@ -1,5 +1,5 @@
 \l+ V_TEAM
-drop database if exists V_TEAM;
+drop database if exists V_TEAM with (force);
 \l+ V_TEAM
 create database V_TEAM;
 \l+ V_TEAM
