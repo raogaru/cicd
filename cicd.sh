@@ -106,14 +106,13 @@ case "${ARG1}" in
 	. ${WORKSPACE}/Team_Gate_Test.sh pluto phase3
 	;;
 "Team-Test-Exit") 
-	ECHOpurple "Option:${ARG1}"
 	. ${WORKSPACE}/Team_Test_Exit.sh 
 	;;
 "Team-Gate-Exit") 
-	ECHOpurple "Option:${ARG1}"
+	. ${WORKSPACE}/Team_Gate_Exit.sh 
 	;;
 "System-Gate-Entry") 
-	ECHOpurple "Option:${ARG1}"
+	. ${WORKSPACE}/System_Gate_Entry.sh
 	;;
 "System-Build-1") 
 	ECHOpurple "Option:${ARG1}"
@@ -124,6 +123,9 @@ case "${ARG1}" in
 "System-Build-3") 
 	ECHOpurple "Option:${ARG1}"
 	;;
+"System-Build-Exit") 
+	. ${WORKSPACE}/System_Build_Exit.sh
+	;;
 "System-Deploy-1") 
 	ECHOpurple "Option:${ARG1}"
 	;;
@@ -132,6 +134,9 @@ case "${ARG1}" in
 	;;
 "System-Deploy-3") 
 	ECHOpurple "Option:${ARG1}"
+	;;
+"System-Deploy-Exit") 
+	. ${WORKSPACE}/System_Deploy_Exit.sh
 	;;
 "System-Test-1") 
 	ECHOpurple "Option:${ARG1}"
@@ -142,8 +147,8 @@ case "${ARG1}" in
 "System-Test-3") 
 	ECHOpurple "Option:${ARG1}"
 	;;
-"Team-Test-Exit") 
-	. ${WORKSPACE}/Team_Test_Exit.sh
+"System-Test-Exit") 
+	. ${WORKSPACE}/System_Test_Exit.sh
 	;;
 "System-Gate-Exit") 
 	ECHOpurple "Option:${ARG1}"
