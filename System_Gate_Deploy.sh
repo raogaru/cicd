@@ -72,10 +72,10 @@ esac
 r=$?
 
 if [ $r -eq 0 ]; then
-	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=SUCCESS"
+	ADDENV "SYSGATE_DEPLOY_${v_type}=SUCCESS"
 	return 0
 else
-	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=FAILED"
+	ADDENV "SYSGATE_DEPLOY_${v_type}=FAILED"
 	return 1
 fi
 }
