@@ -160,7 +160,7 @@ case "${ARG1}" in
 	ECHOpurple "Option:${ARG1}"
 	;;
 "Release-Build") 
-	ECHOpurple "Option:${ARG1}"
+	. ${WORKSPACE}/Release_Gate_Build.sh.sh
 	;;
 "Release-Verify") 
 	ECHOpurple "Option:${ARG1}"
