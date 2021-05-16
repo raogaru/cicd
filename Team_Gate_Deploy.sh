@@ -4,7 +4,7 @@ ECHOpurple "script:Team_Gate_Deploy.sh argument:$1 $2 START"
 v_team=${1}	# team name
 v_type=${2}	# deploy type
 
-HEADER2 "Deploy \"${v_type}\" in team-${v_team} branch requested"
+HEADER2 "Deploy \"${v_type}\" from ${v_team} branch requested"
 
 # ----------------------------------------------------------------------
 f_teamgate_deploy_check_build_status () {

@@ -4,7 +4,7 @@ ECHOpurple "script:Team_Gate_Test.sh argument:$1 $2 START"
 v_team=${1}	# team name
 v_type=${2}	# test type
 
-HEADER2 "Test \"${v_type}\" in team-${v_team} branch requested"
+HEADER2 "Test \"${v_type}\" from team-${v_team} branch requested"
 
 HEADER2 "Check if deploy in team-${v_team} branch successful"
 
