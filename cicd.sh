@@ -105,6 +105,10 @@ case "${ARG1}" in
 "Team-Test-PLUTO-3") 
 	. ${WORKSPACE}/Team_Gate_Test.sh pluto phase3
 	;;
+"Team-Test-Exit") 
+	ECHOpurple "Option:${ARG1}"
+	. ${WORKSPACE}/Team_Test_Exit.sh 
+	;;
 "Team-Gate-Exit") 
 	ECHOpurple "Option:${ARG1}"
 	;;
@@ -137,6 +141,9 @@ case "${ARG1}" in
 	;;
 "System-Test-3") 
 	ECHOpurple "Option:${ARG1}"
+	;;
+"Team-Test-Exit") 
+	. ${WORKSPACE}/Team_Test_Exit.sh
 	;;
 "System-Gate-Exit") 
 	ECHOpurple "Option:${ARG1}"
