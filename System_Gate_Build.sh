@@ -70,9 +70,9 @@ v_team=sysgate
 r=$?
 
 if [ $? -eq 0 ]; then
-	ADDENV "TEAM_BUILD_${v_team}_${v_type}=SUCCESS"
+	ADDENV "SYSGATE_BUILD_${v_type}=SUCCESS"
 else
-	ADDENV "TEAM_BUILD_${v_team}_${v_type}=FAILED"
+	ADDENV "SYSGATE_BUILD_${v_type}=FAILED"
 fi
 }
 # ######################################################################
