@@ -11,6 +11,10 @@ pipeline {
 		ansiColor('xterm')
 		disableConcurrentBuilds()
 		timeout(59)
+		logRotator {
+			daysToKeep(1)
+        		numToKeep(5)
+		}
 	}
 
 	stages {
