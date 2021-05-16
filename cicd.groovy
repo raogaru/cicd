@@ -41,6 +41,8 @@ pipeline {
 		}}
 */
 
+		stage('Team-Build-Exit') { steps { sh './cicd.sh Team-Build-Exit' } }
+
 
 		//stage('Team-Deploy-1') { parallel {
 		stage('Team-Deploy-MARS-1') { steps { sh './cicd.sh Team-Deploy-MARS-1' } }
@@ -60,6 +62,8 @@ pipeline {
 		}}
 */
 
+		stage('Team-Deploy-Exit') { steps { sh './cicd.sh Team-Deploy-Exit' } }
+
 		//stage('Team-Test-1') { parallel {
 		stage('Team-Test-MARS-1') { steps { sh './cicd.sh Team-Test-MARS-1' } }
 		stage('Team-Test-VENUS-1') { steps { sh './cicd.sh Team-Test-VENUS-1' } }
@@ -77,6 +81,7 @@ pipeline {
 		stage('Team-Test-PLUTO-3') { steps { sh './cicd.sh Team-Test-PLUTO-3' } }
 		}}
 */
+		stage('Team-Test-Exit') { steps { sh './cicd.sh Team-Test-Exit' } }
 
 		stage('Team-Gate-Exit') { steps { sh './cicd.sh Team-Gate-Exit' } }
 

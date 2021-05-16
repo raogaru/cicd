@@ -45,6 +45,9 @@ case "${ARG1}" in
 "Team-Build-PLUTO-3") 
 	. ${WORKSPACE}/Team_Gate_Build.sh pluto ec2
 	;;
+"Team-Build-Exit") 
+	. ${WORKSPACE}/Team_Build_Exit.sh
+	;;
 "Team-Deploy-MARS-1") 
 	. ${WORKSPACE}/Team_Gate_Deploy.sh mars db
 	;;
