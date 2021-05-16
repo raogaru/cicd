@@ -9,7 +9,7 @@ HEADER2 "Build \"${v_type}\" in sysgate branch requested"
 f_sysgate_check_merge_status () {
 v_merge=$(READENV SYSGATE_MERGE)
 
-if [ "${v_merge}" != "YES" ] || [ "${v_checkout}" != "SUCCESS" ]; then
+if [ "${v_merge}" != "SUCCESS" ] ; then
 	WARN "MERGE=${v_merge}.  Hence, NOT doing build for sysgate"
 	ADDENV "SYSGATE_BUILD_${v_type}=N/A"
 	return -1
@@ -80,7 +80,7 @@ fi
 # ######################################################################
 f_sysgate_check_merge_status
 if [ $? -eq 0 ]; then 
-	f_teamgate_build
+	f_sysgate_build
 fi
 # ######################################################################
 ECHOpurple "script:System_Gate_Build.sh END"
