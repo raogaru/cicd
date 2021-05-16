@@ -115,28 +115,25 @@ case "${ARG1}" in
 	. ${WORKSPACE}/System_Gate_Entry.sh
 	;;
 "System-Build-1") 
-	. ${WORKSPACE}/System_Gate_Build.sh db 
+	. ${WORKSPACE}/System_Gate_Build.sh sysgate db 
 	;;
 "System-Build-2") 
-	. ${WORKSPACE}/System_Gate_Build.sh docker 
+	. ${WORKSPACE}/System_Gate_Build.sh sysgate docker 
 	;;
 "System-Build-3") 
-	. ${WORKSPACE}/System_Gate_Build.sh ec2 
+	. ${WORKSPACE}/System_Gate_Build.sh sysgate ec2 
 	;;
 "System-Build-Exit") 
 	. ${WORKSPACE}/System_Build_Exit.sh
 	;;
 "System-Deploy-1") 
-	ECHOpurple "Option:${ARG1}"
-	DUMMY_ACTION
+	. ${WORKSPACE}/System_Gate_Deploy.sh db 
 	;;
 "System-Deploy-2") 
-	ECHOpurple "Option:${ARG1}"
-	DUMMY_ACTION
+	. ${WORKSPACE}/System_Gate_Deploy.sh docker
 	;;
 "System-Deploy-3") 
-	ECHOpurple "Option:${ARG1}"
-	DUMMY_ACTION
+	. ${WORKSPACE}/System_Gate_Deploy.sh ec2 
 	;;
 "System-Deploy-Exit") 
 	. ${WORKSPACE}/System_Deploy_Exit.sh
