@@ -127,13 +127,13 @@ case "${ARG1}" in
 	. ${WORKSPACE}/System_Build_Exit.sh
 	;;
 "System-Deploy-1") 
-	. ${WORKSPACE}/System_Gate_Deploy.sh db 
+	. ${WORKSPACE}/System_Gate_Deploy.sh sysgate db 
 	;;
 "System-Deploy-2") 
-	. ${WORKSPACE}/System_Gate_Deploy.sh docker
+	. ${WORKSPACE}/System_Gate_Deploy.sh sysgate docker
 	;;
 "System-Deploy-3") 
-	. ${WORKSPACE}/System_Gate_Deploy.sh ec2 
+	. ${WORKSPACE}/System_Gate_Deploy.sh sysgate ec2 
 	;;
 "System-Deploy-Exit") 
 	. ${WORKSPACE}/System_Deploy_Exit.sh
