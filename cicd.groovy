@@ -20,9 +20,9 @@ pipeline {
 
 		stage('Hello-1') { 
 			steps { 
-				shell( 'echo hell-1a')
-				shell( 'echo hell-1b')
-				shell( 'echo hell-1c')
+				sh 'echo hell-1a'
+				sh 'echo hell-1b'
+				sh 'echo hell-1c'
 			} 
 		}
 
