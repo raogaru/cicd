@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:Team_Deploy_Exit.sh.sh START"
+ECHOpurple "script:Team_Deploy_Exit.sh START"
 # ######################################################################
 for TEAM in ${AGILE_TEAMS}
 do
@@ -15,5 +15,5 @@ do
 	ADDENV "TEAM_DEPLOY_${TEAM}=${v_deploy_final}"
 done
 # ######################################################################
-ECHOpurple "script:Team_Deploy_Exit.sh.sh END"
+ECHOpurple "script:Team_Deploy_Exit.sh END"
 # ######################################################################

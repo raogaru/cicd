@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:Team_Build_Exit.sh.sh START"
+ECHOpurple "script:Team_Build_Exit.sh START"
 # ######################################################################
 for TEAM in ${AGILE_TEAMS}
 do
@@ -15,5 +15,5 @@ do
 	ADDENV "TEAM_BUILD_${TEAM}=${v_build_final}"
 done
 # ######################################################################
-ECHOpurple "script:Team_Build_Exit.sh.sh END"
+ECHOpurple "script:Team_Build_Exit.sh END"
 # ######################################################################
