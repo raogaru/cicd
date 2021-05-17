@@ -61,7 +61,7 @@ for TEAM in ${AGILE_TEAMS}
 do
         echo ''
         HEADER2 "List of commits by team \"${TEAM}\":"
-        ECHO "git log origin/master..build-${TEAM}"
+        ECHO "git log origin/master..team-${TEAM}"
         git log origin/master..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'
         git log origin/master..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'  > ${PIPE_DIR}/git_commits_by_${TEAM}.lst
         if [ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]; then
@@ -69,6 +69,12 @@ do
 	else
 		ADDENV "TEAM_COMMITS_${TEAM}=NO"
 	fi
+
+        HEADER2 "List of files modified by team \"${TEAM}\":"
+        ECHO "git log origin/master..team-${TEAM}"
+        git log origin/master..origin/team-${TEAM} --pretty="" --name-only
+        git log origin/master..origin/team-${TEAM} --pretty="" --name-only > ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst
+
 done
 }
 # ----------------------------------------------------------------------

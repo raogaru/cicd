@@ -162,6 +162,9 @@ case "${ARG1}" in
 "Release-Build") 
 	. ${WORKSPACE}/Release_Gate_Build.sh
 	;;
+"Release-Artifacts") 
+	. ${WORKSPACE}/Release_Artifacts.sh
+	;;
 "Release-Verify") 
 	ECHOpurple "Option:${ARG1}"
 	;;
