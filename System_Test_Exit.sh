@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:System_Test_Exit.sh START"
+FileMarker "script:System_Test_Exit.sh START"
 # ######################################################################
 HEADER2 "Evaluate test status for all test types ${TEST_TYPES}"
 v_test_final="SUCCESS"
@@ -12,5 +12,5 @@ do
 done
 ADDENV "SYSGATE_TEST=${v_test_final}"
 # ######################################################################
-ECHOpurple "script:System_Test_Exit.sh END"
+FileMarker "script:System_Test_Exit.sh END"
 # ######################################################################

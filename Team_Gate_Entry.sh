@@ -1,9 +1,9 @@
 # ######################################################################
-ECHOpurple "script:Team_Gate_Entry.sh START"
+FileMarker "script:Team_Gate_Entry.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
 f_teamgate_checkout_master () {
-ECHOpurple "function:f_teamgate_checkout_master"
+FileMarker "function:f_teamgate_checkout_master"
 HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	GIT_MASTER_DIR=${PIPE_DIR}/git/master
 	mkdir -p ${GIT_MASTER_DIR}
@@ -26,7 +26,7 @@ HEADER2 "Make sure working on master branch"
 
 # ----------------------------------------------------------------------
 f_teamgate_validate_team_branches () {
-ECHOpurple "function:f_teamgate_validate_team_branches"
+FileMarker "function:f_teamgate_validate_team_branches"
 HEADER2 "List development teams"
         rm -f ${PIPE_DIR}/teams.tmp
         for TEAM in ${AGILE_TEAMS}; do echo "${TEAM}" >> ${PIPE_DIR}/teams.tmp; done
@@ -56,7 +56,7 @@ fi
 }
 # ----------------------------------------------------------------------
 f_teamgate_list_commits_by_each_team () {
-ECHOpurple "function:f_teamgate_list_commits_by_each_team"
+FileMarker "function:f_teamgate_list_commits_by_each_team"
 for TEAM in ${AGILE_TEAMS}
 do
         echo ''
@@ -79,7 +79,7 @@ done
 }
 # ----------------------------------------------------------------------
 f_teamgate_checkout_team_branch () {
-ECHOpurple "function:f_teamgate_checkout_team_branch"
+FileMarker "function:f_teamgate_checkout_team_branch"
 for TEAM in ${AGILE_TEAMS}
 do
 	v_commits=$(READENV TEAM_COMMITS_${TEAM})
@@ -112,5 +112,5 @@ f_teamgate_list_commits_by_each_team
 f_teamgate_checkout_team_branch
 
 # ######################################################################
-ECHOpurple "script:Team_Gate_Entry.sh END"
+FileMarker "script:Team_Gate_Entry.sh END"
 # ######################################################################

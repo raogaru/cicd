@@ -1,3 +1,3 @@
-ECHOpurple "script:build_maven.sh START"
+FileMarker "script:build_maven.sh START"
 ECHO "building maven "
-ECHOpurple "script:build_maven.sh END"
+FileMarker "script:build_maven.sh END"

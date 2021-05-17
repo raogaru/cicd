@@ -1,7 +1,7 @@
 # ######################################################################
-ECHOpurple "script:Team_Gate_Exit.sh START"
+FileMarker "script:Team_Gate_Exit.sh START"
 # ######################################################################
 echo arguments $* 
 # ######################################################################
-ECHOpurple "script:Team_Gate_Exit.sh END"
+FileMarker "script:Team_Gate_Exit.sh END"
 # ######################################################################

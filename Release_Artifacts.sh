@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:Release_Artifacts.sh argument:$1 $2 START"
+FileMarker "script:Release_Artifacts.sh argument:$1 $2 START"
 # ######################################################################
 
 
@@ -35,5 +35,5 @@ done
 
 
 # ######################################################################
-ECHOpurple "script:Release_Artifacts.sh END"
+FileMarker "script:Release_Artifacts.sh END"
 # ######################################################################

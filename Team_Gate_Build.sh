@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:Team_Gate_Build.sh argument:$1 $2 START"
+FileMarker "script:Team_Gate_Build.sh argument:$1 $2 START"
 # ######################################################################
 v_team=${1}	# team name
 v_type=${2}	# build type
@@ -24,7 +24,7 @@ fi
 }
 # ----------------------------------------------------------------------
 f_teamgate_build () {
-ECHOpurple "function:f_teamgate_build"
+FileMarker "function:f_teamgate_build"
 
 GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
 
@@ -84,5 +84,5 @@ if [ $? -eq 0 ]; then
 	f_teamgate_build
 fi
 # ######################################################################
-ECHOpurple "script:Team_Gate_Build.sh END"
+FileMarker "script:Team_Gate_Build.sh END"
 # ######################################################################

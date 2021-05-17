@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:build_db.sh START"
+FileMarker "script:build_db.sh START"
 # ######################################################################
 BUILD_DB_SQL=${PIPE_DIR}/build_db_${v_team}.sql
 
@@ -19,5 +19,5 @@ else
 fi
 
 # ######################################################################
-ECHOpurple "script:build_db.sh END"
+FileMarker "script:build_db.sh END"
 # ######################################################################

@@ -1,4 +1,4 @@
-ECHOpurple "script:deploy_db.sh START"
+FileMarker "script:deploy_db.sh START"
 
 V_DB=${1}
 
@@ -30,4 +30,4 @@ else
 	ERROR "Build DB failed for team ${v_team}"
 fi
 
-ECHOpurple "script:deploy_db.sh END"
+FileMarker "script:deploy_db.sh END"

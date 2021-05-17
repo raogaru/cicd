@@ -1,3 +1,3 @@
-ECHOpurple "script:build_docker.sh START"
+FileMarker "script:build_docker.sh START"
 ECHO "building docker image"
-ECHOpurple "script:build_docker.sh END"
+FileMarker "script:build_docker.sh END"

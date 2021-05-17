@@ -9,7 +9,7 @@ HEADER1 "BEGIN $ARG1"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
-ECHOpurple "script:cicd.sh argument:${ARG1} START"
+FileMarker "script:cicd.sh argument:${ARG1} START"
 
 case "${ARG1}" in
 "Main-Gate-Entry") 
@@ -139,25 +139,25 @@ case "${ARG1}" in
 	. ${WORKSPACE}/System_Deploy_Exit.sh
 	;;
 "System-Test-1") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "System-Test-2") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "System-Test-3") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "System-Test-Exit") 
 	. ${WORKSPACE}/System_Test_Exit.sh
 	;;
 "System-Gate-Exit") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "Release-Gate-Entry") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "Release-Prepare") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "Release-Build") 
 	. ${WORKSPACE}/Release_Gate_Build.sh
@@ -166,19 +166,19 @@ case "${ARG1}" in
 	. ${WORKSPACE}/Release_Artifacts.sh
 	;;
 "Release-Verify") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "Release-Publish") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "Release-Notify") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "Release-Gate-Exit") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "Main-Gate-Exit") 
-	ECHOpurple "Option:${ARG1}"
+	FileMarker "Option:${ARG1}"
 	;;
 "*")
 	ERROR "Invalid argument to cicd.sh"
@@ -187,7 +187,7 @@ esac
 
 r=$?
 if [ $r -eq 0 ]; then
-	ECHOpurple "script:cicd.sh END"
+	FileMarker "script:cicd.sh END"
 else
 	ECHOred "script:cicd.sh END FAILED"
 fi

@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:System_Build_Exit.sh START"
+FileMarker "script:System_Build_Exit.sh START"
 # ######################################################################
 HEADER2 "Evaluate build status for all build types ${BUILD_TYPES}"
 v_build_final="SUCCESS"
@@ -12,5 +12,5 @@ do
 done
 ADDENV "SYSGATE_BUILD=${v_build_final}"
 # ######################################################################
-ECHOpurple "script:System_Build_Exit.sh END"
+FileMarker "script:System_Build_Exit.sh END"
 # ######################################################################

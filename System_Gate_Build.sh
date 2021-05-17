@@ -1,5 +1,5 @@
 # ######################################################################
-ECHOpurple "script:System_Gate_Build.sh argument:$1 $2 START"
+FileMarker "script:System_Gate_Build.sh argument:$1 $2 START"
 # ######################################################################
 v_team=${1}	# team name
 v_type=${2}	# deploy type
@@ -21,7 +21,7 @@ fi
 }
 # ----------------------------------------------------------------------
 f_sysgate_build () {
-ECHOpurple "function:f_sysgate_build"
+FileMarker "function:f_sysgate_build"
 
 #GIT_SYSGATE_DIR=${PIPE_DIR}/git/sysgate
 
@@ -84,5 +84,5 @@ if [ $? -eq 0 ]; then
 	f_sysgate_build
 fi
 # ######################################################################
-ECHOpurple "script:System_Gate_Build.sh END"
+FileMarker "script:System_Gate_Build.sh END"
 # ######################################################################
