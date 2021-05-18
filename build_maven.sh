@@ -1,3 +1,7 @@
 FileMarker "script:build_maven.sh START"
-ECHO "building maven "
+
+ECHO "building jar using maven"
+
+java -cp target/myapp-1.0.jar com.raogaru.app.App
+
 FileMarker "script:build_maven.sh END"
