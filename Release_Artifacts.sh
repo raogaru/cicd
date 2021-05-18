@@ -30,7 +30,7 @@ do
 	echo ${vLINE2} >> ${REL_NOTES}
 	echo "Git Files Modified by Team \"${v_team}\""  >> ${REL_NOTES}
 	echo "" >> ${REL_NOTES}
-	cat ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst >> >> ${REL_NOTES}
+	cat ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst >> ${REL_NOTES}
 done
 
 
