@@ -182,7 +182,7 @@ ENV PGDATA /var/lib/postgresql/data
 RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PGDATA"
 VOLUME /var/lib/postgresql/data
 
-COPY docker-entrypoint.sh /usr/local/bin/postgres.sh
+COPY postgres.sh /usr/local/bin/postgres.sh
 RUN ln -s usr/local/bin/postgres.sh / # backwards compat
 ENTRYPOINT ["postgres.sh"]
 
