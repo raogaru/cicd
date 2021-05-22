@@ -10,9 +10,9 @@ HEADER2 "Build \"${v_type}\" in sysgate branch requested"
 f_sysgate_check_merge_status () {
 v_merge=$(READENV SYSGATE_MERGE)
 
-if [ "${v_merge}" != "SUCCESS" ] ; then
+if [ "${v_merge}" != "${cPASS}" ] ; then
 	WARN "MERGE=${v_merge}.  Hence, NOT doing build for sysgate"
-	ADDENV "SYSGATE_BUILD_${v_type}=N/A"
+	ADDENV "SYSGATE_BUILD_${v_type}=${cNOTA}"
 	return -1
 else
 	ECHO "Proceed with \"${v_type}\" build for sysgate ..."
@@ -71,9 +71,9 @@ v_team=sysgate
 r=$?
 
 if [ $? -eq 0 ]; then
-	ADDENV "SYSGATE_BUILD_${v_type}=SUCCESS"
+	ADDENV "SYSGATE_BUILD_${v_type}=${cPASS}"
 else
-	ADDENV "SYSGATE_BUILD_${v_type}=FAILED"
+	ADDENV "SYSGATE_BUILD_${v_type}=${cFAIL}"
 fi
 }
 # ######################################################################

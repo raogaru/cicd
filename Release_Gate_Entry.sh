@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:System_Gate_Entry.sh START"
+FileMarker "script:Release_Gate_Entry.sh START"
 # ######################################################################
 
 f_sysgate_git_checkout_sysgate_branch () {

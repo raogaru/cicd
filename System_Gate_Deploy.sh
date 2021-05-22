@@ -13,9 +13,9 @@ HEADER2 "Check if build in team-${v_team} branch"
 
 v_build=$(READENV SYSGATE_BUILD)
 
-if [ "${v_build}" != "SUCCESS" ]; then
+if [ "${v_build}" != "${cPASS}" ]; then
 	WARN "SYSGATE_BUILD=${v_build}. Hence, NOT doing deploy for ${v_team}"
-	ADDENV "SYSGATE_DEPLOY_${v_type}=N/A"
+	ADDENV "SYSGATE_DEPLOY_${v_type}=${cNOTA}"
 	return -1
 else
 	ECHO "Proceed with \"${v_type}\" deploy for ${v_team} ..."
@@ -72,10 +72,10 @@ esac
 r=$?
 
 if [ $r -eq 0 ]; then
-	ADDENV "SYSGATE_DEPLOY_${v_type}=SUCCESS"
+	ADDENV "SYSGATE_DEPLOY_${v_type}=${cPASS}"
 	return 0
 else
-	ADDENV "SYSGATE_DEPLOY_${v_type}=FAILED"
+	ADDENV "SYSGATE_DEPLOY_${v_type}=${cFAIL}"
 	return 1
 fi
 }

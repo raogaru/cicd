@@ -90,11 +90,16 @@ do
 	        mkdir -p ${GIT_TEAM_DIR}
 		cd ${GIT_TEAM_DIR}
 	        ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
-		git clone -b team-${TEAM} ${MYAPP_GIT} ${GIT_TEAM_DIR}
-		[[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo team-${TEAM} branch"
-		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
 		ADDENV "GIT_TEAM_DIR_${TEAM}=${GIT_TEAM_DIR}"
-		ADDENV "TEAM_CHECKOUT_${TEAM}=SUCCESS"
+		git clone -b team-${TEAM} ${MYAPP_GIT} ${GIT_TEAM_DIR}
+		if [ $? -ne 0 ]; then
+			ADDENV "TEAM_CHECKOUT_${TEAM}=${cFAIL}"
+			ERROR "Failed to clone ${MYAPP_GIT} git repo team-${TEAM} branch"
+		else
+			ADDENV "TEAM_CHECKOUT_${TEAM}=${cPASS}"
+		fi
+	
+		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
 	fi
 done
 

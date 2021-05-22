@@ -15,9 +15,9 @@ v_commits=$(READENV TEAM_COMMITS_${v_team})
 v_checkout=$(READENV TEAM_CHECKOUT_${v_team})
 v_build=$(READENV TEAM_BUILD_${v_team})
 
-if [ "${v_commits}" != "YES" ] || [ "${v_checkout}" != "SUCCESS" ] || [ "${v_build}" != "SUCCESS" ]; then
+if [ "${v_commits}" != "YES" ] || [ "${v_checkout}" != "${cPASS}" ] || [ "${v_build}" != "${cPASS}" ]; then
 	WARN "COMMITS=${v_commits}. CHECKOUT=${v_checkout}. BUILD=${v_build}. Hence, NOT doing deploy for team ${v_team}"
-	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=N/A"
+	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=${cNOTA}"
 	return -1
 else
 	ECHO "Proceed with \"${v_type}\" deploy for team ${v_team} ..."
@@ -74,10 +74,10 @@ esac
 r=$?
 
 if [ $r -eq 0 ]; then
-	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=SUCCESS"
+	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=${cPASS}"
 	return 0
 else
-	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=FAILED"
+	ADDENV "TEAM_DEPLOY_${v_team}_${v_type}=${cFAIL}"
 	return 1
 fi
 }

@@ -12,7 +12,7 @@ v_deployed=$(READENV TEAM_DEPLOY_${v_team})
 
 # ----------------------------------------------------------------------
 f_teamgate_test_val_build () {
-if [ "${v_deployed}" != "SUCCESS" ]; then
+if [ "${v_deployed}" != "${cPASS}" ]; then
 	ECHO "Deploy not scucess. Nothing to do."
 	return 1
 else
@@ -39,9 +39,9 @@ case "${v_type}" in
 esac
 r=$?
 if [ $? -eq 0 ]; then
-	ADDENV "TEAM_TEST_${v_team}_${v_type}=SUCCESS"
+	ADDENV "TEAM_TEST_${v_team}_${v_type}=${cPASS}"
 else
-	ADDENV "TEAM_TEST_${v_team}_${v_type}=FAILED"
+	ADDENV "TEAM_TEST_${v_team}_${v_type}=${cFAIL}"
 fi
 }
 # ----------------------------------------------------------------------
