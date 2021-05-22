@@ -107,12 +107,12 @@ pipeline {
 		stage('System-Gate-Exit') { steps { sh './cicd.sh System-Gate-Exit' } }
 
 		stage('Release-Gate-Entry') { steps { sh './cicd.sh Release-Gate-Entry' } }
-		stage('Release-Prepare') { steps { sh './cicd.sh Release-Prepare' } }
-		stage('Release-Build') { steps { sh './cicd.sh Release-Build' } }
-		stage('Release-Artifacts') { steps { sh './cicd.sh Release-Artifacts' } }
-		stage('Release-Verify') { steps { sh './cicd.sh Release-Verify' }} 
-		stage('Release-Publish') { steps { sh './cicd.sh Release-Publish' }} 
-		stage('Release-Notify') { steps { sh './cicd.sh Release-Notify' } }
+		stage('Release-Prepare') { steps { sh './cicd.sh Release-Gate-Prepare' } }
+		stage('Release-Build') { steps { sh './cicd.sh Release-Gate-Build' } }
+		stage('Release-Artifacts') { steps { sh './cicd.sh Release-Gate-Artifacts' } }
+		stage('Release-Verify') { steps { sh './cicd.sh Release-Gate-Verify' }} 
+		stage('Release-Publish') { steps { sh './cicd.sh Release-Gate-Publish' }} 
+		stage('Release-Notify') { steps { sh './cicd.sh Release-Gate-Notify' } }
 		stage('Release-Gate-Exit') { steps { sh './cicd.sh Release-Gate-Exit' } }
 
 		stage('Exit') { steps { sh './cicd.sh Exit' } }
