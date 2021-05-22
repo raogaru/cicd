@@ -33,14 +33,6 @@ ECHO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
 ECHO "Workspace directory is ${WORKSPACE}"
 
-HEADER2 "Build tomcat docker"
-docker build -t rao-tomcat docker/tomcat
-[[ $? -ne 0 ]] && ERROR "docker build failed for \"tomcat\""
-
-HEADER2 "Build postgres docker"
-docker build -t rao-postgres docker/postgres
-[[ $? -ne 0 ]] && ERROR "docker build failed for \"postgres\""
-
 echo "script:Main_Gate_Entry.sh END"
 # ######################################################################
 # EOF
