@@ -5,6 +5,7 @@ pipelineJob('DEMO-CI-Pipeline') {
       script('''
 pipeline {
 	agent any
+	 environmentVariables(PROCEED: 'YES')
 
 	options { 
 		timestamps()
@@ -12,6 +13,10 @@ pipeline {
 		disableConcurrentBuilds()
 		timeout(59)
 		buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '1'))
+	}
+
+	triggers {
+		cron('@hourly')
 	}
 
 	stages {
@@ -24,19 +29,7 @@ pipeline {
 		stage('Main-Gate-Checkin') { steps { sh './cicd.sh Main-Gate-Checkin' } }
 		stage('Main-Gate-Build') { steps { sh './cicd.sh Main-Gate-Build' } }
 
-		stage('Team-Gate-Entry') { 
-steps {
-	conditionalSteps {
-		condition {
-			stringsMatch('${vPROCEED}', 'YES', false)
-		}
-		runner('Fail')
-		steps {
-			sh './cicd.sh Team-Gate-Entry' 
-		}
-	}
-}
-}
+		stage('Team-Gate-Entry') { steps { sh './cicd.sh Team-Gate-Entry' } }
 
 		//stage('Team-Build-1') { parallel {
 		stage('Team-Build-MARS-1') { steps { sh './cicd.sh Team-Build-MARS-1' } }

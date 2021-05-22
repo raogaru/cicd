@@ -12,6 +12,7 @@ HEADER1 "BEGIN $ARG1"
 FileMarker "script:cicd.sh argument:${ARG1} START"
 
 case "${ARG1}" in
+
 "Main-Gate-Entry") . ${WORKSPACE}/Main_Gate_Entry.sh ;;
 "Main-Gate-Checkin") . ${WORKSPACE}/Main_Gate_Checkin.sh ;;
 "Main-Gate-Build") . ${WORKSPACE}/Main_Gate_Build.sh ;;
@@ -84,6 +85,7 @@ case "${ARG1}" in
 "Main-Gate-Exit") FileMarker "Option:${ARG1}" ;;
 
 "*") ERROR "Invalid argument to cicd.sh" ;;
+
 esac
 
 r=$?
