@@ -20,10 +20,23 @@ pipeline {
 		stage('Git') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru') } }
 
 		stage('Main-Gate-Entry') { steps { sh './cicd.sh Main-Gate-Entry' } }
+
 		stage('Main-Gate-Checkin') { steps { sh './cicd.sh Main-Gate-Checkin' } }
 		stage('Main-Gate-Build') { steps { sh './cicd.sh Main-Gate-Build' } }
 
-		stage('Team-Gate-Entry') { steps { sh './cicd.sh Team-Gate-Entry' } }
+		stage('Team-Gate-Entry') { 
+steps {
+	conditionalSteps {
+		condition {
+			stringsMatch('${vPROCEED}', 'YES', false)
+		}
+		runner('Fail')
+		steps {
+			sh './cicd.sh Team-Gate-Entry' 
+		}
+	}
+}
+}
 
 		//stage('Team-Build-1') { parallel {
 		stage('Team-Build-MARS-1') { steps { sh './cicd.sh Team-Build-MARS-1' } }
