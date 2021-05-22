@@ -33,7 +33,11 @@ ECHO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
 ECHO "Workspace directory is ${WORKSPACE}"
 
+HEADER2 "Build tomcat docker"
 docker build -t rao-tomcat docker/tomcat
+
+HEADER2 "Build postgres docker"
+docker build -t rao-postgres docker/postgres
 
 echo "script:Main_Gate_Entry.sh END"
 # ######################################################################
