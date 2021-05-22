@@ -33,6 +33,8 @@ ECHO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
 ECHO "Workspace directory is ${WORKSPACE}"
 
+docker build -t rao-tomcat docker/tomcat
+
 echo "script:Main_Gate_Entry.sh END"
 # ######################################################################
 # EOF
