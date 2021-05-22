@@ -20,6 +20,8 @@ pipeline {
 		stage('Git') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru') } }
 
 		stage('Main-Gate-Entry') { steps { sh './cicd.sh Main-Gate-Entry' } }
+		stage('Main-Gate-Checkin') { steps { sh './cicd.sh Main-Gate-Checkin' } }
+		stage('Main-Gate-Build') { steps { sh './cicd.sh Main-Gate-Build' } }
 
 		stage('Team-Gate-Entry') { steps { sh './cicd.sh Team-Gate-Entry' } }
 
