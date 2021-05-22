@@ -2,7 +2,7 @@
 FileMarker "script:Main_Gate_Build.sh START"
 # ######################################################################
 
-v_docker_build_final_status="${cPASS}
+v_docker_build_final_status=${cPASS}
 v_docker_build_final_point=""
 for v_docker in ${DOCKER_LIST}
 do
