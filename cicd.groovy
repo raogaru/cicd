@@ -13,6 +13,7 @@ pipeline {
 		disableConcurrentBuilds()
 		timeout(59)
 		buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '1'))
+//		ws('/tmp/cicd')
 	}
 
 	triggers {
@@ -22,7 +23,8 @@ pipeline {
 	stages {
 		stage('Banner') { steps { echo 'CI-PIPELINE-START' } }
 
-		stage('Git') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru') } }
+		stage('Git-CICD') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } }
+		stage('Git-MyApp') { steps { dir('myapp') { git(url: 'https://github.com/raogaru/myapp.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } } }
 
 		stage('Main-Gate-Entry') { steps { sh './cicd.sh Main-Gate-Entry' } }
 
