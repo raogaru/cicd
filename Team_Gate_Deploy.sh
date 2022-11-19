@@ -25,11 +25,11 @@ fi
 
 GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
 
-HEADER2 "List my branch"
+HEADER4 "List my branch"
 	cd ${GIT_TEAM_DIR}
         git branch 
 
-HEADER2 "Make sure working on team-${v_team} branch"
+HEADER4 "Make sure working on team-${v_team} branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
         [[ "${x1}" != "team-${v_team}" ]] && ECHOred "Current branch is not \"team-${v_team}\"." && return 1
         ECHO Current branch is "${x1}"
