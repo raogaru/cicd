@@ -13,6 +13,11 @@ Install: brew install jenkins
 
 Upgrade: brew upgrade jenkins
 
+vi /usr/local/Cellar/jenkins/2.378/homebrew.mxcl.jenkins.plist
+change httpPort from 8080 to 8101
+
+
+
 Start: brew services start jenkins
 
 Install Plugins: 
@@ -28,6 +33,19 @@ Install Plugins:
 [Pipeline-Build-Step](https://plugins.jenkins.io/pipeline-build-step/)
 [Pipeline-Stage-Step](https://plugins.jenkins.io/pipeline-stage-step/)
 [Docker-Pipeline](https://plugins.jenkins.io/docker-workflow/)
+[Mask-Passwords](https://plugins.jenkins.io/mask-passwords/)
+[Log-Parser](https://plugins.jenkins.io/log-parser/)
+[Collapsing-Console-Sections](https://plugins.jenkins.io/collapsing-console-sections/)
+[Console-Badge](https://plugins.jenkins.io/console-badge/)
+[Console-Tail](https://plugins.jenkins.io/console-tail/)
+[Job-DSL](https://plugins.jenkins.io/job-dsl/)
+
+Install plugsin using jenkins-cli
+export JENKINS_URL=http://localhost:8080/
+jenkins-cli -webSocket install-plugin  https://plugins.jenkins.io/docker-workflow/
+
+
+
 
 ---
 #### Liquibase
