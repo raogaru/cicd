@@ -9,7 +9,7 @@ cat ${BUILD_DB_SQL}
 
 HEADER2 "Execute ${BUILD_DB_SQL}"
 export PGPASSWORD=rao
-psql -h localhost -p 5432 -d rao -U rao -f ${BUILD_DB_SQL}
+${PGSQL_HOME}/bin/psql -h localhost -p 5432 -d rao -U rao -f ${BUILD_DB_SQL}
 r=$?
 
 if [ $r -eq 0 ]; then
