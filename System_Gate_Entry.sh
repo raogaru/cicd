@@ -1,9 +1,9 @@
 # ######################################################################
-FileMarker "script:System_Gate_Entry.sh START"
+MARKER "script:System_Gate_Entry.sh START"
 # ######################################################################
 
 f_sysgate_git_checkout_sysgate_branch () {
-FileMarker "function:f_sysgate_git_checkout_sysgate_branch"
+MARKER "function:f_sysgate_git_checkout_sysgate_branch"
 
 HEADER2 "Create directory for sysgate"
         GIT_SYSGATE_DIR=${PIPE_DIR}/git/sysgate
@@ -55,7 +55,7 @@ HEADER2 "Make sure working on sysgate branch"
 }
 # ----------------------------------------------------------------------
 f_sysgate_git_merge_team_branches () {
-FileMarker "function:f_sysgate_git_merge_team_branches"
+MARKER "function:f_sysgate_git_merge_team_branches"
 
 for TEAM in ${AGILE_TEAMS}
 do
@@ -80,7 +80,7 @@ done
 }
 # ----------------------------------------------------------------------
 f_sysgate_git_merge_status () {
-FileMarker "function:f_sysgate_git_merge_status"
+MARKER "function:f_sysgate_git_merge_status"
 
 HEADER2 "Check merge status for each team"
 v_merge_final="${cPASS}"
@@ -104,5 +104,5 @@ if [ $? -eq 0 ]; then
 	fi
 fi
 # ######################################################################
-FileMarker "script:System_Gate_Entry.sh END"
+MARKER "script:System_Gate_Entry.sh END"
 # ######################################################################

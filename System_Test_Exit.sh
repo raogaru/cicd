@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:System_Test_Exit.sh START"
+MARKER "script:System_Test_Exit.sh START"
 # ######################################################################
 HEADER2 "Evaluate test status for all test types ${TEST_TYPES}"
 v_test_final=${cPASS} 
@@ -12,5 +12,5 @@ do
 done
 ADDENV "SYSGATE_TEST=${v_test_final}"
 # ######################################################################
-FileMarker "script:System_Test_Exit.sh END"
+MARKER "script:System_Test_Exit.sh END"
 # ######################################################################

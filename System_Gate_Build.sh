@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:System_Gate_Build.sh argument:$1 $2 START"
+MARKER "script:System_Gate_Build.sh argument:$1 $2 START"
 # ######################################################################
 v_team=${1}	# team name
 v_type=${2}	# deploy type
@@ -21,7 +21,7 @@ fi
 }
 # ----------------------------------------------------------------------
 f_sysgate_build () {
-FileMarker "function:f_sysgate_build"
+MARKER "function:f_sysgate_build"
 
 #GIT_SYSGATE_DIR=${PIPE_DIR}/git/sysgate
 

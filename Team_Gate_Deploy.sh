@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:Team_Gate_Deploy.sh argument:$1 $2 START"
+MARKER "script:Team_Gate_Deploy.sh argument:$1 $2 START"
 # ######################################################################
 v_team=${1}	# team name
 v_type=${2}	# deploy type
@@ -90,5 +90,5 @@ if [ $? -eq 0 ]; then
 fi
 
 # ######################################################################
-FileMarker "script:Team_Gate_Deploy.sh END"
+MARKER "script:Team_Gate_Deploy.sh END"
 # ######################################################################

@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:Release_Artifacts.sh argument:$1 $2 START"
+MARKER "script:Release_Artifacts.sh argument:$1 $2 START"
 # ######################################################################
 
 REL_NOTES=${PIPE_DIR}/release_notes_${PIPE_NUM}.txt
@@ -54,5 +54,5 @@ done
 
 
 # ######################################################################
-FileMarker "script:Release_Artifacts.sh END"
+MARKER "script:Release_Artifacts.sh END"
 # ######################################################################

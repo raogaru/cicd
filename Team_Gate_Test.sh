@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:Team_Gate_Test.sh argument:$1 $2 START"
+MARKER "script:Team_Gate_Test.sh argument:$1 $2 START"
 # ######################################################################
 v_team=${1}	# team name
 v_type=${2}	# test type
@@ -50,5 +50,5 @@ if [ $? -eq 0 ]; then
 	f_teamgate_test
 fi
 # ######################################################################
-FileMarker "script:Team_Gate_Test.sh END"
+MARKER "script:Team_Gate_Test.sh END"
 # ######################################################################

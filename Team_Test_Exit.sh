@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:Team_Test_Exit.sh START"
+MARKER "script:Team_Test_Exit.sh START"
 # ######################################################################
 for v_team in ${AGILE_TEAMS}
 do
@@ -15,5 +15,5 @@ do
 	ADDENV "TEAM_TEST_${v_team}=${v_test_final}"
 done
 # ######################################################################
-FileMarker "script:Team_Test_Exit.sh END"
+MARKER "script:Team_Test_Exit.sh END"
 # ######################################################################

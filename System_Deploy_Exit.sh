@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:System_Deploy_Exit.sh START"
+MARKER "script:System_Deploy_Exit.sh START"
 # ######################################################################
 HEADER2 "Evaluate deploy status for all deploy types ${DEPLOY_TYPES}"
 v_deploy_final=${cPASS}
@@ -12,5 +12,5 @@ do
 done
 ADDENV "SYSGATE_DEPLOY=${v_deploy_final}"
 # ######################################################################
-FileMarker "script:System_Deploy_Exit.sh END"
+MARKER "script:System_Deploy_Exit.sh END"
 # ######################################################################

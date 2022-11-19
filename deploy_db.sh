@@ -5,7 +5,7 @@ V_DB=${1}
 HEADER2 "Deploy using liquibase to database \"${V_DB}\""
 ECHO "current directory is $PWD"
 
-liquibase \
+${LIQUIBASE_HOME}/liquibase \
   --driver=org.postgresql.Driver \
   --classpath=/Users/rao/.jenkins/war/WEB-INF/lib/postgresql-42.2.20.jar \
   --url="jdbc:postgresql://localhost:5432/${V_DB}" \

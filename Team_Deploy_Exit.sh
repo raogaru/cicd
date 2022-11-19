@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:Team_Deploy_Exit.sh START"
+MARKER "script:Team_Deploy_Exit.sh START"
 # ######################################################################
 for v_team in ${AGILE_TEAMS}
 do
@@ -15,5 +15,5 @@ do
 	ADDENV "TEAM_DEPLOY_${v_team}=${v_deploy_final}"
 done
 # ######################################################################
-FileMarker "script:Team_Deploy_Exit.sh END"
+MARKER "script:Team_Deploy_Exit.sh END"
 # ######################################################################

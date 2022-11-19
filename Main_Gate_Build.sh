@@ -1,5 +1,5 @@
 # ######################################################################
-FileMarker "script:Main_Gate_Build.sh START"
+MARKER "script:Main_Gate_Build.sh START"
 # ######################################################################
 
 v_docker_build_final_status=${cPASS}
@@ -21,5 +21,5 @@ done
 [[ "${v_docker_build_final_status}" == "${cFAIL}" ]] && ERROR "docker build failed. check ${PIPE_DIR}/docker_build_\*.log"
 
 # ######################################################################
-FileMarker "script:Main_Gate_Build.sh END"
+MARKER "script:Main_Gate_Build.sh END"
 # ######################################################################
