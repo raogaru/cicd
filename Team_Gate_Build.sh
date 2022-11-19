@@ -57,8 +57,8 @@ case "${v_type}" in
 	HEADER2 "Building database" 
 	DUMMY_ACTION
 	;;
-"pqr") 
-	HEADER2 "Building pqr " 
+"abc") 
+	HEADER2 "Building abc " 
 	DUMMY_ACTION
 	;;
 "xyz") 
