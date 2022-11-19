@@ -9,7 +9,7 @@ HEADER1 "BEGIN $ARG1"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
-FileMarker "script:cicd.sh argument:${ARG1} START"
+MARKER "script:cicd.sh argument:${ARG1} START"
 
 case "${ARG1}" in
 
@@ -66,23 +66,23 @@ case "${ARG1}" in
 "System-Deploy-3") . ${WORKSPACE}/System_Gate_Deploy.sh sysgate ec2 ;;
 "System-Deploy-Exit") . ${WORKSPACE}/System_Deploy_Exit.sh ;;
 
-"System-Test-1") FileMarker "Option:${ARG1}" ;;
-"System-Test-2") FileMarker "Option:${ARG1}" ;;
-"System-Test-3") FileMarker "Option:${ARG1}" ;;
+"System-Test-1") MARKER "Option:${ARG1}" ;;
+"System-Test-2") MARKER "Option:${ARG1}" ;;
+"System-Test-3") MARKER "Option:${ARG1}" ;;
 "System-Test-Exit") . ${WORKSPACE}/System_Test_Exit.sh ;;
 
-"System-Gate-Exit") FileMarker "Option:${ARG1}" ;;
+"System-Gate-Exit") MARKER "Option:${ARG1}" ;;
 
-"Release-Gate-Entry") FileMarker "Option:${ARG1}" ;;
-"Release-Gate-Prepare") FileMarker "Option:${ARG1}" ;;
+"Release-Gate-Entry") MARKER "Option:${ARG1}" ;;
+"Release-Gate-Prepare") MARKER "Option:${ARG1}" ;;
 "Release-Gate-Build") . ${WORKSPACE}/Release_Gate_Build.sh ;;
 "Release-Gate-Artifacts") . ${WORKSPACE}/Release_Artifacts.sh ;;
-"Release-Gate-Verify") FileMarker "Option:${ARG1}" ;;
-"Release-Gate-Publish") FileMarker "Option:${ARG1}" ;;
-"Release-Gate-Notify") FileMarker "Option:${ARG1}" ;;
-"Release-Gate-Exit") FileMarker "Option:${ARG1}" ;;
+"Release-Gate-Verify") MARKER "Option:${ARG1}" ;;
+"Release-Gate-Publish") MARKER "Option:${ARG1}" ;;
+"Release-Gate-Notify") MARKER "Option:${ARG1}" ;;
+"Release-Gate-Exit") MARKER "Option:${ARG1}" ;;
 
-"Main-Gate-Exit") FileMarker "Option:${ARG1}" ;;
+"Main-Gate-Exit") MARKER "Option:${ARG1}" ;;
 
 "*") ERROR "Invalid argument to cicd.sh" ;;
 
@@ -90,7 +90,7 @@ esac
 
 r=$?
 if [ $r -eq 0 ]; then
-	FileMarker "script:cicd.sh END"
+	MARKER "script:cicd.sh END"
 else
 	ECHOred "script:cicd.sh END FAILED"
 fi
