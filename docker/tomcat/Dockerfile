@@ -3,7 +3,7 @@
 # ######################################################################
 FROM centos
 
-MAINTAINER rao@raogaru.com
+MAINTAINER raogaruinc@gmail.com
 
 RUN mkdir /opt/tomcat/
 
