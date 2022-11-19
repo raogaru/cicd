@@ -9,11 +9,13 @@ CI/CD Pipeline Code
 
 [1. Install Jenkins](https://www.jenkins.io/doc/book/installing/)
 
-brew install jenkins
-brew upgrade jenkins
-brew services start jenkins
+Install: brew install jenkins
 
-Plugins: 
+Upgrade: brew upgrade jenkins
+
+Start: brew services start jenkins
+
+Install Plugins: 
 [AnsiColor](https://plugins.jenkins.io/ansicolor/)
 [Timestamper](https://plugins.jenkins.io/timestamper/)
 [Workspace-Cleanup](https://plugins.jenkins.io/ws-cleanup/)
