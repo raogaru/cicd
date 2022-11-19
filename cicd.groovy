@@ -28,7 +28,6 @@ pipeline {
 
 		stage('Main-Gate-Entry') { steps { sh './cicd.sh Main-Gate-Entry' } }
 
-		stage('Main-Gate-Checkin') { steps { sh './cicd.sh Main-Gate-Checkin' } }
 		stage('Main-Gate-Build') { steps { sh './cicd.sh Main-Gate-Build' } }
 
 		stage('Team-Gate-Entry') { steps { sh './cicd.sh Team-Gate-Entry' } }
