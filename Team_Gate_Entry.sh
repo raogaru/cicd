@@ -97,7 +97,7 @@ do
 		else
 			ADDENV "TEAM_CHECKOUT_${TEAM}=${cFAIL}"
 			ERROR "Failed to clone ${MYAPP_GIT} git repo team-${TEAM} branch"
-		if
+		fi
 		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
 	fi
 done
