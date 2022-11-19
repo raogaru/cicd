@@ -16,16 +16,16 @@ brew services start jenkins
 Plugins: 
 [AnsiColor](https://plugins.jenkins.io/ansicolor/)
 [Timestamper](https://plugins.jenkins.io/timestamper/)
-[Workspace Cleanup](https://plugins.jenkins.io/ws-cleanup/)
-[Build Timeout](https://plugins.jenkins.io/build-timeout/)
-[Display Console Output](https://plugins.jenkins.io/display-console-output/)
+[Workspace-Cleanup](https://plugins.jenkins.io/ws-cleanup/)
+[Build-Timeout](https://plugins.jenkins.io/build-timeout/)
+[Display-Console Output](https://plugins.jenkins.io/display-console-output/)
 [Git](https://plugins.jenkins.io/git)
-[Git Parameter](https://plugins.jenkins.io/git-parameter/)
+[Git-Parameter](https://plugins.jenkins.io/git-parameter/)
 [Pipeline](https://plugins.jenkins.io/workflow-aggregator/)
-[Pipeline: Groovy](https://plugins.jenkins.io/workflow-cps/)
-[Pipeline: Build Step](https://plugins.jenkins.io/pipeline-build-step/)
-[Pipeline: Stage Step](https://plugins.jenkins.io/pipeline-stage-step/)
-[Docker Pipeline](https://plugins.jenkins.io/docker-workflow/)
+[Pipeline-Groovy](https://plugins.jenkins.io/workflow-cps/)
+[Pipeline-Build-Step](https://plugins.jenkins.io/pipeline-build-step/)
+[Pipeline-Stage-Step](https://plugins.jenkins.io/pipeline-stage-step/)
+[Docker-Pipeline](https://plugins.jenkins.io/docker-workflow/)
 
 ---
 #### Liquibase
