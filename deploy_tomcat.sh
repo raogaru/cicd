@@ -1,3 +1,3 @@
-FileMarker "script:deploy_tomcat.sh START"
+MARKER "script:deploy_tomcat.sh START"
 ECHO "deploy_tomcat"
-FileMarker "script:deploy_tomcat.sh END"
+MARKER "script:deploy_tomcat.sh END"
