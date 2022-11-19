@@ -13,9 +13,6 @@ f_teamgate_checkout_status_check () {
 v_commits=$(READENV TEAM_COMMITS_${v_team})
 v_checkout=$(READENV TEAM_CHECKOUT_${v_team})
 
-ECHO ${v_commits}
-ECHO ${v_checkout}
-
 if [ "${v_commits}" != "YES" ] || [ "${v_checkout}" != "${cPASS}" ]; then
 	WARN "COMMITS=${v_commits}.  CHECKOUT=${v_checkout}. Hence, NOT doing build for team-${v_team}"
 	ADDENV "TEAM_BUILD_${v_team}_${v_type}=${cNOTA}"
@@ -31,11 +28,11 @@ FileMarker "function:f_teamgate_build"
 
 GIT_TEAM_DIR=${PIPE_DIR}/git/${v_team}
 
-HEADER2 "List my branch"
+HEADER3 "List my branch"
         cd ${GIT_TEAM_DIR}
         git branch
 
-HEADER2 "Make sure working on team-${v_team} branch"
+HEADER3 "Make sure working on team-${v_team} branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
         [[ "${x1}" != "team-${v_team}" ]] && ECHOred "Current branch is not \"team-${v_team}\"." && return 1
         ECHO Current branch is "${x1}"
