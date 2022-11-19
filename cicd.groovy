@@ -5,7 +5,7 @@ pipelineJob('DEMO-CI-Pipeline') {
       script('''
 pipeline {
 	agent any
-	 environmentVariables(PROCEED: 'YES')
+//	environmentVariables(PROCEED: 'YES')
 
 	options { 
 		timestamps()
