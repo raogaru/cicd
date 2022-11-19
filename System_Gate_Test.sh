@@ -1,8 +1,9 @@
 # ######################################################################
-MARKER "script:System_Gate_Test.sh argument:$1 $2 START"
+MARKER "script:System_Gate_Test.sh argument:$1 START"
 # ######################################################################
 echo "Script $0 START"
 echo $* 
+DUMMY_ACTION
 echo "Script $0 END"
 # ######################################################################
 # EOF
