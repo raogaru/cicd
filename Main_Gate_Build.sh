@@ -7,6 +7,7 @@ v_docker_build_final_point=""
 for v_docker in ${DOCKER_LIST}
 do
 	HEADER2 "DOCKER BUILD ${v_docker}"
+	WARN "Commented docker build command"
 	#${DOCKER_HOME}/bin/docker build -t rao-${v_docker} -q docker/${v_docker} | tee ${PIPE_DIR}/docker_build_${v_docker}.log
 	if [ $? -eq 0 ]; then
 		ADDENV "DOCKER_BUILD_${v_docker}=${cPASS}"
