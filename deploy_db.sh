@@ -1,4 +1,4 @@
-FileMarker "script:deploy_db.sh START"
+MARKER "script:deploy_db.sh START"
 
 V_DB=${1}
 
@@ -30,4 +30,4 @@ else
 	ERROR "Build DB failed for team ${v_team}"
 fi
 
-FileMarker "script:deploy_db.sh END"
+MARKER "script:deploy_db.sh END"
