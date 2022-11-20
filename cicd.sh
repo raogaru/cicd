@@ -5,7 +5,7 @@
 ARG1=$1
 source cicd.env
 set +x
-HEADER1 "BEGIN $ARG1"
+HEADER1 "BEGIN STAGE $ARG1"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
@@ -95,5 +95,5 @@ else
 	ECHOred "script:cicd.sh END FAILED"
 fi
 # ######################################################################
-FOOTER1 "END $ARG1"
+FOOTER1 "END STAGE $ARG1"
 # ######################################################################
