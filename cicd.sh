@@ -66,9 +66,9 @@ case "${ARG1}" in
 "System-Deploy-3") . ${WORKSPACE}/System_Gate_Deploy.sh sysgate ec2 ;;
 "System-Deploy-Exit") . ${WORKSPACE}/System_Deploy_Exit.sh ;;
 
-"System-Test-1") MARKER "Option:${ARG1}" ;;
-"System-Test-2") MARKER "Option:${ARG1}" ;;
-"System-Test-3") MARKER "Option:${ARG1}" ;;
+"System-Test-1") . ${WORKSPACE}/System_Gate_Test.sh phase1 ;;
+"System-Test-2") . ${WORKSPACE}/System_Gate_Test.sh phase2 ;;
+"System-Test-3") . ${WORKSPACE}/System_Gate_Test.sh phase3 ;;
 "System-Test-Exit") . ${WORKSPACE}/System_Test_Exit.sh ;;
 
 "System-Gate-Exit") MARKER "Option:${ARG1}" ;;
