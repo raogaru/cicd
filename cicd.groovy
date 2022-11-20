@@ -8,6 +8,7 @@ pipeline {
 //	environmentVariables(PROCEED: 'YES')
 
 	options { 
+		colorizeOutput()
 		timestamps()
 		ansiColor('xterm')
 		disableConcurrentBuilds()
