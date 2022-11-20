@@ -69,6 +69,11 @@ git clone https://github.com/raogaru/cicd.git
 
 git clone https://github.com/raogaru/myapp.git
 
-![airflow-dag-png](cicd.png?raw=true)
-
-
+---
+#### Airflow Pipeline Diagrams
+![CI-Pipeline-Summary](ci-pipeline-summary.png?raw=true)
+![CI-Main-Gate](ci-main-gate.png?raw=true)
+![CI-Team-Gate](ci-team-gate.png?raw=true)
+![CI-System-Gate](ci-system-gate.png?raw=true)
+![CI-Release-Gate](ci-release-gate.png?raw=true)
+![CI-Pipeline-Detail](ci-pipeline-detail.png?raw=true)
