@@ -69,5 +69,6 @@ git clone https://github.com/raogaru/cicd.git
 
 git clone https://github.com/raogaru/myapp.git
 
+![airflow-dag-png](cicd.png?raw=true)
 
 
