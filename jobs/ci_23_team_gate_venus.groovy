@@ -20,6 +20,7 @@ pipeline {
 	stages {
 		stage('Team-Gate-Start-VENUS') { steps { echo 'CI-PIPELINE-TEAM-GATE-VENUS-START' } } 
 
+		stage('Team-Gate-Git-VENUS') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } }
 		stage('Team-Gate-Enter-VENUS') { steps { sh './ci.sh DUMMY' } }
 
 		stage('Team-Gate-Build-Enter-VENUS') { steps { sh './ci.sh DUMMY' } }

@@ -20,6 +20,7 @@ pipeline {
 	stages {
 		stage('System-Gate-Start') { steps { echo 'CI-PIPELINE-SYSTEM-GATE-START' } } 
 
+		stage('System-Gate-Git-CICD') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } }
 		stage('System-Gate-Enter') { steps { sh './ci.sh DUMMY' } }
 
 		stage('System-Gate-Build-Enter') { steps { sh './ci.sh DUMMY' } }

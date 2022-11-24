@@ -20,6 +20,7 @@ pipeline {
 	stages {
 		stage('Team-Gate-Start-PLUTO') { steps { echo 'CI-PIPELINE-TEAM-GATE-PLUTO-START' } } 
 
+		stage('Team-Gate-Git-MARS') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } }
 		stage('Team-Gate-Enter-PLUTO') { steps { sh './ci.sh DUMMY' } }
 
 		stage('Team-Gate-Build-Enter-PLUTO') { steps { sh './ci.sh DUMMY' } }
