@@ -22,8 +22,6 @@ pipeline {
 		stage('end') { steps { echo 'CI-PIPELINE-TEAM-GATE-END' } } 
 	}
 }
-
-
       '''.stripIndent())
       sandbox()
     }
