@@ -3,6 +3,10 @@
 # ci.sh - Main program to be called by CI-Jenkins-pipeline
 # ######################################################################
 ARG1=$1
+ARG2=$2
+ARG3=$3
+ARG4=$4
+ARG5=$5
 source cicd.env
 set +x
 HEADER1 "BEGIN STAGE $ARG1"
@@ -13,9 +17,10 @@ MARKER "script:ci.sh argument:${ARG1} START"
 
 case "${ARG1}" in
 
-"Main-Gate-Enter") . ${WORKSPACE}/Main_Gate_Enter.sh ;;
-"Main-Gate-Checkin") . ${WORKSPACE}/Main_Gate_Checkin.sh ;;
-"Main-Gate-Build") . ${WORKSPACE}/Main_Gate_Build.sh ;;
+"Main-Gate-Enter") . ${WORKSPACE}/mg_Enter.sh ;;
+"Main-Gate-Checkin") . ${WORKSPACE}/mg_Checkin.sh ;;
+"Main-Gate-Prepare") . ${WORKSPACE}/mg_Prepare.sh ${ARG2};;
+"Main-Gate-Verify") . ${WORKSPACE}/mg_Verify.sh ;;
 
 "Team-Gate-Enter") . ${WORKSPACE}/tg_Enter.sh ;;
 
