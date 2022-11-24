@@ -1,3 +1,8 @@
+// ######################################################################
+pipelineJob('DEMO-CI-Pipeline') {
+  definition {
+    cps {
+      script('''
 pipeline {
 	agent any
 	options { 
@@ -37,3 +42,9 @@ pipeline {
 	}
 }
 
+      '''.stripIndent())
+      sandbox()
+    }
+  }
+}
+// ######################################################################

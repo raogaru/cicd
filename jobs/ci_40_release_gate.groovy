@@ -1,3 +1,8 @@
+// ######################################################################
+pipelineJob('DEMO-CI-Pipeline') {
+  definition {
+    cps {
+      script('''
 pipeline {
 	agent any
 	options { 
@@ -38,3 +43,9 @@ pipeline {
 		stage('Release-Gate-End') { steps { echo 'CI-PIPELINE-RELEASE-GATE-END' } } 
 	}
 }
+      '''.stripIndent())
+      sandbox()
+    }
+  }
+}
+// ######################################################################
