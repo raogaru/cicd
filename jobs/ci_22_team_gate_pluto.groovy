@@ -1,5 +1,5 @@
 // ######################################################################
-pipelineJob('ci-22-team-gate-PLUTO') {
+pipelineJob('DEMO-CI-22-team-gate-PLUTO') {
   definition {
     cps {
       script('''

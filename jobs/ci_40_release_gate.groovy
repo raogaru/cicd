@@ -1,5 +1,5 @@
 // ######################################################################
-pipelineJob('ci-40-release-gate') {
+pipelineJob('DEMO-CI-40-release-gate') {
   definition {
     cps {
       script('''

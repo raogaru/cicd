@@ -1,5 +1,5 @@
 // ######################################################################
-pipelineJob('ci-00-pipeline') {
+pipelineJob('DEMO-CI-00-pipeline') {
   definition {
     cps {
       script('''
@@ -19,10 +19,10 @@ pipeline {
 
 	stages {
 		stage('start') { steps { echo 'CI-PIPELINE-START' } } 
-		stage ('ci-10-main-gate') {steps {build job: 'ci-10-main-gate', parameters: [string(name: 'param1', value: "value1")]}}
-		stage ('ci-20-team-gate') {steps {build job: 'ci-20-team-gate', parameters: [string(name: 'param1', value: "value1")]}}
-		stage ('ci-30-system-gate') {steps {build job: 'ci-30-system-gate', parameters: [string(name: 'param1', value: "value1")]}}
-		stage ('ci-40-release-gate') {steps {build job: 'ci-40-release-gate', parameters: [string(name: 'param1', value: "value1")]}}
+		stage ('DEMO-CI-10-main-gate') {steps {build job: 'DEMO-CI-10-main-gate', parameters: [string(name: 'param1', value: "value1")]}}
+		stage ('DEMO-CI-20-team-gate') {steps {build job: 'DEMO-CI-20-team-gate', parameters: [string(name: 'param1', value: "value1")]}}
+		stage ('DEMO-CI-30-system-gate') {steps {build job: 'DEMO-CI-30-system-gate', parameters: [string(name: 'param1', value: "value1")]}}
+		stage ('DEMO-CI-40-release-gate') {steps {build job: 'DEMO-CI-40-release-gate', parameters: [string(name: 'param1', value: "value1")]}}
 		stage('end') { steps { echo 'CI-PIPELINE-END' } } 
 	}
 }
