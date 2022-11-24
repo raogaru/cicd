@@ -1,7 +1,6 @@
 pipeline {
 	agent any
 	options { 
-		colorizeOutput()
 		timestamps()
 		ansiColor('xterm')
 		disableConcurrentBuilds()
