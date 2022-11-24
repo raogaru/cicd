@@ -26,7 +26,9 @@ pipeline {
 	}
 
 	stage('Main-Gate-Enter') { steps { sh './ci.sh DUMMY' } }
+
 	stage('Main-Gate-Checkin') { steps { sh './ci.sh DUMMY' } }
+
 	stage('Main-Gate-Build') { 
 		parallel {
 			stage('Main-Gate-Build-DB-Docker') { steps { sh './ci.sh DUMMY' } }
