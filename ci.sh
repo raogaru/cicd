@@ -24,51 +24,79 @@ case "${ARG1}" in
 
 "Team-Gate-Enter") . ${WORKSPACE}/tg_Enter.sh ;;
 
-"Team-Gate-Build-MARS-1") . ${WORKSPACE}/tgBuild.sh mars db ;;
-"Team-Gate-Build-MARS-2") . ${WORKSPACE}/tgBuild.sh mars docker ;;
-"Team-Gate-Build-MARS-3") . ${WORKSPACE}/tgBuild.sh mars ec2 ;;
+"Team-Gate-MARS-Enter") 	. ${WORKSPACE}/tg_Enter.sh MARS ;;
+"Team-Gate-Build-MARS-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh MARS ;;
+"Team-Gate-Build-MARS-DB1") 	. ${WORKSPACE}/tgBuild.sh MARS db1 ;;
+"Team-Gate-Build-MARS-DB2") 	. ${WORKSPACE}/tgBuild.sh MARS db1 ;;
+"Team-Gate-Build-MARS-WWW") 	. ${WORKSPACE}/tgBuild.sh MARS www ;;
+"Team-Gate-Build-MARS-APP1") 	. ${WORKSPACE}/tgBuild.sh MARS app1 ;;
+"Team-Gate-Build-MARS-APP2") 	. ${WORKSPACE}/tgBuild.sh MARS app2 ;;
+"Team-Gate-Build-MARS-APP3") 	. ${WORKSPACE}/tgBuild.sh MARS app3 ;;
+"Team-Gate-Build-MARS-Exit") 	. ${WORKSPACE}/tgBuild_Exit.sh MARS ;;
+"Team-Gate-Deploy-MARS-Enter") 	. ${WORKSPACE}/tgDeploy_Enter.sh MARS ;;
+"Team-Gate-Deploy-MARS-DB1") 	. ${WORKSPACE}/tgDeploy.sh MARS db1 ;;
+"Team-Gate-Deploy-MARS-DB2") 	. ${WORKSPACE}/tgDeploy.sh MARS db2 ;;
+"Team-Gate-Deploy-MARS-WWW") 	. ${WORKSPACE}/tgDeploy.sh MARS www ;;
+"Team-Gate-Deploy-MARS-APP1") 	. ${WORKSPACE}/tgDeploy.sh MARS app1 ;;
+"Team-Gate-Deploy-MARS-APP2") 	. ${WORKSPACE}/tgDeploy.sh MARS app2 ;;
+"Team-Gate-Deploy-MARS-APP3") 	. ${WORKSPACE}/tgDeploy.sh MARS app3 ;;
+"Team-Gate-Deploy-MARS-Exit") 	. ${WORKSPACE}/tgDeploy_Exit.sh MARS ;;
+"Team-Gate-Test-MARS-Enter") 	. ${WORKSPACE}/tgTest_Enter.sh MARS enter ;;
+"Team-Gate-Test-MARS-Functional") . ${WORKSPACE}/tgTest.sh MARS functional ;;
+"Team-Gate-Test-MARS-Performance"). ${WORKSPACE}/tgTest.sh MARS performance ;;
+"Team-Gate-Test-MARS-Security") . ${WORKSPACE}/tgTest.sh MARS security ;;
+"Team-Gate-Test-MARS-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh MARS ;;
+"Team-Gate-MARS-Exit") 		. ${WORKSPACE}/tg_Exit.sh MARS ;;
 
-"Team-Gate-Deploy-MARS-1") . ${WORKSPACE}/tgDeploy.sh mars db ;;
-"Team-Gate-Deploy-MARS-2") . ${WORKSPACE}/tgDeploy.sh mars kubernetes ;;
-"Team-Gate-Deploy-MARS-3") . ${WORKSPACE}/tgDeploy.sh mars tomcat ;;
+"Team-Gate-PLUTO-Enter") 	. ${WORKSPACE}/tg_Enter.sh PLUTO ;;
+"Team-Gate-Build-PLUTO-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh PLUTO ;;
+"Team-Gate-Build-PLUTO-DB1") 	. ${WORKSPACE}/tgBuild.sh PLUTO db1 ;;
+"Team-Gate-Build-PLUTO-DB2") 	. ${WORKSPACE}/tgBuild.sh PLUTO db1 ;;
+"Team-Gate-Build-PLUTO-WWW") 	. ${WORKSPACE}/tgBuild.sh PLUTO www ;;
+"Team-Gate-Build-PLUTO-APP1") 	. ${WORKSPACE}/tgBuild.sh PLUTO app1 ;;
+"Team-Gate-Build-PLUTO-APP2") 	. ${WORKSPACE}/tgBuild.sh PLUTO app2 ;;
+"Team-Gate-Build-PLUTO-APP3") 	. ${WORKSPACE}/tgBuild.sh PLUTO app3 ;;
+"Team-Gate-Build-PLUTO-Exit") 	. ${WORKSPACE}/tgBuild_Exit.sh PLUTO ;;
+"Team-Gate-Deploy-PLUTO-Enter") 	. ${WORKSPACE}/tgDeploy_Enter.sh PLUTO ;;
+"Team-Gate-Deploy-PLUTO-DB1") 	. ${WORKSPACE}/tgDeploy.sh PLUTO db1 ;;
+"Team-Gate-Deploy-PLUTO-DB2") 	. ${WORKSPACE}/tgDeploy.sh PLUTO db2 ;;
+"Team-Gate-Deploy-PLUTO-WWW") 	. ${WORKSPACE}/tgDeploy.sh PLUTO www ;;
+"Team-Gate-Deploy-PLUTO-APP1") 	. ${WORKSPACE}/tgDeploy.sh PLUTO app1 ;;
+"Team-Gate-Deploy-PLUTO-APP2") 	. ${WORKSPACE}/tgDeploy.sh PLUTO app2 ;;
+"Team-Gate-Deploy-PLUTO-APP3") 	. ${WORKSPACE}/tgDeploy.sh PLUTO app3 ;;
+"Team-Gate-Deploy-PLUTO-Exit") 	. ${WORKSPACE}/tgDeploy_Exit.sh PLUTO ;;
+"Team-Gate-Test-PLUTO-Enter") 	. ${WORKSPACE}/tgTest_Enter.sh PLUTO enter ;;
+"Team-Gate-Test-PLUTO-Functional") . ${WORKSPACE}/tgTest.sh PLUTO functional ;;
+"Team-Gate-Test-PLUTO-Performance"). ${WORKSPACE}/tgTest.sh PLUTO performance ;;
+"Team-Gate-Test-PLUTO-Security") . ${WORKSPACE}/tgTest.sh PLUTO security ;;
+"Team-Gate-Test-PLUTO-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh PLUTO ;;
+"Team-Gate-PLUTO-Exit") 		. ${WORKSPACE}/tg_Exit.sh PLUTO ;;
 
-"Team-Gate-Test-MARS-1") . ${WORKSPACE}/tgTest.sh mars phase1 ;;
-"Team-Gate-Test-MARS-2") . ${WORKSPACE}/tgTest.sh mars phase2 ;;
-"Team-Gate-Test-MARS-3") . ${WORKSPACE}/tgTest.sh mars phase3 ;;
+"Team-Gate-VENUS-Enter") 	. ${WORKSPACE}/tg_Enter.sh VENUS ;;
+"Team-Gate-Build-VENUS-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh VENUS ;;
+"Team-Gate-Build-VENUS-DB1") 	. ${WORKSPACE}/tgBuild.sh VENUS db1 ;;
+"Team-Gate-Build-VENUS-DB2") 	. ${WORKSPACE}/tgBuild.sh VENUS db1 ;;
+"Team-Gate-Build-VENUS-WWW") 	. ${WORKSPACE}/tgBuild.sh VENUS www ;;
+"Team-Gate-Build-VENUS-APP1") 	. ${WORKSPACE}/tgBuild.sh VENUS app1 ;;
+"Team-Gate-Build-VENUS-APP2") 	. ${WORKSPACE}/tgBuild.sh VENUS app2 ;;
+"Team-Gate-Build-VENUS-APP3") 	. ${WORKSPACE}/tgBuild.sh VENUS app3 ;;
+"Team-Gate-Build-VENUS-Exit") 	. ${WORKSPACE}/tgBuild_Exit.sh VENUS ;;
+"Team-Gate-Deploy-VENUS-Enter") 	. ${WORKSPACE}/tgDeploy_Enter.sh VENUS ;;
+"Team-Gate-Deploy-VENUS-DB1") 	. ${WORKSPACE}/tgDeploy.sh VENUS db1 ;;
+"Team-Gate-Deploy-VENUS-DB2") 	. ${WORKSPACE}/tgDeploy.sh VENUS db2 ;;
+"Team-Gate-Deploy-VENUS-WWW") 	. ${WORKSPACE}/tgDeploy.sh VENUS www ;;
+"Team-Gate-Deploy-VENUS-APP1") 	. ${WORKSPACE}/tgDeploy.sh VENUS app1 ;;
+"Team-Gate-Deploy-VENUS-APP2") 	. ${WORKSPACE}/tgDeploy.sh VENUS app2 ;;
+"Team-Gate-Deploy-VENUS-APP3") 	. ${WORKSPACE}/tgDeploy.sh VENUS app3 ;;
+"Team-Gate-Deploy-VENUS-Exit") 	. ${WORKSPACE}/tgDeploy_Exit.sh VENUS ;;
+"Team-Gate-Test-VENUS-Enter") 	. ${WORKSPACE}/tgTest_Enter.sh VENUS enter ;;
+"Team-Gate-Test-VENUS-Functional") . ${WORKSPACE}/tgTest.sh VENUS functional ;;
+"Team-Gate-Test-VENUS-Performance"). ${WORKSPACE}/tgTest.sh VENUS performance ;;
+"Team-Gate-Test-VENUS-Security") . ${WORKSPACE}/tgTest.sh VENUS security ;;
+"Team-Gate-Test-VENUS-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh VENUS ;;
+"Team-Gate-VENUS-Exit") 		. ${WORKSPACE}/tg_Exit.sh VENUS ;;
 
-"Team-Gate-Build-VENUS-1") . ${WORKSPACE}/tgBuild.sh venus db ;;
-"Team-Gate-Build-VENUS-2") . ${WORKSPACE}/tgBuild.sh venus docker ;;
-"Team-Gate-Build-VENUS-3") . ${WORKSPACE}/tgBuild.sh venus ec2 ;;
-
-"Team-Gate-Deploy-VENUS-1") . ${WORKSPACE}/tgDeploy.sh venus db ;;
-"Team-Gate-Deploy-VENUS-2") . ${WORKSPACE}/tgDeploy.sh venus kubernetes ;;
-"Team-Gate-Deploy-VENUS-3") . ${WORKSPACE}/tgDeploy.sh venus tomcat ;;
-
-"Team-Gate-Test-VENUS-1") . ${WORKSPACE}/tgTest.sh venus phase1 ;;
-"Team-Gate-Test-VENUS-3") . ${WORKSPACE}/tgTest.sh venus phase3 ;;
-"Team-Gate-Test-VENUS-2") . ${WORKSPACE}/tgTest.sh venus phase2 ;;
-
-"Team-Gate-Build-PLUTO-1") . ${WORKSPACE}/tgBuild.sh pluto db ;;
-"Team-Gate-Build-PLUTO-2") . ${WORKSPACE}/tgBuild.sh pluto docker ;;
-"Team-Gate-Build-PLUTO-3") . ${WORKSPACE}/tgBuild.sh pluto ec2 ;;
-
-"Team-Gate-Deploy-PLUTO-1") . ${WORKSPACE}/tgDeploy.sh pluto db ;;
-"Team-Gate-Deploy-PLUTO-2") . ${WORKSPACE}/tgDeploy.sh pluto kubernetes ;;
-"Team-Gate-Deploy-PLUTO-3") . ${WORKSPACE}/tgDeploy.sh pluto tomcat ;;
-
-"Team-Gate-Test-PLUTO-1") . ${WORKSPACE}/tgTest.sh pluto phase1 ;;
-"Team-Gate-Test-PLUTO-2") . ${WORKSPACE}/tgTest.sh pluto phase2 ;;
-"Team-Gate-Test-PLUTO-3") . ${WORKSPACE}/tgTest.sh pluto phase3 ;;
-
-"Team-Gate-Build-Exit") . ${WORKSPACE}/tgBuild_Exit.sh ;;
-"Team-Gate-Build-Exit") . ${WORKSPACE}/Team_Build_Exit.sh ;;
-"Team-Gate-Build-Exit") . ${WORKSPACE}/Team_Build_Exit.sh ;;
-
-"Team-Gate-Deploy-Exit") . ${WORKSPACE}/Team_Deploy_Exit.sh ;;
-
-"Team-Gate-Test-Exit") . ${WORKSPACE}/Team_Test_Exit.sh ;;
-
-"Team-Gate-Exit") . ${WORKSPACE}/Team_Gate_Exit.sh ;;
+"Team-Gate-Exit") . ${WORKSPACE}/tg_Exit.sh ;;
 
 "System-Gate-Enter") . ${WORKSPACE}/System_Gate_Enter.sh ;;
 
