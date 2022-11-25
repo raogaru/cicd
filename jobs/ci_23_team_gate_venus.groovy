@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Team-Gate-VENUS-Git') 		{ steps { 
 			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
-			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'master',credentialsId:'raogaru',poll:'false')} 
+			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'VENUS',credentialsId:'raogaru',poll:'false')} 
 		} }
 
 		stage('Team-Gate-VENUS-Enter') 		{ steps { sh './ci.sh Team-Gate-VENUS-Enter' } }
@@ -43,7 +43,7 @@ pipeline {
 		stage('Team-Gate-Deploy-VENUS-DB2') 	{ steps { sh './ci.sh Team-Gate-Deploy-VENUS-DB2' } }
 		stage('Team-Gate-Deploy-VENUS-WWW') 	{ steps { sh './ci.sh Team-Gate-Deploy-VENUS-WWW' } }
 		stage('Team-Gate-Deploy-VENUS-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-VENUS-APP1' } }
-		stage('Team-Gate-Deploy-VENUS-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-VENUS-APP2' } }
+		stage('Team-Gate-Deploy-VENUS-APP2') 	{ steps { sh './ci.sh Team-Gate-Deploy-VENUS-APP2' } }
 		stage('Team-Gate-Deploy-VENUS-APP3') 	{ steps { sh './ci.sh Team-Gate-Deploy-VENUS-APP3' } }
 		stage('Team-Gate-Deploy-VENUS-Exit') 	{ steps { sh './ci.sh Team-Gate-Deploy-VENUS-Exit' } }
 
