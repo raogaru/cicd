@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Team-Gate-PLUTO-Git') 		{ steps { 
 			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
-			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'master',credentialsId:'raogaru',poll:'false')} 
+			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'PLUTO',credentialsId:'raogaru',poll:'false')} 
 		} }
 
 		stage('Team-Gate-PLUTO-Enter') 		{ steps { sh './ci.sh Team-Gate-PLUTO-Enter' } }
@@ -43,7 +43,7 @@ pipeline {
 		stage('Team-Gate-Deploy-PLUTO-DB2') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-DB2' } }
 		stage('Team-Gate-Deploy-PLUTO-WWW') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-WWW' } }
 		stage('Team-Gate-Deploy-PLUTO-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-APP1' } }
-		stage('Team-Gate-Deploy-PLUTO-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-APP2' } }
+		stage('Team-Gate-Deploy-PLUTO-APP2') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-APP2' } }
 		stage('Team-Gate-Deploy-PLUTO-APP3') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-APP3' } }
 		stage('Team-Gate-Deploy-PLUTO-Exit') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-Exit' } }
 
