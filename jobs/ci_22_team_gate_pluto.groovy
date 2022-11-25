@@ -14,48 +14,48 @@ pipeline {
 		ws('/tmp/cicd')
 	}
 	environment {
+		vGATE = 'TEAM'
+		vTEAM = 'PLUTO'
 		vPROCEED = 'YES'
 	}
 
 	stages {
-		stage('Team-Gate-Start-PLUTO') { steps { echo 'CI-PIPELINE-TEAM-GATE-PLUTO-START' } } 
+		stage('Team-Gate-PLUTO-Start') 		{ steps { echo 'CI-PIPELINE-TEAM-GATE-PLUTO-START' } } 
 
-		stage('Team-Gate-Git-MARS') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } }
-		stage('Team-Gate-Enter-PLUTO') { steps { sh './ci.sh DUMMY' } }
+		stage('Team-Gate-PLUTO-Git') 		{ steps { 
+			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
+			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'master',credentialsId:'raogaru',poll:'false')} 
+		} }
 
-		stage('Team-Gate-Build-Enter-PLUTO') { steps { sh './ci.sh DUMMY' } }
+		stage('Team-Gate-PLUTO-Enter') 		{ steps { sh './ci.sh Team-Gate-PLUTO-Enter' } }
 
-		//stage('Team-Gate-Build-PLUTO') { parallel {
-		stage('Team-Gate-Build-DB-Docker-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		stage('Team-Gate-Build-Web-Docker-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		stage('Team-Gate-Build-App-Docker-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		//} }
+		stage('Team-Gate-Build-PLUTO-Enter')	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-Enter' } }
+		stage('Team-Gate-Build-PLUTO-DB1') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-DB1' } }
+		stage('Team-Gate-Build-PLUTO-DB2') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-DB2' } }
+		stage('Team-Gate-Build-PLUTO-WWW') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-WWW' } }
+		stage('Team-Gate-Build-PLUTO-APP1') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-APP1' } }
+		stage('Team-Gate-Build-PLUTO-APP2') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-APP2' } }
+		stage('Team-Gate-Build-PLUTO-APP3') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-APP3' } }
+		stage('Team-Gate-Build-PLUTO-Exit') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-' } }
 
-		stage('Team-Gate-Build-Exit-PLUTO') { steps { sh './ci.sh DUMMY' } }
+		stage('Team-Gate-Deploy-PLUTO-Enter') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-Enter' } }
+		stage('Team-Gate-Deploy-PLUTO-DB1') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-DB1' } }
+		stage('Team-Gate-Deploy-PLUTO-DB2') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-DB2' } }
+		stage('Team-Gate-Deploy-PLUTO-WWW') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-WWW' } }
+		stage('Team-Gate-Deploy-PLUTO-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-APP1' } }
+		stage('Team-Gate-Deploy-PLUTO-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-APP2' } }
+		stage('Team-Gate-Deploy-PLUTO-APP3') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-APP3' } }
+		stage('Team-Gate-Deploy-PLUTO-Exit') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-Exit' } }
 
-		stage('Team-Gate-Deploy-Enter-PLUTO') { steps { sh './ci.sh DUMMY' } }
+		stage('Team-Gate-Test-PLUTO-Enter') 	{ steps { sh './ci.sh Team-Gate-Test-PLUTO-Enter' } }
+		stage('Team-Gate-Test-PLUTO-Functional') { steps { sh './ci.sh Team-Gate-Test-PLUTO-Functional' } }
+		stage('Team-Gate-Test-PLUTO-Performance'){ steps { sh './ci.sh Team-Gate-Test-PLUTO-Performance' } }
+		stage('Team-Gate-Test-PLUTO-Security') 	{ steps { sh './ci.sh Team-Gate-Test-PLUTO-Security' } }
+		stage('Team-Gate-Test-PLUTO-Exit') 	{ steps { sh './ci.sh Team-Gate-Test-PLUTO-Exit' } }
 
-		//stage('Team-Gate-Deploy-PLUTO') { parallel {
-		stage('Team-Gate-Deploy-DB-Docker-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		stage('Team-Gate-Deploy-Web-Docker-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		stage('Team-Gate-Deploy-App-Docker-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		//} }
+		stage('Team-Gate-PLUTO-Exit') { steps { sh './ci.sh Team-Gate-PLUTO-Exit' } }
 
-		stage('Team-Gate-Deploy-Exit-PLUTO') { steps { sh './ci.sh DUMMY' } }
-
-		stage('Team-Gate-Test-Enter-PLUTO') { steps { sh './ci.sh DUMMY' } }
-
-		//stage('Team-Gate-Test-PLUTO') { parallel {
-		stage('Team-Gate-Test-Functional-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		stage('Team-Gate-Test-Performance-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		stage('Team-Gate-Test-Security-PLUTO') { steps { sh './ci.sh DUMMY' } }
-		//} }
-
-		stage('Team-Gate-Test-Exit-PLUTO') { steps { sh './ci.sh DUMMY' } }
-
-		stage('Team-Gate-Exit-PLUTO') { steps { sh './ci.sh DUMMY' } }
-
-		stage('Team-Gate-End-PLUTO') { steps { echo 'CI-PIPELINE-TEAM-GATE-PLUTO-END' } } 
+		stage('Team-Gate-PLUTO-End') { steps { echo 'CI-PIPELINE-TEAM-GATE-PLUTO-END' } } 
 	}
 }
       '''.stripIndent())
@@ -63,4 +63,4 @@ pipeline {
     }
   }
 }
-// ######################################################################
+// #####################################################################:
