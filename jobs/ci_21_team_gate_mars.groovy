@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Team-Gate-MARS-Git') 		{ steps { 
 			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
-			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'master',credentialsId:'raogaru',poll:'false')} 
+			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'MARS',credentialsId:'raogaru',poll:'false')} 
 		} }
 
 		stage('Team-Gate-MARS-Enter') 		{ steps { sh './ci.sh Team-Gate-MARS-Enter' } }
@@ -43,7 +43,7 @@ pipeline {
 		stage('Team-Gate-Deploy-MARS-DB2') 	{ steps { sh './ci.sh Team-Gate-Deploy-MARS-DB2' } }
 		stage('Team-Gate-Deploy-MARS-WWW') 	{ steps { sh './ci.sh Team-Gate-Deploy-MARS-WWW' } }
 		stage('Team-Gate-Deploy-MARS-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-MARS-APP1' } }
-		stage('Team-Gate-Deploy-MARS-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-MARS-APP2' } }
+		stage('Team-Gate-Deploy-MARS-APP2') 	{ steps { sh './ci.sh Team-Gate-Deploy-MARS-APP2' } }
 		stage('Team-Gate-Deploy-MARS-APP3') 	{ steps { sh './ci.sh Team-Gate-Deploy-MARS-APP3' } }
 		stage('Team-Gate-Deploy-MARS-Exit') 	{ steps { sh './ci.sh Team-Gate-Deploy-MARS-Exit' } }
 
