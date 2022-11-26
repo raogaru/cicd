@@ -96,6 +96,29 @@ case "${ARG1}" in
 "Team-Gate-Test-VENUS-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh VENUS ;;
 "Team-Gate-VENUS-Exit") 		. ${WORKSPACE}/tg_Exit.sh VENUS ;;
 
+"Team-Gate-EARTH-Enter") 	. ${WORKSPACE}/tg_Enter.sh EARTH ;;
+"Team-Gate-Build-EARTH-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh EARTH ;;
+"Team-Gate-Build-EARTH-DB1") 	. ${WORKSPACE}/tgBuild.sh EARTH db1 ;;
+"Team-Gate-Build-EARTH-DB2") 	. ${WORKSPACE}/tgBuild.sh EARTH db1 ;;
+"Team-Gate-Build-EARTH-WWW") 	. ${WORKSPACE}/tgBuild.sh EARTH www ;;
+"Team-Gate-Build-EARTH-APP1") 	. ${WORKSPACE}/tgBuild.sh EARTH app1 ;;
+"Team-Gate-Build-EARTH-APP2") 	. ${WORKSPACE}/tgBuild.sh EARTH app2 ;;
+"Team-Gate-Build-EARTH-APP3") 	. ${WORKSPACE}/tgBuild.sh EARTH app3 ;;
+"Team-Gate-Build-EARTH-Exit") 	. ${WORKSPACE}/tgBuild_Exit.sh EARTH ;;
+"Team-Gate-Deploy-EARTH-Enter") 	. ${WORKSPACE}/tgDeploy_Enter.sh EARTH ;;
+"Team-Gate-Deploy-EARTH-DB1") 	. ${WORKSPACE}/tgDeploy.sh EARTH db1 ;;
+"Team-Gate-Deploy-EARTH-DB2") 	. ${WORKSPACE}/tgDeploy.sh EARTH db2 ;;
+"Team-Gate-Deploy-EARTH-WWW") 	. ${WORKSPACE}/tgDeploy.sh EARTH www ;;
+"Team-Gate-Deploy-EARTH-APP1") 	. ${WORKSPACE}/tgDeploy.sh EARTH app1 ;;
+"Team-Gate-Deploy-EARTH-APP2") 	. ${WORKSPACE}/tgDeploy.sh EARTH app2 ;;
+"Team-Gate-Deploy-EARTH-APP3") 	. ${WORKSPACE}/tgDeploy.sh EARTH app3 ;;
+"Team-Gate-Deploy-EARTH-Exit") 	. ${WORKSPACE}/tgDeploy_Exit.sh EARTH ;;
+"Team-Gate-Test-EARTH-Enter") 	. ${WORKSPACE}/tgTest_Enter.sh EARTH enter ;;
+"Team-Gate-Test-EARTH-Functional") . ${WORKSPACE}/tgTest.sh EARTH functional ;;
+"Team-Gate-Test-EARTH-Performance"). ${WORKSPACE}/tgTest.sh EARTH performance ;;
+"Team-Gate-Test-EARTH-Security") . ${WORKSPACE}/tgTest.sh EARTH security ;;
+"Team-Gate-Test-EARTH-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh EARTH ;;
+"Team-Gate-EARTH-Exit") 		. ${WORKSPACE}/tg_Exit.sh EARTH ;;
 "Team-Gate-Exit") . ${WORKSPACE}/tg_Exit.sh ;;
 
 "System-Gate-Enter") . ${WORKSPACE}/System_Gate_Enter.sh ;;
