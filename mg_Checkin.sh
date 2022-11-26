@@ -29,8 +29,7 @@ HEADER2 "List development teams"
         rm -f ${PIPE_DIR}/teams.tmp
 # ----------------------------------------------------------------------
 HEADER2 "Identify list of team-branches"
-	pwd
-	#cd ${GIT_MASTER_DIR}
+	cd ${GIT_MASTER_DIR}
         git branch -a | grep remote | grep "\/team\-" | sed -e 's/^.*\/team-//'|sort > ${PIPE_DIR}/git_team_branches.lst
         cat ${PIPE_DIR}/git_team_branches.lst | sed -e 's/^/team\-/'
 # ----------------------------------------------------------------------
