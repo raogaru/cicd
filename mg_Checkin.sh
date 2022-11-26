@@ -1,5 +1,5 @@
 # ######################################################################
-MARKER "script:Main_Gate_Checkin.sh START"
+MARKER "script:mg_Checkin.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
 f_maingate_checkin_checkout_master () {
@@ -112,8 +112,8 @@ return 0
 f_maingate_checkin_checkout_master
 f_maingate_checkin_validate_team_branches
 f_maingate_checkin_list_commits_by_each_team
-f_maingate_checkin_checkout_team_branch
+#f_maingate_checkin_checkout_team_branch
 
 # ######################################################################
-MARKER "script:Main_Gate_Checkin.sh END"
+MARKER "script:mg_Checkin.sh END"
 # ######################################################################
