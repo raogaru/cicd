@@ -27,6 +27,7 @@ HEADER3 "build Tomcat2 Docker for App3"
 DUMMY_ACTION
 
 HEADER2 "Build Kafka docker"
+DUMMY_ACTION
 HEADER2 "Build Vault docker"
 DUMMY_ACTION
 HEADER2 "Build Hygiea Docker"
