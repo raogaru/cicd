@@ -16,6 +16,10 @@ pipeline {
 
 	stages {
 		stage('start') { steps { echo 'CI-PIPELINE-TEAM-GATE-START' } } 
+		stage('Main-Gate-Git') 	{ steps { 
+			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
+//			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-MARS',credentialsId:'raogaru',poll:'false')} 
+		} }
 		stage('Team-Gate-Enter') 	{ steps { sh './ci.sh Team-Gate-Enter' } }
 		stage('Teams-in-Parallel') { parallel {
 		stage ('DEMO-CI-21-team-gate-MARS') {steps {build job: 'DEMO-CI-21-team-gate-MARS', parameters: [string(name: 'param1', value: "value1")]}}
