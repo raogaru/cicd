@@ -7,13 +7,13 @@ ARG2=$2
 ARG3=$3
 ARG4=$4
 ARG5=$5
-source cicd.env
+source ${WORKSPACE}/ci.env
 set +x
 HEADER1 "BEGIN STAGE $ARG1"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
-MARKER "script:ci.sh argument:${ARG1} START"
+MARKER "script:ci.sh argument:${ARG1} position:START"
 
 case "${ARG1}" in
 
@@ -157,10 +157,13 @@ case "${ARG1}" in
 
 esac
 
+	MARKER "script:ci.sh argument:${ARG1} position:END"
+
 r=$?
 if [ $r -eq 0 ]; then
-	MARKER "script:ci.sh END"
+	MARKER "script:ci.sh argument:${ARG1} position:END"
 else
+	MARKER "script:ci.sh argument:${ARG1} position:END"
 	ECHOred "script:ci.sh END FAILED"
 fi
 # ######################################################################
