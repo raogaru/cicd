@@ -2,29 +2,6 @@
 MARKER "script:tg_Enter.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
-f_teamgate_checkout_master () {
-MARKER "function:f_teamgate_checkout_master"
-HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
-	GIT_MASTER_DIR=${PIPE_DIR}/git/master
-	mkdir -p ${GIT_MASTER_DIR}
-	cd ${GIT_MASTER_DIR}
-	ECHO "GIT_MASTER_DIR is ${GIT_MASTER_DIR}"
-	git clone ${MYAPP_GIT} ${GIT_MASTER_DIR}
-	git checkout master
-	[[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo"
-	[[ ! -d ${GIT_MASTER_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_MASTER_DIR} directory"
-	ADDENV "GIT_MASTER_DIR=${GIT_MASTER_DIR}"
-
-HEADER2 "List all branches"
-	git branch -a
-
-HEADER2 "Make sure working on master branch"
-        x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
-        [[ "${x1}" != "master" ]] && ERROR "Current branch is not \"master\"."
-	ECHO Current branch is "master"
-}
-
-# ----------------------------------------------------------------------
 f_teamgate_validate_team_branches () {
 MARKER "function:f_teamgate_validate_team_branches"
 HEADER2 "List development teams"
@@ -108,7 +85,6 @@ return 0
 # ######################################################################
 # START HERE
 # ######################################################################
-f_teamgate_checkout_master
 f_teamgate_validate_team_branches
 f_teamgate_list_commits_by_each_team
 f_teamgate_checkout_team_branch
