@@ -1,7 +1,6 @@
 # ######################################################################
 MARKER "script:mg_Enter.sh START"
 # ######################################################################
-ECHO "script:Main_Gate_Entry.sh START"
 
 ECHO "Application Name is \"${MYAPP_NAME}\""
 ECHO "Pipe Environment file is \"${PIPE_ENV}\""
