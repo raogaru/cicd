@@ -15,7 +15,7 @@ pipeline {
 	}
 	environment {
 		vPROCEED = 'YES'
-		vGATE = 'MAIN'
+		v_gate = 'MAIN'
 	}
 
 	stages { 
