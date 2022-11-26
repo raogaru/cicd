@@ -157,15 +157,13 @@ case "${ARG1}" in
 
 esac
 
-	MARKER "script:ci.sh argument:${ARG1} position:END"
-
 r=$?
 if [ $r -eq 0 ]; then
 	MARKER "script:ci.sh argument:${ARG1} position:END"
 else
-	MARKER "script:ci.sh argument:${ARG1} position:END"
-	ECHOred "script:ci.sh END FAILED"
+	MARKER "script:ci.sh argument:${ARG1} position:END FAILED"
 fi
 # ######################################################################
 FOOTER1 "END STAGE $ARG1"
 # ######################################################################
+exit $r
