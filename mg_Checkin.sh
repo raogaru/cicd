@@ -2,8 +2,6 @@
 MARKER "script:mg_Checkin.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
-f_maingate_checkin_checkout_master () {
-MARKER "function:f_maingate_checkin_checkout_master"
 HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	GIT_MASTER_DIR=${PIPE_DIR}/git/master
 	mkdir -p ${GIT_MASTER_DIR}
@@ -14,29 +12,28 @@ HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
 	[[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo"
 	[[ ! -d ${GIT_MASTER_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_MASTER_DIR} directory"
 	ADDENV "GIT_MASTER_DIR=${GIT_MASTER_DIR}"
-
+# ----------------------------------------------------------------------
 HEADER2 "List all branches"
 	git branch -a
-
+# ----------------------------------------------------------------------
 HEADER2 "Make sure working on master branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
         [[ "${x1}" != "master" ]] && ERROR "Current branch is not \"master\"."
 	ECHO Current branch is "master"
-}
-
 # ----------------------------------------------------------------------
-f_maingate_checkin_validate_team_branches () {
-MARKER "function:f_maingate_checkin_validate_team_branches"
 HEADER2 "List development teams"
         rm -f ${PIPE_DIR}/teams.tmp
         for TEAM in ${AGILE_TEAMS}; do echo "${TEAM}" >> ${PIPE_DIR}/teams.tmp; done
         cat ${PIPE_DIR}/teams.tmp |sort > ${PIPE_DIR}/teams.lst
         cat ${PIPE_DIR}/teams.lst
         rm -f ${PIPE_DIR}/teams.tmp
-
+# ----------------------------------------------------------------------
 HEADER2 "Identify list of team-branches"
+	pwd
+	#cd ${GIT_MASTER_DIR}
         git branch -a | grep remote | grep "\/team\-" | sed -e 's/^.*\/team-//'|sort > ${PIPE_DIR}/git_team_branches.lst
         cat ${PIPE_DIR}/git_team_branches.lst | sed -e 's/^/team\-/'
+# ----------------------------------------------------------------------
 
 HEADER2 "Compare teams with team-branches"
         diff ${PIPE_DIR}/teams.lst ${PIPE_DIR}/git_team_branches.lst
