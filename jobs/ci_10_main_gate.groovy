@@ -26,15 +26,11 @@ pipeline {
 
 	stage('Main-Gate-Git-MyApp') { steps { dir('myapp') { git(url: 'https://github.com/raogaru/myapp.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } } }
 
-    stage('Main-Gate-Enter') { steps { sh './ci.sh Main-Gate-Enter' } }
+	stage('Main-Gate-Enter') { steps { sh './ci.sh Main-Gate-Enter' } }
 
-    stage('Main-Gate-Checkin') { steps { sh './ci.sh Main-Gate-Checkin' } }
+	stage('Main-Gate-Checkin') { steps { sh './ci.sh Main-Gate-Checkin' } }
 
-	//stage('Main-Gate-Prepare') { parallel {
-			stage('Main-Gate-Prepare-DB-Docker') { steps { sh './ci.sh Main-Gate-Prepare db' } }
-			stage('Main-Gate-Prepare-Web-Docker') { steps { sh './ci.sh Main-Gate-Prepare web' } }
-			stage('Main-Gate-Prepare-App-Docker') { steps { sh './ci.sh Main-Gate-Prepare app' } }
-	//} }
+	stage('Main-Gate-Prepare') { steps { sh './ci.sh Main-Gate-Prepare' } }
 
 	stage('Main-Gate-Verify') { steps { sh './ci.sh Main-Gate-Verify' } }
 
