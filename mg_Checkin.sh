@@ -75,35 +75,35 @@ do
 done
 }
 # ----------------------------------------------------------------------
-#RAO f_maingate_checkin_checkout_team_branch () {
-#RAO MARKER "function:f_maingate_checkin_checkout_team_branch"
-#RAO for TEAM in ${AGILE_TEAMS}
-#RAO do
-#RAO 	v_commits=$(READENV TEAM_COMMITS_${TEAM})
-#RAO 	if [ "${v_commits}" != "YES" ] ; then
-#RAO 		ECHO "No commits for team ${TEAM}. No need to checkout team-${TEAM} branch"
-#RAO         	ADDENV "TEAM_CHECKOUT_${TEAM}=N/A"
-#RAO 	else
-#RAO 		HEADER2 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
-#RAO         	GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
-#RAO 	        mkdir -p ${GIT_TEAM_DIR}
-#RAO 		cd ${GIT_TEAM_DIR}
-#RAO 	        ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
-#RAO 		ADDENV "GIT_TEAM_DIR_${TEAM}=${GIT_TEAM_DIR}"
-#RAO 		git clone -b team-${TEAM} ${MYAPP_GIT} ${GIT_TEAM_DIR}
-#RAO 		if [ $? -ne 0 ]; then
-#RAO 			ADDENV "TEAM_CHECKOUT_${TEAM}=${cFAIL}"
-#RAO 			ERROR "Failed to clone ${MYAPP_GIT} git repo team-${TEAM} branch"
-#RAO 		else
-#RAO 			ADDENV "TEAM_CHECKOUT_${TEAM}=${cPASS}"
-#RAO 		fi
-#RAO 	
-#RAO 		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
-#RAO 	fi
-#RAO done
-#RAO 
-#RAO return 0
-#RAO }
+f_maingate_checkin_checkout_team_branch () {
+MARKER "function:f_maingate_checkin_checkout_team_branch"
+for TEAM in ${AGILE_TEAMS}
+do
+	v_commits=$(READENV TEAM_COMMITS_${TEAM})
+	if [ "${v_commits}" != "YES" ] ; then
+		ECHO "No commits for team ${TEAM}. No need to checkout team-${TEAM} branch"
+        	ADDENV "TEAM_CHECKOUT_${TEAM}=N/A"
+	else
+		HEADER2 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
+        	GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
+	        mkdir -p ${GIT_TEAM_DIR}
+		cd ${GIT_TEAM_DIR}
+	        ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
+		ADDENV "GIT_TEAM_DIR_${TEAM}=${GIT_TEAM_DIR}"
+		git clone -b team-${TEAM} ${MYAPP_GIT} ${GIT_TEAM_DIR}
+		if [ $? -ne 0 ]; then
+			ADDENV "TEAM_CHECKOUT_${TEAM}=${cFAIL}"
+			ERROR "Failed to clone ${MYAPP_GIT} git repo team-${TEAM} branch"
+		else
+			ADDENV "TEAM_CHECKOUT_${TEAM}=${cPASS}"
+		fi
+	
+		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
+	fi
+done
+
+return 0
+}
 # ----------------------------------------------------------------------
 # ######################################################################
 # START HERE
@@ -111,7 +111,7 @@ done
 f_maingate_checkin_checkout_master
 f_maingate_checkin_validate_team_branches
 f_maingate_checkin_list_commits_by_each_team
-#RAO f_maingate_checkin_checkout_team_branch
+f_maingate_checkin_checkout_team_branch
 
 # ######################################################################
 MARKER "script:mg_Checkin.sh END"
