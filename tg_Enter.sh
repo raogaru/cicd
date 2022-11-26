@@ -1,3 +1,4 @@
+v_team=${1}
 # ######################################################################
 MARKER "script:tg_Enter.sh START"
 # ######################################################################
@@ -86,10 +87,11 @@ return 0
 # ######################################################################
 # START HERE
 # ######################################################################
-f_teamgate_validate_team_branches
-f_teamgate_list_commits_by_each_team
-f_teamgate_checkout_team_branch
-
+if [ "${v_team}" == "" ]; then
+	f_teamgate_validate_team_branches
+	f_teamgate_list_commits_by_each_team
+	f_teamgate_checkout_team_branch
+fi
 # ######################################################################
 MARKER "script:tg_Enter.sh END"
 # ######################################################################
