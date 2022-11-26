@@ -11,7 +11,7 @@ pipeline {
 		disableConcurrentBuilds()
 		timeout(59)
 		buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '1'))
-		ws('/tmp/cicd')
+//		ws('/tmp/cicd')
 	}
 	triggers {
 		cron('@hourly')
