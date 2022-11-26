@@ -1,6 +1,5 @@
-v_script=mgEnter.sh
 # ######################################################################
-# Main_Gate_Entry.sh 
+MARKER "script:mg_Enter.sh START"
 # ######################################################################
 ECHO "script:Main_Gate_Entry.sh START"
 
@@ -38,7 +37,6 @@ ECHO "Build Initialized - PIPE_NUM is \"${PIPE_NUM}\""
 
 ECHO "Workspace directory is ${WORKSPACE}"
 
-echo "script:Main_Gate_Entry.sh END"
 # ######################################################################
-# EOF
+MARKER "script:mg_Enter.sh END"
 # ######################################################################
