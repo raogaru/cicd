@@ -34,7 +34,6 @@ HEADER2 "Identify list of team-branches"
         git branch -a | grep remote | grep "\/team\-" | sed -e 's/^.*\/team-//'|sort > ${PIPE_DIR}/git_team_branches.lst
         cat ${PIPE_DIR}/git_team_branches.lst | sed -e 's/^/team\-/'
 # ----------------------------------------------------------------------
-
 HEADER2 "Compare teams with team-branches"
         diff ${PIPE_DIR}/teams.lst ${PIPE_DIR}/git_team_branches.lst
         r=$?
@@ -50,13 +49,11 @@ else
         WARN "Team branches found for unknown team. Branches to be deleted:"
         diff ${PIPE_DIR}/teams.lst ${PIPE_DIR}/git_team_branches.lst |grep ">" |sed -e 's/^\> //' | sed -e 's/^/team\-/'
 fi
-}
 # ----------------------------------------------------------------------
-f_maingate_checkin_list_commits_by_each_team () {
-MARKER "function:f_maingate_checkin_list_commits_by_each_team"
+HEADER2 "List of commits by each team"
 for TEAM in ${AGILE_TEAMS}
 do
-        HEADER2 "List of commits by team \"${TEAM}\":"
+        HEADER3 "List of commits by team \"${TEAM}\":"
         ECHO "git log origin/master..team-${TEAM}"
         git log origin/master..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'  | tee  ${PIPE_DIR}/git_commits_by_${TEAM}.lst
         if [ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]; then
@@ -65,15 +62,13 @@ do
 		ADDENV "TEAM_COMMITS_${TEAM}=NO"
 	fi
 
-        HEADER2 "List of files modified by team \"${TEAM}\":"
+        HEADER3 "List of files modified by team \"${TEAM}\":"
         ECHO "git log origin/master..team-${TEAM}"
         git log origin/master..origin/team-${TEAM} --pretty="" --name-only | tee ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst
 
 done
-}
 # ----------------------------------------------------------------------
-f_maingate_checkin_checkout_team_branch () {
-MARKER "function:f_maingate_checkin_checkout_team_branch"
+HEADER2 "Checkout Team Branches"
 for TEAM in ${AGILE_TEAMS}
 do
 	v_commits=$(READENV TEAM_COMMITS_${TEAM})
@@ -81,7 +76,7 @@ do
 		ECHO "No commits for team ${TEAM}. No need to checkout team-${TEAM} branch"
         	ADDENV "TEAM_CHECKOUT_${TEAM}=N/A"
 	else
-		HEADER2 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
+		HEADER3 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
         	GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
 	        mkdir -p ${GIT_TEAM_DIR}
 		cd ${GIT_TEAM_DIR}
@@ -98,18 +93,7 @@ do
 		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
 	fi
 done
-
-return 0
-}
 # ----------------------------------------------------------------------
-# ######################################################################
-# START HERE
-# ######################################################################
-f_maingate_checkin_checkout_master
-f_maingate_checkin_validate_team_branches
-f_maingate_checkin_list_commits_by_each_team
-f_maingate_checkin_checkout_team_branch
-
 # ######################################################################
 MARKER "script:mg_Checkin.sh END"
 # ######################################################################
