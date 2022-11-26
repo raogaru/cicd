@@ -16,9 +16,8 @@ pipeline {
 
 	stages {
 		stage('start') { steps { echo 'CI-PIPELINE-TEAM-GATE-START' } } 
-		stage('execute') { 
-		stage('Team-Gate-Enter') 		{ steps { sh './ci.sh Team-Gate-Enter' } }
-		parallel {
+		stage('Team-Gate-Enter') 	{ steps { sh './ci.sh Team-Gate-Enter' } }
+		stage('Teams-in-Parallel') { parallel {
 		stage ('DEMO-CI-21-team-gate-MARS') {steps {build job: 'DEMO-CI-21-team-gate-MARS', parameters: [string(name: 'param1', value: "value1")]}}
 		stage ('DEMO-CI-22-team-gate-PLUTO') {steps {build job: 'DEMO-CI-22-team-gate-PLUTO', parameters: [string(name: 'param1', value: "value1")]}}
 		stage ('DEMO-CI-23-team-gate-VENUS') {steps {build job: 'DEMO-CI-23-team-gate-VENUS', parameters: [string(name: 'param1', value: "value1")]}}
