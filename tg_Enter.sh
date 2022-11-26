@@ -1,6 +1,5 @@
-v_script=tg_Enter.sh
 # ######################################################################
-MARKER "script:${v_script} START"
+MARKER "script:tg_Enter.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
 f_teamgate_checkout_master () {
@@ -115,5 +114,5 @@ f_teamgate_list_commits_by_each_team
 f_teamgate_checkout_team_branch
 
 # ######################################################################
-MARKER "script:${v_script} END"
+MARKER "script:tg_Enter.sh END"
 # ######################################################################
