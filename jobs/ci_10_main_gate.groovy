@@ -22,9 +22,10 @@ pipeline {
 
 	stage('Main-Gate-Start') { steps { echo 'CI-PIPELINE-MAIN-GATE-START' } } 
 
-	stage('Main-Gate-Git-CICD') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } }
-
-	stage('Main-Gate-Git-MyApp') { steps { dir('myapp') { git(url: 'https://github.com/raogaru/myapp.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } } }
+	stage('Main-Gate-Git') 	{ steps { 
+			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
+//			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-MARS',credentialsId:'raogaru',poll:'false')} 
+		} }
 
 	stage('Main-Gate-Enter') { steps { sh './ci.sh Main-Gate-Enter' } }
 

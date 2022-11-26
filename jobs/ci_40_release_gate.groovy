@@ -20,7 +20,10 @@ pipeline {
 	stages {
 		stage('Release-Gate-Start') { steps { echo 'CI-PIPELINE-RELEASE-GATE-START' } } 
 
-		stage('Release-Gate-Git-CICD') { steps { git(url: 'https://github.com/raogaru/cicd.git', branch: 'master', credentialsId: 'raogaru', poll: 'false') } }
+		stage('Release-Gate-Git') 	{ steps { 
+			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
+		} }
+
 		stage('Release-Gate-Enter') { steps { sh './ci.sh DUMMY' } }
 
 		stage('Release-Gate-Build-Enter') { steps { sh './ci.sh DUMMY' } }

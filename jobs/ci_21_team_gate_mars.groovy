@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Team-Gate-MARS-Git') 		{ steps { 
 			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
-			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-MARS',credentialsId:'raogaru',poll:'false')} 
+//			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-MARS',credentialsId:'raogaru',poll:'false')} 
 		} }
 
 		stage('Team-Gate-MARS-Enter') 		{ steps { sh './ci.sh Team-Gate-MARS-Enter' } }

@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Team-Gate-VENUS-Git') 		{ steps { 
 			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
-			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-VENUS',credentialsId:'raogaru',poll:'false')} 
+//			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-VENUS',credentialsId:'raogaru',poll:'false')} 
 		} }
 
 		stage('Team-Gate-VENUS-Enter') 		{ steps { sh './ci.sh Team-Gate-VENUS-Enter' } }
