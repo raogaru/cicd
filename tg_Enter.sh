@@ -113,6 +113,7 @@ do
 	TMP_DB_SQL=${PIPE_DIR}/tmp_db_${TEAM}.sql
 	echo "select datname from pg_database where datname='${TEAM}';" > ${TMP_DB_SQL}
 
+	HEADER3 "Connecting to PostgreSQL DB ${TEAM}"
 	export PGPASSWORD=rao
 	${PGSQL_HOME}/bin/psql -h localhost -p 5432 -d ${TEAM} -U rao -f ${TMP_DB_SQL}
 	r=$?
