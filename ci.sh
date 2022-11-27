@@ -9,7 +9,7 @@ ARG4=$4
 ARG5=$5
 v_stage=$1
 source ${WORKSPACE}/ci.env
-set +x
+set -x
 HEADER1 "BEGIN STAGE ${v_stage}"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
