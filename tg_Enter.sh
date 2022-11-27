@@ -111,7 +111,7 @@ do
 	if [ "${v_commits}" == "YES" ] ; then
 
 	TMP_DB_SQL=${PIPE_DIR}/tmp_db_${v_team}.sql
-	echo "select datname from pg_database where datname='mars';" > ${TMP_DB_SQL}
+	echo "select datname from pg_database where datname='${TEAM}';" > ${TMP_DB_SQL}
 
 	export PGPASSWORD=rao
 	${PGSQL_HOME}/bin/psql -h localhost -p 5432 -d ${TEAM} -U rao -f ${TMP_DB_SQL}
@@ -123,12 +123,6 @@ do
 	fi
 	fi
 done
-
-# ######################################################################
-MARKER "script:build_db.sh END"
-# ######################################################################
-done
-# ----------------------------------------------------------------------
 # ######################################################################
 MARKER "script:tg_Enter.sh END"
 # ######################################################################
