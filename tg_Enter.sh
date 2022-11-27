@@ -1,9 +1,6 @@
 # ######################################################################
 MARKER "script:tg_Enter.sh START"
 # ######################################################################
-# ----------------------------------------------------------------------
-f_teamgate_validate_team_branches () {
-MARKER "function:f_teamgate_validate_team_branches"
 HEADER2 "List development teams"
         rm -f ${PIPE_DIR}/teams.tmp
         for TEAM in ${AGILE_TEAMS}; do echo "${TEAM}" >> ${PIPE_DIR}/teams.tmp; done
@@ -31,10 +28,7 @@ else
         WARN "Team branches found for unknown team. Branches to be deleted:"
         diff ${PIPE_DIR}/teams.lst ${PIPE_DIR}/git_team_branches.lst |grep ">" |sed -e 's/^\> //' | sed -e 's/^/team\-/'
 fi
-}
 # ----------------------------------------------------------------------
-f_teamgate_list_commits_by_each_team () {
-MARKER "function:f_teamgate_list_commits_by_each_team"
 for TEAM in ${AGILE_TEAMS}
 do
         HEADER2 "List of commits by team \"${TEAM}\":"
@@ -52,10 +46,8 @@ do
         git log origin/${GIT_MASTER_BRANCH}..origin/team-${TEAM} --pretty="" --name-only | tee ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst
 	echo ""
 done
-}
 # ----------------------------------------------------------------------
-f_teamgate_checkout_team_branch () {
-MARKER "function:f_teamgate_checkout_team_branch"
+HEADER2 "Checkout team branches"
 for TEAM in ${AGILE_TEAMS}
 do
 	v_commits=$(READENV TEAM_COMMITS_${TEAM})
@@ -80,18 +72,7 @@ do
 		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
 	fi
 done
-
-return 0
-}
 # ----------------------------------------------------------------------
-# ######################################################################
-# START HERE
-# ######################################################################
-if [ "${vSTAGE}" == "Team-Gate-Enter" ]; then
-	f_teamgate_validate_team_branches
-	f_teamgate_list_commits_by_each_team
-	f_teamgate_checkout_team_branch
-fi
 # ######################################################################
 MARKER "script:tg_Enter.sh END"
 # ######################################################################
