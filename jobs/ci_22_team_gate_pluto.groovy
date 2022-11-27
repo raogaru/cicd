@@ -37,7 +37,7 @@ pipeline {
 		stage('Team-Gate-Build-PLUTO-APP1') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-APP1' } }
 		stage('Team-Gate-Build-PLUTO-APP2') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-APP2' } }
 		stage('Team-Gate-Build-PLUTO-APP3') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-APP3' } }
-		stage('Team-Gate-Build-PLUTO-Exit') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-' } }
+		stage('Team-Gate-Build-PLUTO-Exit') 	{ steps { sh './ci.sh Team-Gate-Build-PLUTO-Exit' } }
 
 		stage('Team-Gate-Deploy-PLUTO-Enter') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-Enter' } }
 		stage('Team-Gate-Deploy-PLUTO-DB1') 	{ steps { sh './ci.sh Team-Gate-Deploy-PLUTO-DB1' } }
