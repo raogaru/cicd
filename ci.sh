@@ -7,16 +7,16 @@ ARG2=$2
 ARG3=$3
 ARG4=$4
 ARG5=$5
-vSTAGE=$1
+v_stage=$1
 source ${WORKSPACE}/ci.env
 set -x
-HEADER1 "BEGIN STAGE ${vSTAGE}"
+HEADER1 "BEGIN STAGE ${v_stage}"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
-MARKER "script:ci.sh argument:${vSTAGE} position:START"
+MARKER "script:ci.sh argument:${v_stage} position:START"
 
-case "${vSTAGE}" in
+case "${v_stage}" in
 
 "Main-Gate-Enter") . ${WORKSPACE}/mg_Enter.sh ;;
 "Main-Gate-Checkin") . ${WORKSPACE}/mg_Checkin.sh ;;
@@ -139,18 +139,18 @@ case "${vSTAGE}" in
 "System-Test-3") . ${WORKSPACE}/System_Gate_Test.sh phase3 ;;
 "System-Test-Exit") . ${WORKSPACE}/System_Test_Exit.sh ;;
 
-"System-Gate-Exit") MARKER "Option:${vSTAGE}" ;;
+"System-Gate-Exit") MARKER "Option:${v_stage}" ;;
 
-"Release-Gate-Enter") MARKER "Option:${vSTAGE}" ;;
-"Release-Gate-Prepare") MARKER "Option:${vSTAGE}" ;;
+"Release-Gate-Enter") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Prepare") MARKER "Option:${v_stage}" ;;
 "Release-Gate-Build") . ${WORKSPACE}/Release_Gate_Build.sh ;;
 "Release-Gate-Artifacts") . ${WORKSPACE}/Release_Artifacts.sh ;;
-"Release-Gate-Verify") MARKER "Option:${vSTAGE}" ;;
-"Release-Gate-Publish") MARKER "Option:${vSTAGE}" ;;
-"Release-Gate-Notify") MARKER "Option:${vSTAGE}" ;;
-"Release-Gate-Exit") MARKER "Option:${vSTAGE}" ;;
+"Release-Gate-Verify") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Publish") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Notify") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Exit") MARKER "Option:${v_stage}" ;;
 
-"Main-Gate-Exit") MARKER "Option:${vSTAGE}" ;;
+"Main-Gate-Exit") MARKER "Option:${v_stage}" ;;
 
 "DUMMY") DUMMY_ACTION ;;
 
@@ -160,11 +160,11 @@ esac
 
 r=$?
 if [ $r -eq 0 ]; then
-	MARKER "script:ci.sh argument:${vSTAGE} position:END"
+	MARKER "script:ci.sh argument:${v_stage} position:END"
 else
-	MARKER "script:ci.sh argument:${vSTAGE} position:END FAILED"
+	MARKER "script:ci.sh argument:${v_stage} position:END FAILED"
 fi
 # ######################################################################
-FOOTER1 "END STAGE ${vSTAGE}"
+FOOTER1 "END STAGE ${v_stage}"
 # ######################################################################
 exit $r
