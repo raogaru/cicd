@@ -40,7 +40,10 @@ do
 	else
 		ADDENV "TEAM_COMMITS_${TEAM}=NO"
 	fi
-
+done
+# ----------------------------------------------------------------------
+for TEAM in ${AGILE_TEAMS}
+do
         HEADER2 "List of files modified by team \"${TEAM}\":"
         SHOWCMD "git log origin/${GIT_MASTER_BRANCH}..team-${TEAM}"
         git log origin/${GIT_MASTER_BRANCH}..origin/team-${TEAM} --pretty="" --name-only | tee ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst
@@ -51,11 +54,8 @@ HEADER2 "Checkout team branches"
 for TEAM in ${AGILE_TEAMS}
 do
 	v_commits=$(READENV TEAM_COMMITS_${TEAM})
-	if [ "${v_commits}" != "YES" ] ; then
-		ECHO "No commits for team ${TEAM}. No need to checkout team-${TEAM} branch"
-        	ADDENV "TEAM_CHECKOUT_${TEAM}=${cNOTA}"
-	else
-		HEADER2 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
+	if [ "${v_commits}" == "YES" ] ; then
+		HEADER2 "Checkout team branch team-${TEAM} of ${MYAPP_NAME} Git repo ${MYAPP_GIT}"
         	GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
 	        mkdir -p ${GIT_TEAM_DIR}
 		cd ${GIT_TEAM_DIR}
@@ -70,6 +70,36 @@ do
 			ERROR "Failed to clone ${MYAPP_GIT} git repo team-${TEAM} branch"
 		fi
 		[[ ! -d ${GIT_TEAM_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_TEAM_DIR} directory"
+	else
+		ECHO "No commits for team ${TEAM}. No need to checkout team-${TEAM} branch"
+        	ADDENV "TEAM_CHECKOUT_${TEAM}=${cNOTA}"
+	fi
+done
+# ----------------------------------------------------------------------
+HEADER2 "Drop and recreated build branches"
+for TEAM in ${AGILE_TEAMS}
+do
+	v_commits=$(READENV TEAM_COMMITS_${TEAM})
+	if [ "${v_commits}" == "YES" ] ; then
+        	GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
+		cd ${GIT_TEAM_DIR}
+		ECHO "Current branch should be team-${TEAM}"
+		git branch
+
+		ECHO "Drop build branch build-${TEAM}"
+		SHOWCMD "git branch -D build-${TEAM}"
+		git branch -D build-${TEAM}
+
+		ECHO "Create build branch build-${TEAM}"
+		SHOWCMD "git branch build-${TEAM}"
+		git branch build-${TEAM}
+
+		ECHO "Checkout build branch build-${TEAM}"
+		SHOWCMD "git checkout build-${TEAM}"w
+		git checkout build-${TEAM}
+
+		ECHO "Current branch should be build-${TEAM}"
+		git branch
 	fi
 done
 # ----------------------------------------------------------------------
