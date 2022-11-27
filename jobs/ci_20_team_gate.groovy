@@ -13,6 +13,11 @@ pipeline {
 		buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '1'))
 //		ws('/tmp/cicd')
 	}
+	environment {
+		v_gate = 'TEAM'
+		v_team = ''
+		vPROCEED = 'YES'
+	}
 
 	stages {
 		stage('start') { steps { echo 'CI-PIPELINE-TEAM-GATE-START' } } 
