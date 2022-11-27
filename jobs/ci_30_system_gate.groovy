@@ -28,39 +28,33 @@ pipeline {
 //			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-MARS',credentialsId:'raogaru',poll:'false')} 
 		} }
 
-		stage('System-Gate-Enter') { steps { sh './ci.sh DUMMY' } }
+		stage('System-Gate-Enter') 		{ steps { sh './ci.sh System-Gate-Enter' } }
 
-		stage('System-Gate-Build-Enter') { steps { sh './ci.sh DUMMY' } }
+		stage('System-Gate-Build-Enter') 	{ steps { sh './ci.sh System-Gate-Build-Enter' } }
+		stage('System-Gate-Build-DB1') 		{ steps { sh './ci.sh System-Gate-Build-DB1' } }
+		stage('System-Gate-Build-DB2') 		{ steps { sh './ci.sh System-Gate-Build-DB2' } }
+		stage('System-Gate-Build-WWW') 		{ steps { sh './ci.sh System-Gate-Build-WWW' } }
+		stage('System-Gate-Build-APP1') 	{ steps { sh './ci.sh System-Gate-Build-APP1' } }
+		stage('System-Gate-Build-APP2') 	{ steps { sh './ci.sh System-Gate-Build-APP2' } }
+		stage('System-Gate-Build-APP3') 	{ steps { sh './ci.sh System-Gate-Build-APP3' } }
+		stage('System-Gate-Build-Exit') 	{ steps { sh './ci.sh System-Gate-Build-Exit' } }
 
-		//stage('System-Gate-Build') { parallel {
-		stage('System-Gate-Build-DB-Docker') { steps { sh './ci.sh DUMMY' } }
-		stage('System-Gate-Build-Web-Docker') { steps { sh './ci.sh DUMMY' } }
-		stage('System-Gate-Build-App-Docker') { steps { sh './ci.sh DUMMY' } }
-		//} }
+		stage('System-Gate-Deploy-Enter') 	{ steps { sh './ci.sh System-Gate-Deploy-Enter' } }
+		stage('System-Gate-Deploy-DB1') 	{ steps { sh './ci.sh System-Gate-Deploy-DB1' } }
+		stage('System-Gate-Deploy-DB2') 	{ steps { sh './ci.sh System-Gate-Deploy-DB2' } }
+		stage('System-Gate-Deploy-WWW') 	{ steps { sh './ci.sh System-Gate-Deploy-WWW' } }
+		stage('System-Gate-Deploy-APP1') 	{ steps { sh './ci.sh System-Gate-Deploy-APP1' } }
+		stage('System-Gate-Deploy-APP2') 	{ steps { sh './ci.sh System-Gate-Deploy-APP2' } }
+		stage('System-Gate-Deploy-APP3') 	{ steps { sh './ci.sh System-Gate-Deploy-APP3' } }
+		stage('System-Gate-Deploy-Exit') 	{ steps { sh './ci.sh System-Gate-Deploy-Exit' } }
 
-		stage('System-Gate-Build-Exit') { steps { sh './ci.sh DUMMY' } }
+		stage('System-Gate-Test-Enter') 	{ steps { sh './ci.sh System-Gate-Test-Enter' } }
+		stage('System-Gate-Test-Functional') 	{ steps { sh './ci.sh System-Gate-Test-Functional' } }
+		stage('System-Gate-Test-Performance')	{ steps { sh './ci.sh System-Gate-Test-Performance' } }
+		stage('System-Gate-Test-Security') 	{ steps { sh './ci.sh System-Gate-Test-Security' } }
+		stage('System-Gate-Test-Exit') 		{ steps { sh './ci.sh System-Gate-Test-Exit' } }
 
-		stage('System-Gate-Deploy-Enter') { steps { sh './ci.sh DUMMY' } }
-
-		//stage('System-Gate-Deploy') { parallel {
-		stage('System-Gate-Deploy-DB-Docker') { steps { sh './ci.sh DUMMY' } }
-		stage('System-Gate-Deploy-Web-Docker') { steps { sh './ci.sh DUMMY' } }
-		stage('System-Gate-Deploy-App-Docker') { steps { sh './ci.sh DUMMY' } }
-		//} }
-
-		stage('System-Gate-Deploy-Exit') { steps { sh './ci.sh DUMMY' } }
-
-		stage('System-Gate-Test-Enter') { steps { sh './ci.sh DUMMY' } }
-
-		//stage('System-Gate-Test') { parallel {
-		stage('System-Gate-Test-Functional') { steps { sh './ci.sh DUMMY' } }
-		stage('System-Gate-Test-Performance') { steps { sh './ci.sh DUMMY' } }
-		stage('System-Gate-Test-Security') { steps { sh './ci.sh DUMMY' } }
-		//} }
-
-		stage('System-Gate-Test-Exit') { steps { sh './ci.sh DUMMY' } }
-
-		stage('System-Gate-Exit') { steps { sh './ci.sh DUMMY' } }
+		stage('System-Gate-Exit') { steps { sh './ci.sh System-Gate-Exit' } }
 
 		stage('System-Gate-End') { steps { echo 'CI-PIPELINE-SYSTEM-GATE-END' } } 
 	}
