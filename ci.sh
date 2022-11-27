@@ -126,24 +126,33 @@ case "${vSTAGE}" in
 "Team-Gate-EARTH-Exit") 	. ${WORKSPACE}/tgTeam_Exit.sh EARTH ;;
 "Team-Gate-Exit") . ${WORKSPACE}/tg_Exit.sh ;;
 
-"System-Gate-Enter") . ${WORKSPACE}/System_Gate_Enter.sh ;;
+"System-Gate-Enter") . ${WORKSPACE}/sg_Enter.sh ;;
 
-"System-Build-1") . ${WORKSPACE}/System_Gate_Build.sh sysgate db ;;
-"System-Build-2") . ${WORKSPACE}/System_Gate_Build.sh sysgate docker ;;
-"System-Build-3") . ${WORKSPACE}/System_Gate_Build.sh sysgate ec2 ;;
-"System-Build-Exit") . ${WORKSPACE}/System_Build_Exit.sh ;;
+"System-Gate-Build-Enter") 	. ${WORKSPACE}/sgBuild_Enter.sh ;;
+"System-Gate-Build-DB1") 	. ${WORKSPACE}/sgBuild.sh ;;
+"System-Gate-Build-DB2") 	. ${WORKSPACE}/sgBuild.sh ;;
+"System-Gate-Build-WWW") 	. ${WORKSPACE}/sgBuild.sh ;;
+"System-Gate-Build-APP1") 	. ${WORKSPACE}/sgBuild.sh ;;
+"System-Gate-Build-APP2") 	. ${WORKSPACE}/sgBuild.sh ;;
+"System-Gate-Build-APP3") 	. ${WORKSPACE}/sgBuild.sh ;;
+"System-Gate-Build-Exit") 	. ${WORKSPACE}/sgBuild_Exit.sh ;;
 
-"System-Deploy-1") . ${WORKSPACE}/System_Gate_Deploy.sh sysgate db ;;
-"System-Deploy-2") . ${WORKSPACE}/System_Gate_Deploy.sh sysgate docker ;;
-"System-Deploy-3") . ${WORKSPACE}/System_Gate_Deploy.sh sysgate ec2 ;;
-"System-Deploy-Exit") . ${WORKSPACE}/System_Deploy_Exit.sh ;;
+"System-Gate-Deploy-Enter") 	. ${WORKSPACE}/sgDeploy_Enter.sh ;;
+"System-Gate-Deploy-DB1") 	. ${WORKSPACE}/sgDeploy.sh ;;
+"System-Gate-Deploy-DB2") 	. ${WORKSPACE}/sgDeploy.sh ;;
+"System-Gate-Deploy-WWW") 	. ${WORKSPACE}/sgDeploy.sh ;;
+"System-Gate-Deploy-APP1") 	. ${WORKSPACE}/sgDeploy.sh ;;
+"System-Gate-Deploy-APP2") 	. ${WORKSPACE}/sgDeploy.sh ;;
+"System-Gate-Deploy-APP3") 	. ${WORKSPACE}/sgDeploy.sh ;;
+"System-Gate-Deploy-Exit") 	. ${WORKSPACE}/sgDeploy_Exit.sh ;;
 
-"System-Test-1") . ${WORKSPACE}/System_Gate_Test.sh phase1 ;;
-"System-Test-2") . ${WORKSPACE}/System_Gate_Test.sh phase2 ;;
-"System-Test-3") . ${WORKSPACE}/System_Gate_Test.sh phase3 ;;
-"System-Test-Exit") . ${WORKSPACE}/System_Test_Exit.sh ;;
+"System-Gate-Test-Enter") 	. ${WORKSPACE}/sgTest_Enter.sh ;;
+"System-Gate-Test-Functional") 	. ${WORKSPACE}/sgTest.sh ;;
+"System-Gate-Test-Performance")	. ${WORKSPACE}/sgTest.sh ;;
+"System-Gate-Test-Security") 	. ${WORKSPACE}/sgTest.sh ;;
+"System-Gate-Test-Exit") 	. ${WORKSPACE}/sgTest_Exit.sh ;;
 
-"System-Gate-Exit") MARKER "Option:${vSTAGE}" ;;
+"System-Gate-Exit") . ${WORKSPACE}/sg_Exit.sh ;;
 
 "Release-Gate-Enter") MARKER "Option:${vSTAGE}" ;;
 "Release-Gate-Prepare") MARKER "Option:${vSTAGE}" ;;
