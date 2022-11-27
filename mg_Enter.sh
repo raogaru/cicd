@@ -2,6 +2,19 @@
 MARKER "script:mg_Enter.sh START"
 # ######################################################################
 
+ECHOred "RED ${vLINE1}"
+ECHOgreen "GREEN ${vLINE1}"
+ECHOyellow  "YELLOw ${vLINE1}"
+ECHOblue  "BLUE ${vLINE1}"
+ECHOmagenta  "MAGENTA ${vLINE1}"
+ECHOcyan  "CYAN ${vLINE1}"
+ECHOdarkred  "DARK RED ${vLINE1}"
+ECHOdarkgreen  "DARK GREEN ${vLINE1}"
+ECHOdarkyellow  "DARK YELLOW ${vLINE1}"
+ECHOdarkblue  "DARK BLUE ${vLINE1}"
+ECHOdarkpurple  "DARK PURPLE ${vLINE1}"
+ECHOdarkcyan  "DARK CYAN ${vLINE1}"
+
 ECHO "Application Name is \"${MYAPP_NAME}\""
 ECHO "Pipe Environment file is \"${PIPE_ENV}\""
 
