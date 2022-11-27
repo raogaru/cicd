@@ -5,23 +5,30 @@ MARKER "script:sg_Enter.sh START"
 f_sysgate_git_checkout_sysgate_branch () {
 MARKER "function:f_sysgate_git_checkout_sysgate_branch"
 
-HEADER2 "Create directory for sysgate"
+HEADER3 "Create directory for sysgate"
         GIT_SYSGATE_DIR=${PIPE_DIR}/git/sysgate
         mkdir -p ${GIT_SYSGATE_DIR}
-        cd ${GIT_SYSGATE_DIR}
         ECHO "GIT_SYSGATE_DIR is ${GIT_SYSGATE_DIR}"
 
-HEADER2 "Clone master branch"
+HEADER3 "Clone System-Gate branch \"${GIT_SYSGATE_BRANCH}\""
+        cd ${GIT_SYSGATE_DIR}
         git clone ${MYAPP_GIT} ${GIT_SYSGATE_DIR}
-	git checkout master
-        [[ $? -ne 0 ]] && ERROR "Failed to checkout ${MYAPP_GIT} git repo master branch"
+
+HEADER3 "Drop System-Gate branch \"${GIT_SYSGATE_BRANCH}\""
+	git branch -D ${GIT_SYSGATE_BRANCH}
+	git push origin -D ${GIT_SYSGATE_BRANCH}
+
+HEADER3 "Clone ${GIT_MASTER_BRANCH} branch \"${GIT_SYSGATE_BRANCH}\""
+	ECHO "git checkout ${GIT_MASTER_BRANCH}"
+	git checkout ${GIT_MASTER_BRANCH}
+        [[ $? -ne 0 ]] && ERROR "Failed to checkout ${MYAPP_GIT} git repo ${GIT_MASTER_BRANCH} branch"
         [[ ! -d ${GIT_SYSGATE_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_SYSGATE_DIR} directory"
         ADDENV "GIT_SYSGATE_DIR=${GIT_SYSGATE_DIR}"
 
 HEADER2 "Checkout team branches"
 	for TEAM in ${AGILE_TEAMS}
 	do
-		ECHO "git checkout team-${TEAM} started"
+		ECHO "git checkout team-${TEAM}"
 		git checkout team-${TEAM}
         	if [ $? -ne 0 ]; then
 			WARN "Failed to checkout ${MYAPP_GIT} git repo team-${TEAM} branch"
@@ -32,26 +39,26 @@ HEADER2 "Checkout team branches"
 		PrintLine2
 	done
 
-HEADER2 "Delete sysgate branch"
-	git branch -D sysgate
+HEADER2 "Delete ${GIT_SYSGATE_BRANCH} branch"
+	git branch -D ${GIT_SYSGATE_BRANCH}
 
 HEADER2 "Create sysgate branch"
-	git branch sysgate
-	git checkout sysgate
+	git branch ${GIT_SYSGATE_BRANCH}
+	git checkout ${GIT_SYSGATE_BRANCH}
        	if [ $? -ne 0 ]; then
-		WARN "Failed to checkout ${MYAPP_GIT} git repo sysgate branch"
+		WARN "Failed to checkout ${MYAPP_GIT} git repo ${GIT_SYSGATE_BRANCH} branch"
 		return 1
 	else
-		ECHO "git checkout sysgate successful"
+		ECHO "git checkout ${GIT_SYSGATE_BRANCH} successful"
 	fi
 
 HEADER2 "List all branches"
         git branch -a
 
-HEADER2 "Make sure working on sysgate branch"
+HEADER2 "Make sure working on ${GIT_SYSGATE_BRANCH} branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
-        [[ "${x1}" != "sysgate" ]] && ERROR "Current branch is not \"sysgate\"."
-        ECHO Current branch is "sysgate"
+        [[ "${x1}" != "${GIT_SYSGATE_BRANCH}" ]] && ERROR "Current branch is not \"${GIT_SYSGATE_BRANCH}\"."
+        ECHO Current branch is "${GIT_SYSGATE_BRANCH}"
 }
 # ----------------------------------------------------------------------
 f_sysgate_git_merge_team_branches () {
@@ -62,14 +69,14 @@ do
 	v_test=$(READENV TEAM_TEST_${TEAM})
 	#ECHO "TEAM_TEST_${TEAM}=${v_test}"
 	if [ "${v_test}" == "${cPASS}" ] ;  then
-		HEADER2 "Merge team-${TEAM} branch into sysgate branch"
+		HEADER2 "Merge team-${TEAM} branch into ${GIT_SYSGATE_BRANCH} branch"
 		git merge team-${TEAM} -m "Merge branch team-${TEAM} pipe# ${PIPE_NUM}"
         	if [ $? -ne 0 ]; then
-			WARN "Failed to merge team-${TEAM} branch of ${MYAPP_GIT} repo to sysgate branch"
+			WARN "Failed to merge team-${TEAM} branch of ${MYAPP_GIT} repo to ${GIT_SYSGATE_BRANCH} branch"
 			ADDENV "SYSGATE_MERGE_${TEAM}=${cFAIL}"
 			return 1
 		else
-			ECHO "git merge successful from team-${TEAM} branch to sysgate branch"
+			ECHO "git merge successful from team-${TEAM} branch to ${GIT_SYSGATE_BRANCH} branch"
 			ADDENV "SYSGATE_MERGE_${TEAM}=${cPASS}"
 		fi
 	else
