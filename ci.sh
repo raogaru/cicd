@@ -29,7 +29,7 @@ case "${vSTAGE}" in
 
 "Team-Gate-Enter") . ${WORKSPACE}/tg_Enter.sh ;;
 
-"Team-Gate-MARS-Enter") 	. ${WORKSPACE}/tg_Enter.sh MARS ;;
+"Team-Gate-MARS-Enter") 	. ${WORKSPACE}/tgTeam_Enter.sh MARS ;;
 "Team-Gate-Build-MARS-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh MARS ;;
 "Team-Gate-Build-MARS-DB1") 	. ${WORKSPACE}/tgBuild.sh MARS db1 ;;
 "Team-Gate-Build-MARS-DB2") 	. ${WORKSPACE}/tgBuild.sh MARS db1 ;;
@@ -51,9 +51,9 @@ case "${vSTAGE}" in
 "Team-Gate-Test-MARS-Performance"). ${WORKSPACE}/tgTest.sh MARS performance ;;
 "Team-Gate-Test-MARS-Security") . ${WORKSPACE}/tgTest.sh MARS security ;;
 "Team-Gate-Test-MARS-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh MARS ;;
-"Team-Gate-MARS-Exit") 		. ${WORKSPACE}/tg_Exit.sh MARS ;;
+"Team-Gate-MARS-Exit") 		. ${WORKSPACE}/tgTeam_Exit MARS ;;
 
-"Team-Gate-PLUTO-Enter") 	. ${WORKSPACE}/tg_Enter.sh PLUTO ;;
+"Team-Gate-PLUTO-Enter") 	. ${WORKSPACE}/tgTeam_Enter.sh PLUTO ;;
 "Team-Gate-Build-PLUTO-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh PLUTO ;;
 "Team-Gate-Build-PLUTO-DB1") 	. ${WORKSPACE}/tgBuild.sh PLUTO db1 ;;
 "Team-Gate-Build-PLUTO-DB2") 	. ${WORKSPACE}/tgBuild.sh PLUTO db1 ;;
@@ -75,9 +75,9 @@ case "${vSTAGE}" in
 "Team-Gate-Test-PLUTO-Performance"). ${WORKSPACE}/tgTest.sh PLUTO performance ;;
 "Team-Gate-Test-PLUTO-Security") . ${WORKSPACE}/tgTest.sh PLUTO security ;;
 "Team-Gate-Test-PLUTO-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh PLUTO ;;
-"Team-Gate-PLUTO-Exit") 		. ${WORKSPACE}/tg_Exit.sh PLUTO ;;
+"Team-Gate-PLUTO-Exit") 		. ${WORKSPACE}/tgTeam_Exit PLUTO ;;
 
-"Team-Gate-VENUS-Enter") 	. ${WORKSPACE}/tg_Enter.sh VENUS ;;
+"Team-Gate-VENUS-Enter") 	. ${WORKSPACE}/tgTeam_Enter.sh VENUS ;;
 "Team-Gate-Build-VENUS-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh VENUS ;;
 "Team-Gate-Build-VENUS-DB1") 	. ${WORKSPACE}/tgBuild.sh VENUS db1 ;;
 "Team-Gate-Build-VENUS-DB2") 	. ${WORKSPACE}/tgBuild.sh VENUS db1 ;;
@@ -99,9 +99,9 @@ case "${vSTAGE}" in
 "Team-Gate-Test-VENUS-Performance"). ${WORKSPACE}/tgTest.sh VENUS performance ;;
 "Team-Gate-Test-VENUS-Security") . ${WORKSPACE}/tgTest.sh VENUS security ;;
 "Team-Gate-Test-VENUS-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh VENUS ;;
-"Team-Gate-VENUS-Exit") 		. ${WORKSPACE}/tg_Exit.sh VENUS ;;
+"Team-Gate-VENUS-Exit") 		. ${WORKSPACE}/tgTeam_Exit VENUS ;;
 
-"Team-Gate-EARTH-Enter") 	. ${WORKSPACE}/tg_Enter.sh EARTH ;;
+"Team-Gate-EARTH-Enter") 	. ${WORKSPACE}/tgTeam_Enter.sh EARTH ;;
 "Team-Gate-Build-EARTH-Enter")	. ${WORKSPACE}/tgBuild_Enter.sh EARTH ;;
 "Team-Gate-Build-EARTH-DB1") 	. ${WORKSPACE}/tgBuild.sh EARTH db1 ;;
 "Team-Gate-Build-EARTH-DB2") 	. ${WORKSPACE}/tgBuild.sh EARTH db1 ;;
@@ -123,7 +123,7 @@ case "${vSTAGE}" in
 "Team-Gate-Test-EARTH-Performance"). ${WORKSPACE}/tgTest.sh EARTH performance ;;
 "Team-Gate-Test-EARTH-Security") . ${WORKSPACE}/tgTest.sh EARTH security ;;
 "Team-Gate-Test-EARTH-Exit") 	. ${WORKSPACE}/tgTest_Exit.sh EARTH ;;
-"Team-Gate-EARTH-Exit") 		. ${WORKSPACE}/tg_Exit.sh EARTH ;;
+"Team-Gate-EARTH-Exit") 	. ${WORKSPACE}/tgTeam_Exit EARTH ;;
 "Team-Gate-Exit") . ${WORKSPACE}/tg_Exit.sh ;;
 
 "System-Gate-Enter") . ${WORKSPACE}/System_Gate_Enter.sh ;;
