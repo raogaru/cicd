@@ -110,16 +110,16 @@ do
 	v_commits=$(READENV TEAM_COMMITS_${TEAM})
 	if [ "${v_commits}" == "YES" ] ; then
 
-	TMP_DB_SQL=${PIPE_DIR}/tmp_db_${v_team}.sql
+	TMP_DB_SQL=${PIPE_DIR}/tmp_db_${TEAM}.sql
 	echo "select datname from pg_database where datname='${TEAM}';" > ${TMP_DB_SQL}
 
 	export PGPASSWORD=rao
 	${PGSQL_HOME}/bin/psql -h localhost -p 5432 -d ${TEAM} -U rao -f ${TMP_DB_SQL}
 	r=$?
 	if [ $r -eq 0 ]; then
-		ECHO "DB connection successful for ${v_team}"
+		ECHO "DB connection successful for ${TEAM}"
 	else
-		ERROR "DB connection failed for ${v_team}"
+		ERROR "DB connection failed for ${TEAM}"
 	fi
 	fi
 done
