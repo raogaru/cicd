@@ -76,11 +76,12 @@ do
 	fi
 done
 # ----------------------------------------------------------------------
-HEADER2 "Drop and recreated build branches"
+HEADER2 "Drop and recreate build branches"
 for TEAM in ${AGILE_TEAMS}
 do
 	v_commits=$(READENV TEAM_COMMITS_${TEAM})
 	if [ "${v_commits}" == "YES" ] ; then
+		HEADER3 "Drop and recreated build branch build-${TEAM}"
         	GIT_TEAM_DIR=${PIPE_DIR}/git/${TEAM}
 		cd ${GIT_TEAM_DIR}
 		ECHO "Current branch should be team-${TEAM}"
@@ -101,6 +102,31 @@ do
 		ECHO "Current branch should be build-${TEAM}"
 		git branch
 	fi
+done
+# ----------------------------------------------------------------------
+HEADER2 "Verify DB connectivity"
+for TEAM in ${AGILE_TEAMS}
+do
+	v_commits=$(READENV TEAM_COMMITS_${TEAM})
+	if [ "${v_commits}" == "YES" ] ; then
+
+	TMP_DB_SQL=${PIPE_DIR}/tmp_db_${v_team}.sql
+	echo "select datname from pg_database where datname='mars';" > ${TMP_DB_SQL}
+
+	export PGPASSWORD=rao
+	${PGSQL_HOME}/bin/psql -h localhost -p 5432 -d ${TEAM} -U rao -f ${TMP_DB_SQL}
+	r=$?
+	if [ $r -eq 0 ]; then
+		ECHO "DB connection successful for ${v_team}"
+	else
+		ERROR "DB connection failed for ${v_team}"
+	fi
+	fi
+done
+
+# ######################################################################
+MARKER "script:build_db.sh END"
+# ######################################################################
 done
 # ----------------------------------------------------------------------
 # ######################################################################
