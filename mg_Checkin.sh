@@ -2,24 +2,26 @@
 MARKER "script:mg_Checkin.sh START"
 # ######################################################################
 # ----------------------------------------------------------------------
-HEADER2 "Checkout master branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
-	GIT_MASTER_DIR=${PIPE_DIR}/git/master
+HEADER2 "Checkout ${GIT_MASTER_BRANCH} branch of ${MYAPP_NAME} Git repo ${GITREPO_URL}"
+	GIT_MASTER_DIR=${PIPE_DIR}/git/${GIT_MASTER_BRANCH}
+	ADDENV "GIT_MASTER_DIR=${GIT_MASTER_DIR}"
 	mkdir -p ${GIT_MASTER_DIR}
 	cd ${GIT_MASTER_DIR}
 	ECHO "GIT_MASTER_DIR is ${GIT_MASTER_DIR}"
+	ECHO "git clone ${MYAPP_GIT} ${GIT_MASTER_DIR}"
 	git clone ${MYAPP_GIT} ${GIT_MASTER_DIR}
-	git checkout master
+	ECHO "git checkout ${GIT_MASTER_BRANCH}"
+	git checkout ${GIT_MASTER_BRANCH}
 	[[ $? -ne 0 ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo"
 	[[ ! -d ${GIT_MASTER_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_MASTER_DIR} directory"
-	ADDENV "GIT_MASTER_DIR=${GIT_MASTER_DIR}"
 # ----------------------------------------------------------------------
 HEADER2 "List all branches"
 	git branch -a
 # ----------------------------------------------------------------------
-HEADER2 "Make sure working on master branch"
+HEADER2 "Make sure working on \"${GIT_MASTER_BRANCH}\" branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
-        [[ "${x1}" != "master" ]] && ERROR "Current branch is not \"master\"."
-	ECHO Current branch is "master"
+        [[ "${x1}" != "${GIT_MASTER_BRANCH}" ]] && ERROR "Current branch is not \"${GIT_MASTER_BRANCH}\"."
+	ECHO Current branch is "${GIT_MASTER_BRANCH}"
 # ----------------------------------------------------------------------
 #RAO HEADER2 "List development teams"
 #RAO         rm -f ${PIPE_DIR}/teams.tmp
@@ -53,8 +55,8 @@ HEADER2 "Make sure working on master branch"
 #RAO for TEAM in ${AGILE_TEAMS}
 #RAO do
 #RAO         HEADER3 "List of commits by team \"${TEAM}\":"
-#RAO         ECHO "git log origin/master..team-${TEAM}"
-#RAO         git log origin/master..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'  | tee  ${PIPE_DIR}/git_commits_by_${TEAM}.lst
+#RAO         ECHO "git log origin/${GIT_MASTER_BRANCH}..team-${TEAM}"
+#RAO         git log origin/${GIT_MASTER_BRANCH}..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'  | tee  ${PIPE_DIR}/git_commits_by_${TEAM}.lst
 #RAO         if [ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]; then
 #RAO 		ADDENV "TEAM_COMMITS_${TEAM}=YES"
 #RAO 	else
@@ -62,8 +64,8 @@ HEADER2 "Make sure working on master branch"
 #RAO 	fi
 #RAO 
 #RAO         HEADER3 "List of files modified by team \"${TEAM}\":"
-#RAO         ECHO "git log origin/master..team-${TEAM}"
-#RAO         git log origin/master..origin/team-${TEAM} --pretty="" --name-only | tee ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst
+#RAO         ECHO "git log origin/${GIT_MASTER_BRANCH}..team-${TEAM}"
+#RAO         git log origin/${GIT_MASTER_BRANCH}..origin/team-${TEAM} --pretty="" --name-only | tee ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst
 #RAO 
 #RAO done
 # ----------------------------------------------------------------------
