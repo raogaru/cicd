@@ -12,7 +12,7 @@ ECHOdarkred  "DARK RED ${vLINE1}"
 ECHOdarkgreen  "DARK GREEN ${vLINE1}"
 ECHOdarkyellow  "DARK YELLOW ${vLINE1}"
 ECHOdarkblue  "DARK BLUE ${vLINE1}"
-ECHOdarkpurple  "DARK PURPLE ${vLINE1}"
+ECHOdarkmagenta  "DARK MAGENTA ${vLINE1}"
 ECHOdarkcyan  "DARK CYAN ${vLINE1}"
 
 ECHO "Application Name is \"${MYAPP_NAME}\""
