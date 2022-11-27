@@ -14,8 +14,9 @@ pipeline {
 //		ws('/tmp/cicd')
 	}
 	environment {
-		v_gate = 'TEAM'
-		v_team = 'VENUS'
+		vGATE = 'TEAM'
+		vSTAGE = ''
+		vTEAM = 'VENUS'
 		vPROCEED = 'YES'
 	}
 
