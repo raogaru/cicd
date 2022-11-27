@@ -8,11 +8,15 @@ ARG3=$3
 ARG4=$4
 ARG5=$5
 v_stage=$1
+set +x
 source ${WORKSPACE}/ci.env
-set -x
 HEADER1 "BEGIN STAGE ${v_stage}"
 
-[[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
+if [ "${v_stage}" == "Main-Gate-Enter" ]; then
+	rm -f ${PIPE_ENV}
+else
+	[[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
+fi
 
 MARKER "script:ci.sh argument:${v_stage} position:START"
 
