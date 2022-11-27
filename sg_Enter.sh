@@ -15,13 +15,13 @@ HEADER3 "Clone System-Gate branch \"${GIT_SYSGATE_BRANCH}\""
         SHOWCMD "git clone ${MYAPP_GIT} ${GIT_SYSGATE_DIR}"
         git clone ${MYAPP_GIT} ${GIT_SYSGATE_DIR}
 
-HEADER3 "Drop System-Gate branch \"${GIT_SYSGATE_BRANCH}\""
-	SHOWCMD "git branch -D ${GIT_SYSGATE_BRANCH}"
-	git branch -D ${GIT_SYSGATE_BRANCH}
-	SHOWCMD "git push origin -D ${GIT_SYSGATE_BRANCH}"
-	git push origin -D ${GIT_SYSGATE_BRANCH}
+#RAO HEADER3 "Drop System-Gate branch \"${GIT_SYSGATE_BRANCH}\""
+#RAO 	SHOWCMD "git branch -D ${GIT_SYSGATE_BRANCH}"
+#RAO 	git branch -D ${GIT_SYSGATE_BRANCH}
+#RAO 	SHOWCMD "git push origin -D ${GIT_SYSGATE_BRANCH}"
+#RAO 	git push origin -D ${GIT_SYSGATE_BRANCH}
 
-HEADER3 "Clone ${GIT_MASTER_BRANCH} branch \"${GIT_SYSGATE_BRANCH}\""
+HEADER3 "Clone master branch \"${GIT_SYSGATE_BRANCH}\""
 	SHOWCMD "git checkout ${GIT_MASTER_BRANCH}"
 	git checkout ${GIT_MASTER_BRANCH}
         [[ $? -ne 0 ]] && ERROR "Failed to checkout ${MYAPP_GIT} git repo ${GIT_MASTER_BRANCH} branch"
