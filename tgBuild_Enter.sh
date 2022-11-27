@@ -1,9 +1,8 @@
-v_script=tgBuild_Enter.sh
 # ######################################################################
-MARKER "script:${v_script} argument=$1 START"
+MARKER "script:tgBuild_Enter.sh argument=$1 START"
 # ######################################################################
 v_team=$1	# team name
 echo arguments $* 
 # ######################################################################
-MARKER "script:${v_script} END"
+MARKER "script:tgBuild_Enter.sh END"
 # ######################################################################
