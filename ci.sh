@@ -7,15 +7,16 @@ ARG2=$2
 ARG3=$3
 ARG4=$4
 ARG5=$5
+v_stage=$1
 source ${WORKSPACE}/ci.env
 set +x
-HEADER1 "BEGIN STAGE $ARG1"
+HEADER1 "BEGIN STAGE ${v_stage}"
 
 [[ -f ${PIPE_ENV} ]] && source ${PIPE_ENV}
 
-MARKER "script:ci.sh argument:${ARG1} position:START"
+MARKER "script:ci.sh argument:${v_stage} position:START"
 
-case "${ARG1}" in
+case "${v_stage}" in
 
 "Main-Gate-Enter") . ${WORKSPACE}/mg_Enter.sh ;;
 "Main-Gate-Checkin") . ${WORKSPACE}/mg_Checkin.sh ;;
@@ -138,18 +139,18 @@ case "${ARG1}" in
 "System-Test-3") . ${WORKSPACE}/System_Gate_Test.sh phase3 ;;
 "System-Test-Exit") . ${WORKSPACE}/System_Test_Exit.sh ;;
 
-"System-Gate-Exit") MARKER "Option:${ARG1}" ;;
+"System-Gate-Exit") MARKER "Option:${v_stage}" ;;
 
-"Release-Gate-Enter") MARKER "Option:${ARG1}" ;;
-"Release-Gate-Prepare") MARKER "Option:${ARG1}" ;;
+"Release-Gate-Enter") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Prepare") MARKER "Option:${v_stage}" ;;
 "Release-Gate-Build") . ${WORKSPACE}/Release_Gate_Build.sh ;;
 "Release-Gate-Artifacts") . ${WORKSPACE}/Release_Artifacts.sh ;;
-"Release-Gate-Verify") MARKER "Option:${ARG1}" ;;
-"Release-Gate-Publish") MARKER "Option:${ARG1}" ;;
-"Release-Gate-Notify") MARKER "Option:${ARG1}" ;;
-"Release-Gate-Exit") MARKER "Option:${ARG1}" ;;
+"Release-Gate-Verify") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Publish") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Notify") MARKER "Option:${v_stage}" ;;
+"Release-Gate-Exit") MARKER "Option:${v_stage}" ;;
 
-"Main-Gate-Exit") MARKER "Option:${ARG1}" ;;
+"Main-Gate-Exit") MARKER "Option:${v_stage}" ;;
 
 "DUMMY") DUMMY_ACTION ;;
 
@@ -159,11 +160,11 @@ esac
 
 r=$?
 if [ $r -eq 0 ]; then
-	MARKER "script:ci.sh argument:${ARG1} position:END"
+	MARKER "script:ci.sh argument:${v_stage} position:END"
 else
-	MARKER "script:ci.sh argument:${ARG1} position:END FAILED"
+	MARKER "script:ci.sh argument:${v_stage} position:END FAILED"
 fi
 # ######################################################################
-FOOTER1 "END STAGE $ARG1"
+FOOTER1 "END STAGE ${v_stage}"
 # ######################################################################
 exit $r
