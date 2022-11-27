@@ -12,23 +12,26 @@ HEADER3 "Create directory for sysgate"
 
 HEADER3 "Clone System-Gate branch \"${GIT_SYSGATE_BRANCH}\""
         cd ${GIT_SYSGATE_DIR}
+        SHOWCMD "git clone ${MYAPP_GIT} ${GIT_SYSGATE_DIR}"
         git clone ${MYAPP_GIT} ${GIT_SYSGATE_DIR}
 
 HEADER3 "Drop System-Gate branch \"${GIT_SYSGATE_BRANCH}\""
+	SHOWCMD "git branch -D ${GIT_SYSGATE_BRANCH}"
 	git branch -D ${GIT_SYSGATE_BRANCH}
+	SHOWCMD "git push origin -D ${GIT_SYSGATE_BRANCH}"
 	git push origin -D ${GIT_SYSGATE_BRANCH}
 
 HEADER3 "Clone ${GIT_MASTER_BRANCH} branch \"${GIT_SYSGATE_BRANCH}\""
-	ECHO "git checkout ${GIT_MASTER_BRANCH}"
+	SHOWCMD "git checkout ${GIT_MASTER_BRANCH}"
 	git checkout ${GIT_MASTER_BRANCH}
         [[ $? -ne 0 ]] && ERROR "Failed to checkout ${MYAPP_GIT} git repo ${GIT_MASTER_BRANCH} branch"
         [[ ! -d ${GIT_SYSGATE_DIR} ]] && ERROR "Failed to clone ${MYAPP_GIT} git repo into ${GIT_SYSGATE_DIR} directory"
         ADDENV "GIT_SYSGATE_DIR=${GIT_SYSGATE_DIR}"
 
-HEADER2 "Checkout team branches"
+HEADER3 "Checkout team branches"
 	for TEAM in ${AGILE_TEAMS}
 	do
-		ECHO "git checkout team-${TEAM}"
+		SHOWCMD "git checkout team-${TEAM}"
 		git checkout team-${TEAM}
         	if [ $? -ne 0 ]; then
 			WARN "Failed to checkout ${MYAPP_GIT} git repo team-${TEAM} branch"
@@ -39,11 +42,10 @@ HEADER2 "Checkout team branches"
 		PrintLine2
 	done
 
-HEADER2 "Delete ${GIT_SYSGATE_BRANCH} branch"
-	git branch -D ${GIT_SYSGATE_BRANCH}
-
-HEADER2 "Create sysgate branch"
+HEADER3 "Create sysgate branch"
+	SHOWCMD "git branch ${GIT_SYSGATE_BRANCH}"
 	git branch ${GIT_SYSGATE_BRANCH}
+	SHOWCMD "git checkout ${GIT_SYSGATE_BRANCH}"
 	git checkout ${GIT_SYSGATE_BRANCH}
        	if [ $? -ne 0 ]; then
 		WARN "Failed to checkout ${MYAPP_GIT} git repo ${GIT_SYSGATE_BRANCH} branch"
@@ -52,10 +54,10 @@ HEADER2 "Create sysgate branch"
 		ECHO "git checkout ${GIT_SYSGATE_BRANCH} successful"
 	fi
 
-HEADER2 "List all branches"
+HEADER3 "List all branches"
         git branch -a
 
-HEADER2 "Make sure working on ${GIT_SYSGATE_BRANCH} branch"
+HEADER3 "Make sure working on ${GIT_SYSGATE_BRANCH} branch"
         x1=$(git branch | grep "^\*" | sed -e 's/^\* //')
         [[ "${x1}" != "${GIT_SYSGATE_BRANCH}" ]] && ERROR "Current branch is not \"${GIT_SYSGATE_BRANCH}\"."
         ECHO Current branch is "${GIT_SYSGATE_BRANCH}"
