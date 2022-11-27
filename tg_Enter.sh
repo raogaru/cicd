@@ -83,6 +83,11 @@ done
 return 0
 }
 # ----------------------------------------------------------------------
+f_teamgate_check_team_specific_items () {
+MARKER "function:f_teamgate_check_team_specific_items"
+ECHO ""
+}
+# ----------------------------------------------------------------------
 # ######################################################################
 # START HERE
 # ######################################################################
@@ -90,6 +95,8 @@ if [ "${v_stage}" == "Team-Gate-Enter" ]; then
 	f_teamgate_validate_team_branches
 	f_teamgate_list_commits_by_each_team
 	f_teamgate_checkout_team_branch
+else
+	f_teamgate_check_team_specific_items
 fi
 # ######################################################################
 MARKER "script:tg_Enter.sh END"
