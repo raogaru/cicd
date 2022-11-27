@@ -38,7 +38,7 @@ MARKER "function:f_teamgate_list_commits_by_each_team"
 for TEAM in ${AGILE_TEAMS}
 do
         HEADER2 "List of commits by team \"${TEAM}\":"
-        ECHO "git log origin/${GIT_MASTER_BRANCH}..team-${TEAM}"
+        SHOWCMD "git log origin/${GIT_MASTER_BRANCH}..team-${TEAM}"
         git log origin/${GIT_MASTER_BRANCH}..origin/team-${TEAM} --pretty=format:"%ad:%h:%H:%an:%ae:%s" --date format:'%Y-%m-%d-%H-%M-%S'  | tee  ${PIPE_DIR}/git_commits_by_${TEAM}.lst
 	echo ""
         if [ -s ${PIPE_DIR}/git_commits_by_${TEAM}.lst ]; then
@@ -48,7 +48,7 @@ do
 	fi
 
         HEADER2 "List of files modified by team \"${TEAM}\":"
-        ECHO "git log origin/${GIT_MASTER_BRANCH}..team-${TEAM}"
+        SHOWCMD "git log origin/${GIT_MASTER_BRANCH}..team-${TEAM}"
         git log origin/${GIT_MASTER_BRANCH}..origin/team-${TEAM} --pretty="" --name-only | tee ${PIPE_DIR}/git_files_modified_by_${TEAM}.lst
 	echo ""
 done
@@ -69,6 +69,7 @@ do
 		cd ${GIT_TEAM_DIR}
 	        ECHO "GIT_TEAM_DIR is ${GIT_TEAM_DIR}"
 		ADDENV "GIT_TEAM_DIR_${TEAM}=${GIT_TEAM_DIR}"
+		SHOWCMD "git clone -b team-${TEAM} ${MYAPP_GIT} ${GIT_TEAM_DIR}"
 		git clone -b team-${TEAM} ${MYAPP_GIT} ${GIT_TEAM_DIR}
 		if [ $? -eq 0 ]; then
 			ADDENV "TEAM_CHECKOUT_${TEAM}=${cPASS}"
