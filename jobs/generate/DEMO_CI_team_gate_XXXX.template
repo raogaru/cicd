@@ -1,0 +1,66 @@
+// ######################################################################
+pipelineJob('DEMO-CI-team-gate-XXXX') {
+  definition {
+    cps {
+      script('''
+pipeline {
+agent any
+options { 
+  timestamps()
+  ansiColor('xterm')
+  disableConcurrentBuilds()
+  timeout(59)
+  buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '1'))
+} // options
+environment {
+  vGATE = 'TEAM'
+  vSTAGE = ''
+  vTEAM = 'XXXX'
+  vPROCEED = 'YES'
+} // environment
+
+stages {
+stage('Team-Gate-XXXX-Start') 		{ steps { echo 'CI-PIPELINE-TEAM-GATE-XXXX-START' } } 
+
+stage('Team-Gate-XXXX-Git') 		{ steps { 
+  git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
+//dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-XXXX',credentialsId:'raogaru',poll:'false')} 
+} }
+
+stage('Team-Gate-XXXX-Enter') 		{ steps { sh './ci.sh Team-Gate-XXXX-Enter' } }
+
+stage('Team-Gate-Build-XXXX-Enter')	{ steps { sh './ci.sh Team-Gate-Build-XXXX-Enter' } }
+stage('Team-Gate-Build-XXXX-DB1') 	{ steps { sh './ci.sh Team-Gate-Build-XXXX-DB1' } }
+stage('Team-Gate-Build-XXXX-DB2') 	{ steps { sh './ci.sh Team-Gate-Build-XXXX-DB2' } }
+stage('Team-Gate-Build-XXXX-WWW') 	{ steps { sh './ci.sh Team-Gate-Build-XXXX-WWW' } }
+stage('Team-Gate-Build-XXXX-APP1') 	{ steps { sh './ci.sh Team-Gate-Build-XXXX-APP1' } }
+stage('Team-Gate-Build-XXXX-APP2') 	{ steps { sh './ci.sh Team-Gate-Build-XXXX-APP2' } }
+stage('Team-Gate-Build-XXXX-APP3') 	{ steps { sh './ci.sh Team-Gate-Build-XXXX-APP3' } }
+stage('Team-Gate-Build-XXXX-Exit') 	{ steps { sh './ci.sh Team-Gate-Build-XXXX-' } }
+
+stage('Team-Gate-Deploy-XXXX-Enter') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-Enter' } }
+stage('Team-Gate-Deploy-XXXX-DB1') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-DB1' } }
+stage('Team-Gate-Deploy-XXXX-DB2') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-DB2' } }
+stage('Team-Gate-Deploy-XXXX-WWW') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-WWW' } }
+stage('Team-Gate-Deploy-XXXX-APP1') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-APP1' } }
+stage('Team-Gate-Deploy-XXXX-APP2') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-APP2' } }
+stage('Team-Gate-Deploy-XXXX-APP3') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-APP3' } }
+stage('Team-Gate-Deploy-XXXX-Exit') 	{ steps { sh './ci.sh Team-Gate-Deploy-XXXX-Exit' } }
+
+stage('Team-Gate-Test-XXXX-Enter') 	{ steps { sh './ci.sh Team-Gate-Test-XXXX-Enter' } }
+stage('Team-Gate-Test-XXXX-Functional') { steps { sh './ci.sh Team-Gate-Test-XXXX-Functional' } }
+stage('Team-Gate-Test-XXXX-Performance'){ steps { sh './ci.sh Team-Gate-Test-XXXX-Performance' } }
+stage('Team-Gate-Test-XXXX-Security') 	{ steps { sh './ci.sh Team-Gate-Test-XXXX-Security' } }
+stage('Team-Gate-Test-XXXX-Exit') 	{ steps { sh './ci.sh Team-Gate-Test-XXXX-Exit' } }
+
+stage('Team-Gate-XXXX-Exit') { steps { sh './ci.sh Team-Gate-XXXX-Exit' } }
+
+stage('Team-Gate-XXXX-End') { steps { echo 'CI-PIPELINE-TEAM-GATE-XXXX-END' } } 
+} // stages
+} // pipeline
+      '''.stripIndent())
+      sandbox()
+    }
+  }
+}
+// ######################################################################
