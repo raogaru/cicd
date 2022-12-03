@@ -1,0 +1,10 @@
+HUB https://hub.docker.com/_/mysql
+
+DOC https://dev.mysql.com/doc/
+
+GIT  https://github.com/docker-library/mysql/tree/e0d43b2a29867c5b7d5c01a8fea30a086861df2b/5.7
+
+DOWNLOAD
+Dockerfile
+docker-entrypoint.sh
+
