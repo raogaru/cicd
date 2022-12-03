@@ -5,7 +5,7 @@
 #
 FROM alpine:3.17
 
-LABEL maintainer="raogaruinc@gmail.com"
+LABEL MAINTAINER="raogaruinc@gmail.com"
 
 ENV NGINX_VERSION 1.22.1
 ENV PKG_RELEASE   1
