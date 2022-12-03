@@ -147,8 +147,11 @@ RUN set -eux; \
 		exit 1; \
 	fi
 
-#RAO COPY tomcat-users.xml /opt/tomcat/conf/
-#RAO COPY index.jsp /opt/tomcat/webapps/ROOT/
+RUN rmdir /usr/local/tomcat/webapps/
+RUN mv /usr/local/tomcat/webapps.dist/ /usr/local/tomcat/webapps/
+COPY sample.war /usr/local/tomcat/webapps/
+COPY tomcat-users.xml /usr/local/tomcat/conf/
+COPY index.jsp /usr/local/tomcat/webapps/ROOT/
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
