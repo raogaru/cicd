@@ -4,4 +4,29 @@ DOC https://tomcat.apache.org/
 
 GIT https://github.com/docker-library/tomcat/blob/master/10.1/jdk17/temurin-jammy/Dockerfile
 
+DOWNLOAD
+Dockerfile
+
+Download sample.war from https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+
+Modify Dockerfile as "webapps.dist" directory shipped has the contents and "webapps" was empty for security
+
+Also upload tomcat-users.xml file with "tomcat" user and "tomcat" password.
+
+BUILD
+docker build -t rao-tomcat .
+
+START
+docker run --name rao-tomcat -it -p 8001:8080 -v ${HOME}/Docker/tomcat:/tmp --rm -d rao-tomcat
+
+CONNECT
+docker exec -it $(docker ps|grep rao-tomcat|cut -c1-12) bash
+
+TEST
+http://localhost:8001//
+http://localhost:8001/tutorial/
+http://localhost:8001/sample/
+http://localhost:8001/examples/
+http://localhost:8001/docs/
+http://localhost:8001/host-manager/
 
