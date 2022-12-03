@@ -1,0 +1,43 @@
+// ######################################################################
+pipelineJob('DEMO-CI-20-team-gate') {
+  definition {
+    cps {
+      script('''
+pipeline {
+	agent any
+	options { 
+		timestamps()
+		ansiColor('xterm')
+		disableConcurrentBuilds()
+		timeout(59)
+		buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '1'))
+//		ws('/tmp/cicd')
+	}
+	environment {
+		vGATE = 'TEAM'
+		vSTAGE = ''
+		vTEAM = ''
+		vPROCEED = 'YES'
+	}
+
+	stages {
+		stage('start') { steps { echo 'CI-PIPELINE-TEAM-GATE-START' } } 
+		stage('Main-Gate-Git') 	{ steps { 
+			git(url:'https://github.com/raogaru/cicd.git',branch:'master',credentialsId:'raogaru',poll:'false')
+//			dir('myapp') {git(url:'https://github.com/raogaru/myapp.git',branch:'team-MARS',credentialsId:'raogaru',poll:'false')} 
+		} }
+		stage('Team-Gate-Enter') 	{ steps { sh './ci.sh Team-Gate-Enter' } }
+		stage('Teams-in-Parallel') { parallel {
+//FILE_INSERT_BEGIN	########################################
+//FILE_INSERT_END	########################################
+		} }
+		stage('Team-Gate-Exit') 		{ steps { sh './ci.sh Team-Gate-Exit' } }
+		stage('end') { steps { echo 'CI-PIPELINE-TEAM-GATE-END' } } 
+	}
+}
+      '''.stripIndent())
+      sandbox()
+    }
+  }
+}
+// ######################################################################
