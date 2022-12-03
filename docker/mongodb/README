@@ -1,9 +1,0 @@
-HUB https://hub.docker.com/_/mongo
-
-DOC https://www.mongodb.com/docs/
-
-GIT https://github.com/docker-library/mongo/tree/master/6.0
-
-DOWNLOAD
-Dockerfile
-docker-entrypoint.sh
