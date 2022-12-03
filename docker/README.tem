@@ -5,4 +5,5 @@ DOC
 GIT
 
 DOWNLOAD
-
+Dockerfile
+docker-entrypoint.sh
