@@ -1,0 +1,9 @@
+HUB https://hub.docker.com/_/sonarqube
+
+DOC https://docs.sonarqube.org/latest/
+
+GIT https://github.com/SonarSource/docker-sonarqube/tree/master/8/community
+
+DOWNLOAD
+Dockerfile
+docker-entrypoint.sh
