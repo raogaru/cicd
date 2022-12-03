@@ -1,0 +1,9 @@
+HUB https://hub.docker.com/_/elasticsearch
+
+DOC https://www.elastic.co/guide/index.html
+
+GIT https://github.com/docker-library/elasticsearch/tree/master/8
+
+DOWNLOAD
+Dockerfile
+docker-entrypoint.sh
