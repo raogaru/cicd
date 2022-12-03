@@ -1,0 +1,14 @@
+HUB https://hub.docker.com/_/jenkins
+
+DOC https://www.jenkins.io/doc/
+
+GIT https://github.com/jenkinsci/docker/blob/587b2856cd225bb152c4abeeaaa24934c75aa460/Dockerfile
+
+DOWNLOAD
+init.groovy
+jenkins-support
+jenkins.sh
+plugins.sh
+install-plugins.sh
+Dockerfile
+
