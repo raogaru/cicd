@@ -1,0 +1,9 @@
+HUB https://hub.docker.com/_/redis
+
+DOC https://redis.io/docs/
+
+GIT https://github.com/docker-library/redis/tree/master/7.0/alpine
+
+DOWNLOAD
+Dockerfile
+docker-entrypoint.sh
