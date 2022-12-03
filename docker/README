@@ -1,4 +1,4 @@
-Add/Update MAINTAINER to Dockerfile
+Add/Update MAINTAINER to Dockerfile "after" FROM clause
 LABEL MAINTAINER="raogaruinc@gmail.com"
 
 BUILD
