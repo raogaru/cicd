@@ -1,0 +1,2 @@
+docker stop $(docker ps|grep rao-${1}|cut -c1-12)
+
