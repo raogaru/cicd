@@ -1,0 +1,13 @@
+HUB https://hub.docker.com/_/memcached
+
+DOC https://memcached.org/
+
+GIT https://github.com/docker-library/memcached/tree/master/alpine
+
+DOWNLOAD
+Dockerfile
+docker-entrypoint.sh
+
+CUSTOM
+set memory usage
+docker run --name rao-memcache -d rao-memcached -m 64
