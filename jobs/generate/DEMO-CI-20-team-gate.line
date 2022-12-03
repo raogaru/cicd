@@ -1,0 +1,1 @@
+stage ('DEMO-CI-team-gate-XXXX') {steps {build job: 'DEMO-CI-team-gate-XXXX', parameters: [string(name: 'vTEAM', value: "XXXX")]}}
