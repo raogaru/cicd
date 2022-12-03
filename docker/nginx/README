@@ -1,7 +1,7 @@
-DOWNLOAD https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim
+DOWNLOAD following 5 files from https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim
 
-curl https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/10-listen-on-ipv6-by-default.sh .
-curl https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/20-envsubst-on-templates.sh
-curl https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/30-tune-worker-processes.sh
-curl https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/docker-entrypoint.sh
-curl https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/Dockerfile
+https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/10-listen-on-ipv6-by-default.sh
+https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/20-envsubst-on-templates.sh
+https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/30-tune-worker-processes.sh
+https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/docker-entrypoint.sh
+https://github.com/nginxinc/docker-nginx/tree/master/mainline/alpine-slim/Dockerfile
