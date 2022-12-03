@@ -1,0 +1,9 @@
+HUB https://hub.docker.com/r/xueshanf/awscli
+
+DOC https://docs.aws.amazon.com/cli/index.html
+
+GIT https://github.com/xueshanf/docker-awscli
+
+DOWNLOAD
+Dockerfile
+docker-entrypoint.sh
