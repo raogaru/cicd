@@ -1,0 +1,9 @@
+HUB https://hub.docker.com/_/node
+
+DOC https://nodejs.org/en/docs/
+
+GIT https://github.com/nodejs/docker-node/blob/66ec7a544dab2f8284e167075938258399a9d458/19/alpine3.15/
+
+DOWNLOAD
+Dockerfile
+docker-entrypoint.sh
