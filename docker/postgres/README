@@ -8,3 +8,8 @@ DOWNLOAD
 Dockerfile
 docker-entrypoint.sh
 
+START
+
+docker run --name rao-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 rao-postgres
+/var/lib/postgresql/data
+
