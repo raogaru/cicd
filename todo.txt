@@ -1,0 +1,8 @@
+Backup
+tar cvf ../cicd.$(date '+%Y%m%d%H%M').tar *
+
+TG:
+drop and rebuild build-<team> branches
+tg build-deploy-test using build-branches
+master,sysgate, relgate branch name parameterized
+
