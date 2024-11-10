@@ -1,0 +1,5 @@
+NodeJS APi with Postgres
+
+https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/#creating-role-postgres
+https://github.com/bezkoder/node-js-postgresql-crud-example
+
